@@ -11,8 +11,9 @@ public class pigeonMove : MonoBehaviour {
       public static float runSpeed = 10f;
       public float startSpeed = 10f;
       public bool isAlive = true;
+    [SerializeField] AudioSource WalkSFX;
 
-      void Start(){
+    void Start(){
            //anim = gameObject.GetComponentInChildren<Animator>();
            rb2D = transform.GetComponent<Rigidbody2D>();
       }
@@ -26,12 +27,12 @@ public class pigeonMove : MonoBehaviour {
 
                   if ((Input.GetAxis("Horizontal") != 0) || (Input.GetAxis("Vertical") != 0)){
                   //     anim.SetBool ("Walk", true);
-                  //     if (!WalkSFX.isPlaying){
-                  //           WalkSFX.Play();
-                  //     }
+                       if (!WalkSFX.isPlaying){
+                             WalkSFX.Play();
+                       }
                   } else {
                   //     anim.SetBool ("Walk", false);
-                  //     WalkSFX.Stop();
+                       WalkSFX.Stop();
                  }
 
                   // Turning. Reverse if input is moving the Player right and Player faces left.
