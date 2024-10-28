@@ -9,10 +9,12 @@ public class PackageCollider : MonoBehaviour
 
     private readonly KeyCode getPackageKey = KeyCode.E;
     private GameObject package;
+    private GameObject packageHandler;
 
     void Start()
     {
         this.package = transform.parent.gameObject;
+        this.packageHandler = GameObject.FindWithTag("PackageHandler");
     }
 
     void Update()
@@ -30,7 +32,7 @@ public class PackageCollider : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            Debug.Log("enter");
+            // Debug.Log("enter");
             this.isTrigger = true;
         }
     }
@@ -46,6 +48,7 @@ public class PackageCollider : MonoBehaviour
     void PickUpPackage()
     {
         Debug.Log("package picked up!");
+        packageHandler.GetComponent<PackageHandler>().PickUpPackage(gameObject);
         Destroy(package);
     }
 }

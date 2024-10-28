@@ -13,6 +13,6 @@ public class cameraScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = Pigeon.transform.position;
+        transform.position = new Vector3(Pigeon.transform.position.x, Pigeon.transform.position.y, transform.position.z);
     }
 }
