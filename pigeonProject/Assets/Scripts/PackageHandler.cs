@@ -15,6 +15,8 @@ public class PackageHandler : MonoBehaviour
     public GameObject packagePrefab;
     public int score = 0;
     public Transform initPos;
+    [SerializeField] AudioClip PickAudio;
+    [SerializeField] AudioClip DropAudio;
 
     private GameObject player;
 
@@ -27,8 +29,8 @@ public class PackageHandler : MonoBehaviour
         // when package delivered, update score and init another package
         // TODO: should be modified later with new package generation logics
         OnPackageDelivery += this.UpdateScore;
-        OnPackageDelivery += this.initPackage;
-        this.initPackage(gameObject);
+        OnPackageDelivery += this.InitPackage;
+        this.InitPackage(gameObject);
     }
 
     // Update is called once per frame
@@ -47,11 +49,13 @@ public class PackageHandler : MonoBehaviour
 
     void DropPackage() {
         this.packagePicked--;
+        gameObject.GetComponent<AudioSource>().PlayOneShot(DropAudio);
         GenerateNewPackage(player.transform);
     }
 
     public void PickUpPackage(GameObject obj) {
         this.OnPackagePicked?.Invoke(obj);
+        gameObject.GetComponent<AudioSource>().PlayOneShot(PickAudio);
         Debug.Log("package picked up!");
     }
 
@@ -64,7 +68,7 @@ public class PackageHandler : MonoBehaviour
         instance.transform.position = transform.position;
     }
 
-    void initPackage(GameObject _) {
+    void InitPackage(GameObject _) {
         GenerateNewPackage(initPos.transform);
     }
 
@@ -72,4 +76,5 @@ public class PackageHandler : MonoBehaviour
         this.OnPackageDelivery?.Invoke(obj);
         Debug.Log("package delivered!");
     }
+
 }
