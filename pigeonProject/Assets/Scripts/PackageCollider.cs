@@ -15,6 +15,7 @@ public class PackageCollider : MonoBehaviour
     {
         this.package = transform.parent.gameObject;
         this.packageHandler = GameObject.FindWithTag("PackageHandler");
+        packageHandler.GetComponent<PackageHandler>().OnPackageDelivery += this.DeliverPackage;
     }
 
     void Update()
@@ -47,8 +48,12 @@ public class PackageCollider : MonoBehaviour
 
     void PickUpPackage()
     {
-        Debug.Log("package picked up!");
         packageHandler.GetComponent<PackageHandler>().PickUpPackage(gameObject);
+        Destroy(package);
+    }
+
+    // destroy the package when delivered
+    void DeliverPackage(GameObject _) {
         Destroy(package);
     }
 }
