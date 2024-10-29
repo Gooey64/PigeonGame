@@ -11,6 +11,10 @@ public class pigeonMove : MonoBehaviour {
       public static float runSpeed = 10f;
       public float startSpeed = 10f;
       public bool isAlive = true;
+      public GameObject WallTop;
+      public GameObject WallBottom;
+      public GameObject WallLeft;
+      public GameObject WallRight;
     [SerializeField] AudioSource WalkSFX;
 
     void Start(){
@@ -23,7 +27,12 @@ public class pigeonMove : MonoBehaviour {
             //NOTE: Vertical axis: [w] / up arrow, [s] / down arrow
             Vector3 hvMove = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0.0f);
            if (isAlive == true){
-                  transform.position = transform.position + hvMove * runSpeed * Time.deltaTime;
+
+                  Vector3 movement = transform.position + hvMove * runSpeed * Time.deltaTime;
+                  transform.position = new Vector3(
+                  Mathf.Clamp(movement.x, WallLeft.transform.position.x + 1, WallRight.transform.position.x - 1),
+                  Mathf.Clamp(movement.y, WallBottom.transform.position.y + 1, WallTop.transform.position.y - 1),
+                  movement.z);
 
                   if ((Input.GetAxis("Horizontal") != 0) || (Input.GetAxis("Vertical") != 0)){
                   //     anim.SetBool ("Walk", true);
