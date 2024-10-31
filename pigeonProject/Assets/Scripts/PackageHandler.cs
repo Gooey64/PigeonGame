@@ -15,6 +15,7 @@ public class PackageHandler : MonoBehaviour
     public GameObject packagePrefab;
     public int score = 0;
     public Transform initPos;
+    public GameObject LevelFinishedPanel;
     [SerializeField] AudioClip PickAudio;
     [SerializeField] AudioClip DropAudio;
 
@@ -29,7 +30,7 @@ public class PackageHandler : MonoBehaviour
         // when package delivered, update score and init another package
         // TODO: should be modified later with new package generation logics
         OnPackageDelivery += this.UpdateScore;
-        OnPackageDelivery += this.InitPackage;
+        OnPackageDelivery += this.ShowLevelFishedPanel;
         this.InitPackage(gameObject);
     }
 
@@ -75,6 +76,10 @@ public class PackageHandler : MonoBehaviour
     public void DeliverPackage(GameObject obj) {
         this.OnPackageDelivery?.Invoke(obj);
         Debug.Log("package delivered!");
+    }
+
+    public void ShowLevelFishedPanel(GameObject _) {
+        LevelFinishedPanel.SetActive(true);
     }
 
 }
