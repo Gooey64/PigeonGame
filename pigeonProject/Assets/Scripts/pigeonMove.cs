@@ -118,10 +118,8 @@ public class pigeonMove : MonoBehaviour {
         theScale.x *= -1;
         transform.localScale = theScale;
     }
-<<<<<<< Updated upstream
 }
-=======
-
+/*
     void OnTriggerEnter2D(Collider2D other)
     {
 
@@ -182,6 +180,4 @@ public class pigeonMove : MonoBehaviour {
         }
         LaunchDir = 0;
     }
-
-}
->>>>>>> Stashed changes
+*/
