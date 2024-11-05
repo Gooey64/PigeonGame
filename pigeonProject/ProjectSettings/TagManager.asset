@@ -7,6 +7,10 @@ TagManager:
   - PackageHandler
   - Package
   - wall
+  - WindUp
+  - WindDown
+  - WindLeft
+  - WindRight
   layers:
   - Default
   - TransparentFX
