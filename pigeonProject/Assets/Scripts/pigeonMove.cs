@@ -25,6 +25,9 @@ public class pigeonMove : MonoBehaviour {
 
     private Coroutine recharge;
 
+    public int LaunchDir = 0;
+
+
     void Start(){
         rb2D = transform.GetComponent<Rigidbody2D>();
         Stamina = MaxStamina; 
@@ -115,4 +118,70 @@ public class pigeonMove : MonoBehaviour {
         theScale.x *= -1;
         transform.localScale = theScale;
     }
+<<<<<<< Updated upstream
 }
+=======
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+
+        if (other.gameObject.CompareTag("WindLeft"))
+        {
+           
+            rb2D.velocity += new Vector2(-30f,0);
+            LaunchDir = 1;
+            StartCoroutine(LaunchDelay());
+            StopCoroutine(LaunchDelay());
+        }
+        if (other.gameObject.CompareTag("WindUp"))
+        {
+           
+            rb2D.velocity += new Vector2(0,30f);
+            LaunchDir = 2;
+            StartCoroutine(LaunchDelay());
+            StopCoroutine(LaunchDelay());
+        }
+        if (other.gameObject.CompareTag("WindRight"))
+        {
+           
+            rb2D.velocity += new Vector2(30f, 0);
+            LaunchDir = 3;
+            StartCoroutine(LaunchDelay());
+            StopCoroutine(LaunchDelay());
+        }
+        if (other.gameObject.CompareTag("WindDown"))
+        {
+           
+            rb2D.velocity += new Vector2(0, -30f);
+            LaunchDir = 4;
+            StartCoroutine(LaunchDelay());
+            StopCoroutine(LaunchDelay());
+
+
+        }
+    }
+
+    IEnumerator LaunchDelay()
+    {
+        yield return new WaitForSeconds(0.3f);
+        if (LaunchDir == 1)
+        {
+            rb2D.velocity += new Vector2(30f,0);
+        }
+        if (LaunchDir == 2)
+        {
+            rb2D.velocity += new Vector2(0,-30f);
+        }
+        if (LaunchDir == 3)
+        {
+            rb2D.velocity += new Vector2(-30f, 0);
+        }
+         if (LaunchDir == 4)
+        {
+            rb2D.velocity += new Vector2(0, 30f);
+        }
+        LaunchDir = 0;
+    }
+
+}
+>>>>>>> Stashed changes
