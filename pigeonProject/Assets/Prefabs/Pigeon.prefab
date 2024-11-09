@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5847684112092993992
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6801629661810765199}
+  m_Layer: 0
+  m_Name: pigeonFeet
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6801629661810765199
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5847684112092993992}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.149, y: -0.765, z: 0.020242983}
+  m_LocalScale: {x: 0.5, y: 0.19125001, z: 1.5006002}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3659212480453916626}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6953778287892767634
 GameObject:
   m_ObjectHideFlags: 0
@@ -117,8 +148,9 @@ Transform:
   m_Children:
   - {fileID: 3144178809145741201}
   - {fileID: 3341461019462894645}
+  - {fileID: 6801629661810765199}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4315065522020657704
 MonoBehaviour:
@@ -135,20 +167,6 @@ MonoBehaviour:
   rb2D: {fileID: 2941250686706183964}
   startSpeed: 10
   isAlive: 1
-  WallTop: {fileID: 0}
-  WallBottom: {fileID: 0}
-  WallLeft: {fileID: 0}
-  WallRight: {fileID: 0}
-  WalkSFX: {fileID: 7333530593977198923}
-  fallSpeed: 10
-  fastFallSpeed: 10
-  StaminaBar: {fileID: 0}
-  Stamina: 100
-  MaxStamina: 100
-  flyingUp: 25
-  RunCost: 25
-  ChargeRate: 5
-  LaunchDir: 0
 --- !u!61 &4806971940062541633
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -181,7 +199,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.15716925, y: -0.16925943}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -192,7 +210,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.73402077, y: 1.3385189}
   m_EdgeRadius: 0
 --- !u!50 &2941250686706183964
 Rigidbody2D:
