@@ -150,7 +150,7 @@ Transform:
   - {fileID: 3341461019462894645}
   - {fileID: 6801629661810765199}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4315065522020657704
 MonoBehaviour:
@@ -167,6 +167,22 @@ MonoBehaviour:
   rb2D: {fileID: 2941250686706183964}
   startSpeed: 10
   isAlive: 1
+  onPlat: 0
+  leftPlat: 0
+  WallTop: {fileID: 0}
+  WallBottom: {fileID: 0}
+  WallLeft: {fileID: 0}
+  WallRight: {fileID: 0}
+  WalkSFX: {fileID: 7333530593977198923}
+  fallSpeed: 10
+  fastFallSpeed: 10
+  StaminaBar: {fileID: 0}
+  Stamina: 0
+  MaxStamina: 100
+  flyingUp: 25
+  RunCost: 10
+  ChargeRate: 5
+  LaunchDir: 0
 --- !u!61 &4806971940062541633
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -210,7 +226,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.73402077, y: 1.3385189}
+  m_Size: {x: 2, y: 1}
   m_EdgeRadius: 0
 --- !u!50 &2941250686706183964
 Rigidbody2D:
@@ -227,7 +243,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0.5
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
