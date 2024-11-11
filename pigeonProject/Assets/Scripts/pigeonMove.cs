@@ -15,7 +15,7 @@ public class pigeonMove : MonoBehaviour {
     public GameObject WallBottom;
     public GameObject WallLeft;
     public GameObject WallRight;
-    [SerializeField] AudioSource WalkSFX;
+    // [SerializeField] AudioSource WalkSFX;
     public float fallSpeed = 10f; 
     public float fastFallSpeed = 10f; 
 
@@ -60,6 +60,8 @@ public class pigeonMove : MonoBehaviour {
                     recharge = null;
                 }
 
+                AudioManager.Instance.PlaySFX("flap");
+
             } else if (Input.GetAxis("Vertical") < 0 && !onPlat) {
                 
                 verticalMove = -fastFallSpeed * Time.deltaTime;
@@ -81,14 +83,17 @@ public class pigeonMove : MonoBehaviour {
             );
 
             
-            if (horizontalMove != 0 || Input.GetAxis("Vertical") != 0){
-            //     anim.SetBool ("Walk", true);
-                if (!WalkSFX.isPlaying){
-                    WalkSFX.Play();
+            
+           if (horizontalMove != 0 || Input.GetAxis("Vertical") != 0)
+            {
+                if (!AudioManager.Instance.sfxSource.isPlaying)
+                {
+                    AudioManager.Instance.PlaySFX("Flapping Noise");
                 }
-            } else {
-            //     anim.SetBool ("Walk", false);
-                WalkSFX.Stop();
+            }
+            else
+            {
+                AudioManager.Instance.sfxSource.Stop();
             }
 
             // Turning. Reverse if input is moving the Player right and Player faces left.
