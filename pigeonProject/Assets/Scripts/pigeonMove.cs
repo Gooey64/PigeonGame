@@ -35,73 +35,74 @@ public class pigeonMove : MonoBehaviour {
         Stamina = MaxStamina; 
     }
 
-    void Update(){
-      //NOTE: Horizontal axis: [a] / left arrow is -1, [d] / right arrow is 1
-      //NOTE: Vertical axis: [w] / up arrow, [s] / down arrow
-        if (isAlive){
-           
-            float horizontalMove = Input.GetAxis("Horizontal") * runSpeed * Time.deltaTime;
-            float verticalMove = 0.0f;
+void Update()
+{
+    if (isAlive)
+    {
+        float horizontalMove = Input.GetAxis("Horizontal") * runSpeed * Time.deltaTime;
+        float verticalMove = 0.0f;
 
-           
-            if (Input.GetAxis("Vertical") > 0 && Stamina > 0){
-                verticalMove = Input.GetAxis("Vertical") * flyingUp * Time.deltaTime;
+        bool upArrowPressed = Input.GetKey(KeyCode.UpArrow);
+        bool leftArrowPressed = Input.GetKey(KeyCode.LeftArrow);
+        bool rightArrowPressed = Input.GetKey(KeyCode.RightArrow);
 
-                
-                Stamina -= RunCost * Time.deltaTime;
-                if (Stamina < 0) Stamina = 0;
 
-               
-                StaminaBar.fillAmount = Stamina / MaxStamina;
+        //NOTE: Horizontal axis: [a] / left arrow is -1, [d] / right arrow is 1
+        //NOTE: Vertical axis: [w] / up arrow, [s] / down arrow
+        if (upArrowPressed && Stamina > 0 && !onPlat)
+        {
+            verticalMove = Input.GetAxis("Vertical") * flyingUp * Time.deltaTime;
 
-                
-                if (recharge != null){
-                    StopCoroutine(recharge);
-                    recharge = null;
-                }
+            Stamina -= RunCost * Time.deltaTime;
+            if (Stamina < 0) Stamina = 0;
 
-                AudioManager.Instance.PlaySFX("flap");
+            StaminaBar.fillAmount = Stamina / MaxStamina;
 
-            } else if (Input.GetAxis("Vertical") < 0 && !onPlat) {
-                
-                verticalMove = -fastFallSpeed * Time.deltaTime;
-            } else if (!onPlat) {
-                
-                verticalMove = -fallSpeed * Time.deltaTime;
-
-                
-                if (recharge == null && Stamina < MaxStamina){
-                    recharge = StartCoroutine(RechargeStamina());
-                }
-            }
-
-            
-            transform.position = new Vector3(
-                Mathf.Clamp(transform.position.x + horizontalMove, WallLeft.transform.position.x + 1, WallRight.transform.position.x - 1),
-                Mathf.Clamp(transform.position.y + verticalMove, WallBottom.transform.position.y + 1, WallTop.transform.position.y - 1),
-                transform.position.z
-            );
-
-            
-            
-           if (horizontalMove != 0 || Input.GetAxis("Vertical") != 0)
+            if (recharge != null)
             {
-                if (!AudioManager.Instance.sfxSource.isPlaying)
-                {
-                    AudioManager.Instance.PlaySFX("Flapping Noise");
-                }
-            }
-            else
-            {
-                AudioManager.Instance.sfxSource.Stop();
+                StopCoroutine(recharge);
+                recharge = null;
             }
 
-            // Turning. Reverse if input is moving the Player right and Player faces left.
-            if ((horizontalMove < 0 && !FaceRight) || (horizontalMove > 0 && FaceRight)){
-                playerTurn();
+            
+            if (!AudioManager.Instance.sfxSource.isPlaying && (upArrowPressed && (!leftArrowPressed || !rightArrowPressed)))
+            {
+                AudioManager.Instance.PlaySFX("Flapping Noise");
             }
         }
+        else if (Input.GetAxis("Vertical") < 0 && !onPlat)
+        {
+            verticalMove = -fastFallSpeed * Time.deltaTime;
+        }
+        else if (!onPlat)
+        {
+            verticalMove = -fallSpeed * Time.deltaTime;
+
+            if (recharge == null && Stamina < MaxStamina)
+            {
+                recharge = StartCoroutine(RechargeStamina());
+            }
+        }
+
+        transform.position = new Vector3(
+            Mathf.Clamp(transform.position.x + horizontalMove, WallLeft.transform.position.x + 1, WallRight.transform.position.x - 1),
+            Mathf.Clamp(transform.position.y + verticalMove, WallBottom.transform.position.y + 1, WallTop.transform.position.y - 1),
+            transform.position.z
+        );
+
+        if (!upArrowPressed || onPlat)
+        {
+            AudioManager.Instance.sfxSource.Stop();
+        }
+
+        if ((horizontalMove < 0 && !FaceRight) || (horizontalMove > 0 && FaceRight))
+        {
+            playerTurn();
+        }
     }
+}
+
+
 
     private IEnumerator RechargeStamina(){
         yield return new WaitForSeconds(1f);
