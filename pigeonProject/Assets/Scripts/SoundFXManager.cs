@@ -13,6 +13,11 @@ public class SoundFXManager : MonoBehaviour
         if (instance == null)
         {
             instance = this;
+            DontDestroyOnLoad(this.gameObject); 
+        }
+        else
+        {
+            Destroy(gameObject);
         }
     }
 
@@ -61,9 +66,12 @@ public class SoundFXManager : MonoBehaviour
         }
     }
 
-    // public void PlayButtonClick()
-    // {
-    //     PlaySFX("Button Noise");
-    // }
+    public void SetVolume(float volume)
+    {
+        if (currentAudioSource != null)
+        {
+            currentAudioSource.volume = volume;
+        }
+    }
 
 }
