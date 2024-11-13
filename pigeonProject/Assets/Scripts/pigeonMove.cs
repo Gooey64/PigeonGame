@@ -11,11 +11,14 @@ public class pigeonMove : MonoBehaviour {
     public bool isAlive = true;
     public bool onPlat = false;
     public bool leftPlat = false;
+
     public GameObject WallTop;
     public GameObject WallBottom;
     public GameObject WallLeft;
     public GameObject WallRight;
-    // [SerializeField] AudioSource WalkSFX;
+    
+    [SerializeField] private AudioClip flyingClip;
+    // [SerializeField] private AudioClip[] flyingClips;
     public float fallSpeed = 10f; 
     public float fastFallSpeed = 10f; 
 
@@ -29,11 +32,13 @@ public class pigeonMove : MonoBehaviour {
 
     public int LaunchDir = 0;
 
+void Start()
+{
+    rb2D = transform.GetComponent<Rigidbody2D>();
+    Stamina = MaxStamina; 
 
-    void Start(){
-        rb2D = transform.GetComponent<Rigidbody2D>();
-        Stamina = MaxStamina; 
-    }
+    FaceRight = transform.localScale.x > 0;
+}
 
 void Update()
 {
@@ -46,12 +51,9 @@ void Update()
         bool leftArrowPressed = Input.GetKey(KeyCode.LeftArrow);
         bool rightArrowPressed = Input.GetKey(KeyCode.RightArrow);
 
-
-        //NOTE: Horizontal axis: [a] / left arrow is -1, [d] / right arrow is 1
-        //NOTE: Vertical axis: [w] / up arrow, [s] / down arrow
         if (upArrowPressed && Stamina > 0 && !onPlat)
         {
-            verticalMove = Input.GetAxis("Vertical") * flyingUp * Time.deltaTime;
+            verticalMove = flyingUp * Time.deltaTime;
 
             Stamina -= RunCost * Time.deltaTime;
             if (Stamina < 0) Stamina = 0;
@@ -64,13 +66,13 @@ void Update()
                 recharge = null;
             }
 
-            
-            if (!AudioManager.Instance.sfxSource.isPlaying && (upArrowPressed && (!leftArrowPressed || !rightArrowPressed)))
+            if (!SoundFXManager.instance.IsPlaying())
             {
-                AudioManager.Instance.PlaySFX("Flapping Noise");
+                // SoundFXManager.instance.PlayRandomSoundFXClip(flyingClips, transform, 1f);
+                SoundFXManager.instance.PlaySoundFXClip(flyingClip, transform, 1f);
             }
         }
-        else if (Input.GetAxis("Vertical") < 0 && !onPlat)
+        else if (Input.GetAxis("Vertical") < 0 && !onPlat) 
         {
             verticalMove = -fastFallSpeed * Time.deltaTime;
         }
@@ -82,6 +84,12 @@ void Update()
             {
                 recharge = StartCoroutine(RechargeStamina());
             }
+
+            SoundFXManager.instance.StopSoundFX();
+        }
+        else if (onPlat) 
+        {
+            SoundFXManager.instance.StopSoundFX();
         }
 
         transform.position = new Vector3(
@@ -90,17 +98,17 @@ void Update()
             transform.position.z
         );
 
-        if (!upArrowPressed || onPlat)
+        if (horizontalMove < 0 && FaceRight)
         {
-            AudioManager.Instance.sfxSource.Stop();
+            playerTurn();
         }
-
-        if ((horizontalMove < 0 && !FaceRight) || (horizontalMove > 0 && FaceRight))
+        else if (horizontalMove > 0 && !FaceRight)
         {
             playerTurn();
         }
     }
 }
+
 
 
 
