@@ -10,7 +10,10 @@ public class UIController : MonoBehaviour
 
     private void Start()
     {
-        _musicSlider.value = (_musicSlider.minValue + _musicSlider.maxValue) / 2;
+        float savedVolume = PlayerPrefs.GetFloat("Volume", (_musicSlider.minValue + _musicSlider.maxValue) / 2);
+        _musicSlider.value = savedVolume;
+        AudioManager.Instance.MusicVolume(savedVolume);
+        AudioManager.Instance.SFXVolume(savedVolume);
     }
 
     public void ToggleMusic()
@@ -24,7 +27,9 @@ public class UIController : MonoBehaviour
         AudioManager.Instance.MusicVolume(volume);
         AudioManager.Instance.SFXVolume(volume);
 
+        PlayerPrefs.SetFloat("Volume", volume);
+        PlayerPrefs.Save();
+
         EventSystem.current.SetSelectedGameObject(null);
     }
 }
-

@@ -22,10 +22,10 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    private void Start()
-    {
-        PlayMusic("Theme"); 
-    }
+    // private void Start()
+    // {
+    //     // PlayMusic("Theme"); 
+    // }
 
     public void PlayLevelMusic(string levelName)
     {
@@ -50,16 +50,16 @@ public class AudioManager : MonoBehaviour
 
     public void PlayMusic(string name) 
     {
-        SoundControl s = Array.Find(musicSounds, x => x.name == name);
-        if (s == null)
-        {
-            Debug.LogWarning("Music Sound Not Found: " + name);
-        }
-        else 
-        {
-            musicSource.clip = s.clip;
-            musicSource.Play();
-        }
+        // SoundControl s = Array.Find(musicSounds, x => x.name == name);
+        // if (s == null)
+        // {
+        //     Debug.LogWarning("Music Sound Not Found: " + name);
+        // }
+        // else 
+        // {
+        //     musicSource.clip = s.clip;
+        //     musicSource.Play();
+        // }
     }
 
     public void PlaySFX(string name) 
