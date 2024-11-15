@@ -40,16 +40,16 @@ void Start()
     FaceRight = transform.localScale.x > 0;
 }
 
+public float groundSpeed = 2f; 
+
 void Update()
 {
     if (isAlive)
     {
-        float horizontalMove = Input.GetAxis("Horizontal") * runSpeed * Time.deltaTime;
+        float horizontalMove = Input.GetAxis("Horizontal") * (onPlat ? groundSpeed : runSpeed) * Time.deltaTime;
         float verticalMove = 0.0f;
 
         bool upArrowPressed = Input.GetKey(KeyCode.UpArrow);
-        bool leftArrowPressed = Input.GetKey(KeyCode.LeftArrow);
-        bool rightArrowPressed = Input.GetKey(KeyCode.RightArrow);
 
         if (upArrowPressed && Stamina > 0 && !onPlat)
         {
@@ -68,11 +68,10 @@ void Update()
 
             if (!SoundFXManager.instance.IsPlaying())
             {
-                // SoundFXManager.instance.PlayRandomSoundFXClip(flyingClips, transform, 1f);
                 SoundFXManager.instance.PlaySoundFXClip(flyingClip, transform, 1f);
             }
         }
-        else if (Input.GetAxis("Vertical") < 0 && !onPlat) 
+        else if (Input.GetAxis("Vertical") < 0 && !onPlat)
         {
             verticalMove = -fastFallSpeed * Time.deltaTime;
         }
@@ -87,7 +86,7 @@ void Update()
 
             SoundFXManager.instance.StopSoundFX();
         }
-        else if (onPlat) 
+        else if (onPlat)
         {
             SoundFXManager.instance.StopSoundFX();
         }
@@ -108,6 +107,7 @@ void Update()
         }
     }
 }
+
 
 
 
