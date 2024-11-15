@@ -13,33 +13,45 @@ public class PackageHandler : MonoBehaviour
     public event PackageEvents OnPackageDelivery;   // event called when package delivered
     public KeyCode dropKey = KeyCode.Space;
     public GameObject packagePrefab;
-    public int score = 0;
     public Transform initPos;
+    public Transform pigeonBeakPos;
+    public Transform pigeonFeetPos;
+    public GameObject packageOnPigeon;
     public GameObject LevelFinishedPanel;
     [SerializeField] AudioClip PickAudio;
     [SerializeField] AudioClip DropAudio;
 
     private GameObject player;
+    private bool isGrounded = true;
 
-    // Start is called before the first frame update
     void Start()
     {
         this.player = GameObject.FindWithTag("Player");
+        this.pigeonBeakPos = player.transform.Find("pigeonBeak");
+        this.pigeonFeetPos = player.transform.Find("pigeonFeet");
+        this.packageOnPigeon = player.transform.Find("package").gameObject;
         // update the variable when pick up pakcage
         OnPackagePicked += this.UpdatePackagePicked;
-        // when package delivered, update score and init another package
-        // TODO: should be modified later with new package generation logics
-        OnPackageDelivery += this.UpdateScore;
+        // show the package on the pigeon
+        OnPackagePicked += this.AcitvePackageOnPigeon;
+        // when package delivered, finish the level
         OnPackageDelivery += this.ShowLevelFishedPanel;
         this.InitPackage(gameObject);
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown(dropKey)) {
             if (this.packagePicked > 0) {
                 DropPackage();
+            }
+        }
+        if (this.packageOnPigeon.activeSelf) {
+            if (isGrounded) {
+                this.packageOnPigeon.transform.position = pigeonBeakPos.transform.position;
+            }
+            else {
+                this.packageOnPigeon.transform.position = pigeonFeetPos.transform.position;
             }
         }
     }
@@ -52,16 +64,13 @@ public class PackageHandler : MonoBehaviour
         this.packagePicked--;
         gameObject.GetComponent<AudioSource>().PlayOneShot(DropAudio);
         GenerateNewPackage(player.transform);
+        this.packageOnPigeon.SetActive(false);
     }
 
     public void PickUpPackage(GameObject obj) {
         this.OnPackagePicked?.Invoke(obj);
         gameObject.GetComponent<AudioSource>().PlayOneShot(PickAudio);
         Debug.Log("package picked up!");
-    }
-
-    void UpdateScore(GameObject _) {
-        this.score++;
     }
 
     void GenerateNewPackage(Transform transform) {
@@ -80,6 +89,10 @@ public class PackageHandler : MonoBehaviour
 
     public void ShowLevelFishedPanel(GameObject _) {
         LevelFinishedPanel.SetActive(true);
+    }
+
+    public void AcitvePackageOnPigeon(GameObject _) {
+        this.packageOnPigeon.SetActive(true);
     }
 
 }
