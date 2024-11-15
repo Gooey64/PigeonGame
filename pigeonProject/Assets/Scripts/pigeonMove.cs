@@ -108,10 +108,6 @@ void Update()
     }
 }
 
-
-
-
-
     private IEnumerator RechargeStamina(){
         yield return new WaitForSeconds(1f);
 
