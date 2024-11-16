@@ -11,6 +11,8 @@ TagManager:
   - WindDown
   - WindLeft
   - WindRight
+  - Platform
+  - Sidewalk
   layers:
   - Default
   - TransparentFX
