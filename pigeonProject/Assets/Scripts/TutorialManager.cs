@@ -3,19 +3,19 @@ using UnityEngine.UI;
 
 public class TutorialManager : MonoBehaviour
 {
-    [SerializeField] private GameObject[] tutorialPanels; // Array of tutorial panels
+    [SerializeField] private GameObject[] tutorialPanels;
     private int currentPanelIndex = 0;
-    public GameObject player; // Reference to the player GameObject
-    private pigeonMove pigeonMovement; // Reference to the pigeonMove script
-    public Button nextButton; // Button for advancing tutorial
+    public GameObject player;
+    private pigeonMove pigeonMovement;
+    public Button nextButton; 
+    public static bool tutorialCompleted = false; 
 
     private void Start()
     {
-        // Get the pigeonMove script from the player GameObject
         pigeonMovement = player.GetComponent<pigeonMove>();
         if (pigeonMovement != null)
         {
-            pigeonMovement.isAlive = false; // Disable movement at the start of the tutorial
+            pigeonMovement.isAlive = false; 
         }
 
         ShowCurrentPanel();
@@ -23,27 +23,27 @@ public class TutorialManager : MonoBehaviour
 
     public void ShowNextPanel()
     {
-        // Hide the current tutorial panel
         tutorialPanels[currentPanelIndex].SetActive(false);
 
         currentPanelIndex++;
 
         if (currentPanelIndex < tutorialPanels.Length)
         {
-            ShowCurrentPanel(); // Show the next tutorial panel
+            ShowCurrentPanel();
         }
         else
         {
-            // End of the tutorial, enable movement
             if (pigeonMovement != null)
             {
                 pigeonMovement.isAlive = true;
             }
+
+            tutorialCompleted = true;
         }
     }
 
     private void ShowCurrentPanel()
     {
-        tutorialPanels[currentPanelIndex].SetActive(true); // Display the current panel
+        tutorialPanels[currentPanelIndex].SetActive(true); 
     }
 }

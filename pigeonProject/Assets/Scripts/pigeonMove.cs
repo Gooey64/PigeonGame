@@ -33,13 +33,13 @@ public class pigeonMove : MonoBehaviour
 
     public Sprite groundSprite; 
     private SpriteRenderer spriteRenderer;
-    private Animator animator;
+    // private Animator animator;
 
     void Start()
     {
         rb2D = transform.GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
-        animator = GetComponent<Animator>();
+        // animator = GetComponent<Animator>();
         Stamina = MaxStamina;
 
         FaceRight = transform.localScale.x > 0;
@@ -111,15 +111,15 @@ public class pigeonMove : MonoBehaviour
                 playerTurn();
             }
 
-            if (onPlat)
-            {
-                animator.enabled = false;
-                spriteRenderer.sprite = groundSprite; 
-            }
-            else
-            {
-                animator.enabled = true; 
-            }
+            // if (onPlat)
+            // {
+            //     animator.enabled = false;
+            //     spriteRenderer.sprite = groundSprite; 
+            // }
+            // else
+            // {
+            //     animator.enabled = true; 
+            // }
         }
     }
 

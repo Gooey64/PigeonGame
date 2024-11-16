@@ -26,14 +26,9 @@ public class HealthManager : MonoBehaviour
         }
     }
 
-    private void OnMouseDown()
-    {
-        TakeDamage(10); 
-    }
-
     public void TakeDamage(float damage)
     {
-        healthAmount -= damage;
+        healthAmount -= 30;
         healthAmount = Mathf.Clamp(healthAmount, 0, 100); 
         UpdateHealthBar();
     }
