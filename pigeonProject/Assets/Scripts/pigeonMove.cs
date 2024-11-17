@@ -45,7 +45,7 @@ public class pigeonMove : MonoBehaviour
         FaceRight = transform.localScale.x > 0;
     }
 
-    public float groundSpeed = 2f;
+    public float groundSpeed = 3f;
 
     void Update()
     {
@@ -56,25 +56,28 @@ public class pigeonMove : MonoBehaviour
 
             bool upArrowPressed = Input.GetKey(KeyCode.UpArrow);
 
-            if (upArrowPressed && Stamina > 0 && !onPlat)
+            if (upArrowPressed && Stamina > 0/* && !onPlat*/)
             {
                 verticalMove = flyingUp * Time.deltaTime;
-
-                Stamina -= RunCost * Time.deltaTime;
-                if (Stamina < 0) Stamina = 0;
-
-                StaminaBar.fillAmount = Stamina / MaxStamina;
-
-                if (recharge != null)
+                if (!onPlat)
                 {
-                    StopCoroutine(recharge);
-                    recharge = null;
-                }
+                    Stamina -= RunCost * Time.deltaTime;
+                    if (Stamina < 0) Stamina = 0;
 
-                if (!SoundFXManager.instance.IsPlaying())
-                {
-                    SoundFXManager.instance.PlaySoundFXClip(flyingClip, transform, 1f);
+                    StaminaBar.fillAmount = Stamina / MaxStamina;
+
+                    if (recharge != null)
+                    {
+                        StopCoroutine(recharge);
+                        recharge = null;
+                    }
+
+                    if (!SoundFXManager.instance.IsPlaying())
+                    {
+                        SoundFXManager.instance.PlaySoundFXClip(flyingClip, transform, 1f);
+                    }
                 }
+                
             }
             else if (Input.GetAxis("Vertical") < 0 && !onPlat)
             {
