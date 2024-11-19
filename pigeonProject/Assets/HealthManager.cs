@@ -20,10 +20,6 @@ public class HealthManager : MonoBehaviour
             TakeDamage(20);
         }
 
-        if (Input.GetKeyDown(KeyCode.Space)) 
-        {
-            Heal(5);
-        }
     }
 
     public void TakeDamage(float damage)
