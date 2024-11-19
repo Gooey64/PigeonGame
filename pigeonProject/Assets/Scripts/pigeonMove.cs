@@ -28,8 +28,8 @@ public class pigeonMove : MonoBehaviour
     public float ChargeRate = 5f;
 
     private Coroutine recharge;
+    public bool launched;
 
-    public int LaunchDir = 0;
 
     public Sprite groundSprite; 
     private SpriteRenderer spriteRenderer;
@@ -152,31 +152,27 @@ public class pigeonMove : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("WindLeft"))
+        if (other.gameObject.CompareTag("WindLeft") && launched == false)
         {
             rb2D.velocity += new Vector2(-30f, 0);
-            LaunchDir = 1;
             StartCoroutine(LaunchDelay());
             StopCoroutine(LaunchDelay());
         }
-        if (other.gameObject.CompareTag("WindUp"))
+        if (other.gameObject.CompareTag("WindUp") && launched == false)
         {
             rb2D.velocity += new Vector2(0, 30f);
-            LaunchDir = 2;
             StartCoroutine(LaunchDelay());
             StopCoroutine(LaunchDelay());
         }
-        if (other.gameObject.CompareTag("WindRight"))
+        if (other.gameObject.CompareTag("WindRight") && launched == false)
         {
             rb2D.velocity += new Vector2(30f, 0);
-            LaunchDir = 3;
             StartCoroutine(LaunchDelay());
             StopCoroutine(LaunchDelay());
         }
-        if (other.gameObject.CompareTag("WindDown"))
+        if (other.gameObject.CompareTag("WindDown") && launched == false)
         {
             rb2D.velocity += new Vector2(0, -30f);
-            LaunchDir = 4;
             StartCoroutine(LaunchDelay());
             StopCoroutine(LaunchDelay());
         }
@@ -199,24 +195,11 @@ public class pigeonMove : MonoBehaviour
 
     IEnumerator LaunchDelay()
     {
+        launched = true;
         yield return new WaitForSeconds(0.3f);
-        if (LaunchDir == 1)
-        {
-            rb2D.velocity += new Vector2(30f, 0);
-        }
-        if (LaunchDir == 2)
-        {
-            rb2D.velocity += new Vector2(0, -30f);
-        }
-        if (LaunchDir == 3)
-        {
-            rb2D.velocity += new Vector2(-30f, 0);
-        }
-        if (LaunchDir == 4)
-        {
-            rb2D.velocity += new Vector2(0, 30f);
-        }
-        LaunchDir = 0;
+ 
+        rb2D.velocity =  Vector2.zero;
+        launched = false;
     }
 
     IEnumerator LeftPlat()
