@@ -22,18 +22,29 @@ public class pigeonMove : MonoBehaviour
     public float fastFallSpeed = 10f;
 
     public Image StaminaBar;
-    public float Stamina, MaxStamina = 100f;
+    public float Stamina, MaxStamina = 200f;
     public float flyingUp = 25f;
     public float RunCost = 10f;
     public float ChargeRate = 5f;
 
+    public float groundSpeed = 3f; // You can adjust the value as needed
+
     private Coroutine recharge;
     public bool launched;
 
-
-    public Sprite groundSprite; 
+    public Sprite groundSprite;
     private SpriteRenderer spriteRenderer;
     // private Animator animator;
+
+    // Added properties and methods
+    public bool canFly = false;
+    public static bool flyEnergyEnough = true;
+    public float groundPos = 0;
+
+    public AudioSource flySFX1;
+    public AudioSource flySFX2;
+    public AudioSource flySFX3;
+    private AudioSource flySFX;
 
     void Start()
     {
@@ -45,7 +56,34 @@ public class pigeonMove : MonoBehaviour
         FaceRight = transform.localScale.x > 0;
     }
 
-    public float groundSpeed = 3f;
+    public void Fly()
+    {
+        rb2D.velocity = Vector2.up * (flyingUp / 2);
+
+        int flyNum = Random.Range(0, 3);
+        if (flyNum == 0) { flySFX = flySFX1; }
+        else if (flyNum == 1) { flySFX = flySFX2; }
+        else if (flyNum == 2) { flySFX = flySFX3; }
+        else { flySFX = flySFX1; }
+
+        if (!flySFX.isPlaying)
+        {
+            flySFX.Play();
+        }
+
+        StopCoroutine(BirdDrop());
+        StartCoroutine(BirdDrop());
+    }
+
+    IEnumerator BirdDrop()
+    {
+        yield return new WaitForSeconds(0.5f);
+        rb2D.velocity = Vector2.up * (flyingUp / 3);
+        yield return new WaitForSeconds(0.5f);
+        rb2D.velocity = Vector2.up * (flyingUp / 4);
+        yield return new WaitForSeconds(1f);
+        canFly = false;
+    }
 
     void Update()
     {
@@ -77,7 +115,7 @@ public class pigeonMove : MonoBehaviour
                         SoundFXManager.instance.PlaySoundFXClip(flyingClip, transform, 1f);
                     }
                 }
-                
+              
             }
             else if (Input.GetAxis("Vertical") < 0 && !onPlat)
             {
@@ -117,11 +155,11 @@ public class pigeonMove : MonoBehaviour
             // if (onPlat)
             // {
             //     animator.enabled = false;
-            //     spriteRenderer.sprite = groundSprite; 
+            //     spriteRenderer.sprite = groundSprite;
             // }
             // else
             // {
-            //     animator.enabled = true; 
+            //     animator.enabled = true;
             // }
         }
     }
@@ -197,8 +235,7 @@ public class pigeonMove : MonoBehaviour
     {
         launched = true;
         yield return new WaitForSeconds(0.3f);
- 
-        rb2D.velocity =  Vector2.zero;
+        rb2D.velocity = Vector2.zero;
         launched = false;
     }
 
