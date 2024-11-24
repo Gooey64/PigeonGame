@@ -29,18 +29,31 @@ public class MainMenu : MonoBehaviour
 
     public void PlayGame() 
     {
-        // Save volume settings before loading the game
-        // PlayerPrefs.SetFloat("MasterVolume", masterVolumeSlider.value);
-        // PlayerPrefs.SetFloat("MusicVolume", musicVolumeSlider.value);
-        // PlayerPrefs.SetFloat("SFXVolume", sfxVolumeSlider.value);
-
-        // SceneManager.LoadSceneAsync("Level1");
+      
     }
 
     public void QuitGame()
     {
+        Debug.Log("Exiting game and resetting settings...");
+
+        ResetGameSettings();
+
         Application.Quit();
     }
+
+     private void ResetGameSettings()
+    {
+        PlayerPrefs.DeleteAll();
+
+        PlayerPrefs.SetFloat("MasterVolume", 1.0f);
+        PlayerPrefs.SetFloat("MusicVolume", 1.0f);
+        PlayerPrefs.SetFloat("SFXVolume", 1.0f);
+        PlayerPrefs.SetInt("Level_0_Unlocked", 1); 
+
+        PlayerPrefs.Save();
+        Debug.Log("Game settings reset to default.");
+    }
+
 
     private void AdjustMasterVolume(float level)
     {

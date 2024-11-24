@@ -6,8 +6,7 @@ public class pigeonMove : MonoBehaviour
 {
     public Rigidbody2D rb2D;
     private bool FaceRight = false;
-    public static float runSpeed = 10f;
-    public float startSpeed = 10f;
+    public static float runSpeed = 15f;
     public bool isAlive = true;
     public bool onPlat = false;
     public bool leftPlat = false;
@@ -27,19 +26,15 @@ public class pigeonMove : MonoBehaviour
     public float RunCost = 10f;
     public float ChargeRate = 5f;
 
-    public float groundSpeed = 3f; // You can adjust the value as needed
+    public float groundSpeed = 0.5f; 
 
     private Coroutine recharge;
     public bool launched;
 
     public Sprite groundSprite;
     private SpriteRenderer spriteRenderer;
-    // private Animator animator;
-
-    // Added properties and methods
+    
     public bool canFly = false;
-    public static bool flyEnergyEnough = true;
-    public float groundPos = 0;
 
     public AudioSource flySFX1;
     public AudioSource flySFX2;
@@ -50,10 +45,10 @@ public class pigeonMove : MonoBehaviour
     {
         rb2D = transform.GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
-        // animator = GetComponent<Animator>();
         Stamina = MaxStamina;
 
         FaceRight = transform.localScale.x > 0;
+        groundSpeed = 7f;
     }
 
     public void Fly()
@@ -85,84 +80,90 @@ public class pigeonMove : MonoBehaviour
         canFly = false;
     }
 
-    void Update()
+void Update()
+{
+    if (isAlive)
     {
-        if (isAlive)
+        float horizontalMove = 0.0f;
+        float verticalMove = 0.0f;
+
+        if (Input.GetKey(KeyCode.UpArrow) && Stamina > 0)
         {
-            float horizontalMove = Input.GetAxis("Horizontal") * (onPlat ? groundSpeed : runSpeed) * Time.deltaTime;
-            float verticalMove = 0.0f;
+            verticalMove = flyingUp * Time.deltaTime;
 
-            bool upArrowPressed = Input.GetKey(KeyCode.UpArrow);
-
-            if (upArrowPressed && Stamina > 0/* && !onPlat*/)
+            if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.RightArrow))
             {
-                verticalMove = flyingUp * Time.deltaTime;
-                if (!onPlat)
-                {
-                    Stamina -= RunCost * Time.deltaTime;
-                    if (Stamina < 0) Stamina = 0;
-
-                    StaminaBar.fillAmount = Stamina / MaxStamina;
-
-                    if (recharge != null)
-                    {
-                        StopCoroutine(recharge);
-                        recharge = null;
-                    }
-
-                    if (!SoundFXManager.instance.IsPlaying())
-                    {
-                        SoundFXManager.instance.PlaySoundFXClip(flyingClip, transform, 1f);
-                    }
-                }
-              
+                horizontalMove = Input.GetAxis("Horizontal") * runSpeed * Time.deltaTime; 
             }
-            else if (Input.GetAxis("Vertical") < 0 && !onPlat)
-            {
-                verticalMove = -fastFallSpeed * Time.deltaTime;
-            }
-            else if (!onPlat)
-            {
-                verticalMove = -fallSpeed * Time.deltaTime;
 
-                if (recharge == null && Stamina < MaxStamina)
+            if (!onPlat)
+            {
+                Stamina -= RunCost * Time.deltaTime;
+                if (Stamina < 0) Stamina = 0;
+
+                StaminaBar.fillAmount = Stamina / MaxStamina;
+
+                if (recharge != null)
                 {
-                    recharge = StartCoroutine(RechargeStamina());
+                    StopCoroutine(recharge);
+                    recharge = null;
                 }
 
-                SoundFXManager.instance.StopSoundFX();
+                if (!SoundFXManager.instance.IsPlaying())
+                {
+                    SoundFXManager.instance.PlaySoundFXClip(flyingClip, transform, 1f);
+                }
             }
-            else if (onPlat)
-            {
-                SoundFXManager.instance.StopSoundFX();
-            }
-
-            transform.position = new Vector3(
-                Mathf.Clamp(transform.position.x + horizontalMove, WallLeft.transform.position.x + 1, WallRight.transform.position.x - 1),
-                Mathf.Clamp(transform.position.y + verticalMove, WallBottom.transform.position.y + 1, WallTop.transform.position.y - 1),
-                transform.position.z
-            );
-
-            if (horizontalMove < 0 && FaceRight)
-            {
-                playerTurn();
-            }
-            else if (horizontalMove > 0 && !FaceRight)
-            {
-                playerTurn();
-            }
-
-            // if (onPlat)
-            // {
-            //     animator.enabled = false;
-            //     spriteRenderer.sprite = groundSprite;
-            // }
-            // else
-            // {
-            //     animator.enabled = true;
-            // }
         }
+        else if (Input.GetAxis("Vertical") < 0 && !onPlat)
+        {
+            verticalMove = -fastFallSpeed * Time.deltaTime;
+        }
+        else if (!onPlat)
+        {
+            verticalMove = -fallSpeed * Time.deltaTime;
+
+            if (recharge == null && Stamina < MaxStamina)
+            {
+                recharge = StartCoroutine(RechargeStamina());
+            }
+
+            SoundFXManager.instance.StopSoundFX();
+        }
+
+        if (!(Input.GetKey(KeyCode.UpArrow) && Stamina > 0))
+        {
+            horizontalMove = Input.GetAxis("Horizontal") * groundSpeed * Time.deltaTime;
+        }
+
+        transform.position = new Vector3(
+            Mathf.Clamp(transform.position.x + horizontalMove, WallLeft.transform.position.x + 1, WallRight.transform.position.x - 1),
+            Mathf.Clamp(transform.position.y + verticalMove, WallBottom.transform.position.y + 1, WallTop.transform.position.y - 1),
+            transform.position.z
+        );
+
+        if (horizontalMove < 0 && FaceRight)
+        {
+            playerTurn();
+        }
+        else if (horizontalMove > 0 && !FaceRight)
+        {
+            playerTurn();
+        }
+
+        if (onPlat)
+        {
+            spriteRenderer.sprite = groundSprite;
+        }
+        else
+        {
+            spriteRenderer.sprite = null; 
+        }
+
     }
+}
+
+
 
     private IEnumerator RechargeStamina()
     {

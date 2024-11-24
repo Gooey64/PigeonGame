@@ -5,21 +5,32 @@ using TMPro;
 
 public class Timer : MonoBehaviour
 {
-    [SerializeField] TextMeshProUGUI timerText; 
-    [SerializeField] float remainingTime;
+    [SerializeField] private TextMeshProUGUI timerText; 
+    [SerializeField] private float remainingTime = 60f; 
+
+    private bool isTimerRunning = true; 
 
     void Update()
     {
-        if (remainingTime > 0) 
+        if (!isTimerRunning || timerText == null)
+            return;
+
+        if (remainingTime > 0)
         {
-            remainingTime -= Time.deltaTime; 
+            remainingTime -= Time.deltaTime;
         }
-        else if (remainingTime < 0) 
+        else
         {
             remainingTime = 0;
             timerText.color = Color.red;
+            isTimerRunning = false; 
         }
 
+        UpdateTimerText();
+    }
+
+    private void UpdateTimerText()
+    {
         int minutes = Mathf.FloorToInt(remainingTime / 60F);
         int seconds = Mathf.FloorToInt(remainingTime % 60F);
         timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
