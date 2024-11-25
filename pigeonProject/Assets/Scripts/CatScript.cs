@@ -8,6 +8,7 @@ public class CatScript : MonoBehaviour
     float min;
     float max;
     bool right;
+    bool sighted;
 
    Vector3 RightFace = new Vector3(2, 2, 2);
    Vector3 LeftFace = new Vector3(-2, 2, 2);
@@ -19,29 +20,59 @@ public class CatScript : MonoBehaviour
         min = transform.position.x - distance;
         max = transform.position.x + distance;
         right = true;
+        sighted = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (transform.position.x <= min)
+        if (!sighted)
         {
-            right = true;
-            transform.localScale = RightFace;
-        }
-        else if (transform.position.x >= max)
-        {
-            right = false;
-            transform.localScale = LeftFace;
-        }
+            if (transform.position.x <= min)
+            {
+                right = true;
+                transform.localScale = RightFace;
+            }
+            else if (transform.position.x >= max)
+            {
+                right = false;
+                transform.localScale = LeftFace;
+            }
 
-        if (right)
-        {
-            transform.position += Vector3.right * 0.02f;
+            if (right)
+            {
+                transform.position += Vector3.right * 0.02f;
+            }
+            else
+            {
+                transform.position += Vector3.left * 0.02f;
+            }
         }
         else
         {
-            transform.position += Vector3.left * 0.02f;
+            if (right)
+            {
+                transform.position += Vector3.right * 0.06f;
+            }
+            else
+            {
+                transform.position += Vector3.left * 0.06f;
+            }
+        }
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
+          sighted = true;
+        }
+    }
+     void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
+          sighted = false;
         }
     }
 

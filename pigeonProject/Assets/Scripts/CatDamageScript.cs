@@ -18,7 +18,7 @@ public class CatDamageScript : MonoBehaviour
         
     }
 
-        void OnTriggerEnter2D(Collider2D other)
+    void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {

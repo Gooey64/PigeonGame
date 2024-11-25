@@ -205,25 +205,25 @@ void Update()
     {
         if (other.gameObject.CompareTag("WindLeft") && launched == false)
         {
-            rb2D.velocity += new Vector2(-30f, 0);
+            rb2D.velocity += new Vector2(-60f, 0);
             StartCoroutine(LaunchDelay());
             StopCoroutine(LaunchDelay());
         }
         if (other.gameObject.CompareTag("WindUp") && launched == false)
         {
-            rb2D.velocity += new Vector2(0, 30f);
+            rb2D.velocity += new Vector2(0, 60f);
             StartCoroutine(LaunchDelay());
             StopCoroutine(LaunchDelay());
         }
         if (other.gameObject.CompareTag("WindRight") && launched == false)
         {
-            rb2D.velocity += new Vector2(30f, 0);
+            rb2D.velocity += new Vector2(60f, 0);
             StartCoroutine(LaunchDelay());
             StopCoroutine(LaunchDelay());
         }
         if (other.gameObject.CompareTag("WindDown") && launched == false)
         {
-            rb2D.velocity += new Vector2(0, -30f);
+            rb2D.velocity += new Vector2(0, -60f);
             StartCoroutine(LaunchDelay());
             StopCoroutine(LaunchDelay());
         }
