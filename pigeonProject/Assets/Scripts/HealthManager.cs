@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class HealthManager : MonoBehaviour
 {
+    [SerializeField] AudioClip clip;
     public float healthAmount = 100f;
     public Image healthBar; 
 
@@ -12,6 +13,8 @@ public class HealthManager : MonoBehaviour
     {
         if (healthAmount <= 0) 
         {
+            Debug.Log(clip);
+            SoundFXManager.instance.PlaySoundFXClip(clip, transform, 1);
             ReloadLevel();
         }
 
