@@ -8,6 +8,11 @@ public class CatScript : MonoBehaviour
     float min;
     float max;
     bool right;
+
+   Vector3 RightFace = new Vector3(2, 2, 2);
+   Vector3 LeftFace = new Vector3(-2, 2, 2);
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,10 +27,12 @@ public class CatScript : MonoBehaviour
         if (transform.position.x <= min)
         {
             right = true;
+            transform.localScale = RightFace;
         }
         else if (transform.position.x >= max)
         {
             right = false;
+            transform.localScale = LeftFace;
         }
 
         if (right)
@@ -37,6 +44,8 @@ public class CatScript : MonoBehaviour
             transform.position += Vector3.left * 0.02f;
         }
     }
+
+
 
 }
 

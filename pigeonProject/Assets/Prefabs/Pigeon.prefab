@@ -378,7 +378,7 @@ Transform:
   - {fileID: 3179620253425634456}
   - {fileID: 2476953529789044930}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4315065522020657704
 MonoBehaviour:
@@ -409,7 +409,7 @@ MonoBehaviour:
   flyingUp: 25
   RunCost: 25
   ChargeRate: 10
-  groundSpeed: 2
+  baseSpeed: 0.5
   launched: 0
   groundSprite: {fileID: 1671843650, guid: da65f3044ae1744c699731a5150b63c4, type: 3}
   canFly: 0

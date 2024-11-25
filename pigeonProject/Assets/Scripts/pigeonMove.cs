@@ -6,7 +6,7 @@ public class pigeonMove : MonoBehaviour
 {
     public Rigidbody2D rb2D;
     private bool FaceRight = false;
-    public static float runSpeed = 15f;
+    public static float runSpeed = 20f;
     public bool isAlive = true;
     public bool onPlat = false;
     public bool leftPlat = false;
@@ -25,9 +25,9 @@ public class pigeonMove : MonoBehaviour
     public float Stamina, MaxStamina = 200f;
     public float flyingUp = 25f;
     public float RunCost = 10f;
-    public float ChargeRate = 5f;
+    public float ChargeRate = 2f;
 
-    public float groundSpeed = 0.5f; 
+    public float baseSpeed = 30f; 
 
     private Coroutine recharge;
     public bool launched;
@@ -49,7 +49,7 @@ public class pigeonMove : MonoBehaviour
         Stamina = MaxStamina;
 
         FaceRight = transform.localScale.x > 0;
-        groundSpeed = 7f;
+        baseSpeed = 30f;
     }
 
     public void Fly()
@@ -90,11 +90,13 @@ void Update()
 
         if (Input.GetKey(KeyCode.UpArrow) && Stamina > 0)
         {
-            verticalMove = flyingUp * Time.deltaTime;
 
+                verticalMove = flyingUp * Time.deltaTime;
+
+            
             if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.RightArrow))
             {
-                horizontalMove = Input.GetAxis("Horizontal") * runSpeed * Time.deltaTime; 
+                horizontalMove = Input.GetAxis("Horizontal") * baseSpeed * Time.deltaTime; 
             }
 
             if (!onPlat)
@@ -116,6 +118,10 @@ void Update()
                 }
             }
         }
+        else if (Input.GetKey(KeyCode.DownArrow) && !onPlat)
+        {
+            verticalMove = flyingUp * Time.deltaTime * -1;
+        }
         else if (Input.GetAxis("Vertical") < 0 && !onPlat)
         {
             verticalMove = -fastFallSpeed * Time.deltaTime;
@@ -132,10 +138,15 @@ void Update()
             SoundFXManager.instance.StopSoundFX();
         }
 
-        if (!(Input.GetKey(KeyCode.UpArrow) && Stamina > 0))
+        if (!onPlat)
         {
-            horizontalMove = Input.GetAxis("Horizontal") * groundSpeed * Time.deltaTime;
+            horizontalMove = Input.GetAxis("Horizontal") * baseSpeed * Time.deltaTime;
         }
+        else if (onPlat)
+        {
+            horizontalMove = Input.GetAxis("Horizontal") * baseSpeed * Time.deltaTime * 0.3f;
+        }
+
 
         transform.position = new Vector3(
             Mathf.Clamp(transform.position.x + horizontalMove, WallLeft.transform.position.x + 1, WallRight.transform.position.x - 1),

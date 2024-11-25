@@ -9,6 +9,7 @@ public class DroneVertical : MonoBehaviour
     float min;
     float max;
     bool up;
+    public float damage = 10f;
     // Start is called before the first frame update
     void Start()
     {
@@ -39,4 +40,18 @@ public class DroneVertical : MonoBehaviour
         }
     }
 
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            Debug.Log("DroneV hit the pigeon!");
+
+            HealthManager healthManager = other.GetComponent<HealthManager>();
+            if (healthManager != null)
+            {
+                healthManager.TakeDamage(damage);
+            }
+
+        }
+    }
 }
