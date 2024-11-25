@@ -21,6 +21,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Level 3.unity
     guid: 35d1be4142675434ea9b6f63c3489a96
   - enabled: 1
-    path: Assets/Scenes/Level 4.unity
+    path: Assets/Scenes/Level 4 - HAWAII.unity
     guid: 286c90566e70a4712ba25476863855ee
   m_configObjects: {}

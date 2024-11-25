@@ -10,6 +10,7 @@ public class pigeonMove : MonoBehaviour
     public bool isAlive = true;
     public bool onPlat = false;
     public bool leftPlat = false;
+    private Rigidbody2D platformRigidBody;  // record the platform player is standing
 
     public GameObject WallTop;
     public GameObject WallBottom;
@@ -219,6 +220,14 @@ void Update()
         if (other.gameObject.CompareTag("Platform") && !leftPlat)
         {
             onPlat = true;
+            platformRigidBody = other.GetComponent<Rigidbody2D>();
+        }
+    }
+
+    void OnTriggerStay2D(Collider2D other) {
+        if(other.gameObject.CompareTag("Platform") && onPlat && platformRigidBody != null)
+        {
+            rb2D.velocity = new Vector2(platformRigidBody.velocity.x, platformRigidBody.velocity.y);
         }
     }
 
@@ -227,8 +236,10 @@ void Update()
         if (other.gameObject.CompareTag("Platform"))
         {
             onPlat = false;
+            platformRigidBody = null;
             StartCoroutine(LeftPlat());
             StopCoroutine(LeftPlat());
+            StartCoroutine(LeftPlatMomentum());
         }
     }
 
@@ -245,5 +256,11 @@ void Update()
         leftPlat = true;
         yield return new WaitForSeconds(0.3f);
         leftPlat = false;
+    }
+
+    IEnumerator LeftPlatMomentum()
+    {
+        yield return new WaitForSeconds(0.3f);
+        rb2D.velocity = new Vector2(0, 0);
     }
 }
