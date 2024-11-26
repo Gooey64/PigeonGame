@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class pigeonMove : MonoBehaviour
 {
@@ -50,6 +51,10 @@ public class pigeonMove : MonoBehaviour
 
         FaceRight = transform.localScale.x > 0;
         baseSpeed = 30f;
+          if (SceneManager.GetActiveScene().name != "Level 1")
+        {
+            isAlive = true;
+        }
     }
 
     public void Fly()
