@@ -22,7 +22,7 @@ public class PackageCollider : MonoBehaviour
     {
         if (isTrigger)
         {
-            if (Input.GetKeyDown(getPackageKey))
+            if (Input.GetButtonDown("Action"))
             {
                 PickUpPackage();
             }

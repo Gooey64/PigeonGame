@@ -88,13 +88,14 @@ void Update()
         float horizontalMove = 0.0f;
         float verticalMove = 0.0f;
 
-        if (Input.GetKey(KeyCode.UpArrow) && Stamina > 0)
+        if (Input.GetAxis("Vertical") > 0 && Stamina > 0)
         {
 
+                Debug.Log(Input.GetAxis("Vertical"));
                 verticalMove = flyingUp * Time.deltaTime;
 
             
-            if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.RightArrow))
+            if (Input.GetAxis("Horizontal") != 0)
             {
                 horizontalMove = Input.GetAxis("Horizontal") * baseSpeed * Time.deltaTime; 
             }
@@ -118,13 +119,9 @@ void Update()
                 }
             }
         }
-        else if (Input.GetKey(KeyCode.DownArrow) && !onPlat)
-        {
-            verticalMove = flyingUp * Time.deltaTime * -1;
-        }
         else if (Input.GetAxis("Vertical") < 0 && !onPlat)
         {
-            verticalMove = -fastFallSpeed * Time.deltaTime;
+            verticalMove = flyingUp * Time.deltaTime * -1;
         }
         else if (!onPlat)
         {

@@ -11,7 +11,7 @@ public class PackageHandler : MonoBehaviour
     public delegate void PackageEvents(GameObject gameObject);
     public event PackageEvents OnPackagePicked; // event called when package picked up
     public event PackageEvents OnPackageDelivery;   // event called when package delivered
-    public KeyCode dropKey = KeyCode.Space;
+    public KeyCode dropKey = KeyCode.E;
     public GameObject packagePrefab;
     public Transform initPos;
     public Transform pigeonBeakPos;
@@ -41,7 +41,7 @@ public class PackageHandler : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(dropKey)) {
+        if (Input.GetButtonDown("Action")) {
             if (this.packagePicked > 0) {
                 DropPackage();
             }
