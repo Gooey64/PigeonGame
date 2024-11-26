@@ -95,7 +95,7 @@ Transform:
   - {fileID: 9004447336181268370}
   - {fileID: 828527642084286306}
   m_Father: {fileID: 0}
-  m_RootOrder: 19
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3243849060066641707
 MonoBehaviour:
@@ -111,6 +111,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   left: {fileID: 9004447336181268370}
   right: {fileID: 828527642084286306}
+  platform: {fileID: 9006937120905419774}
   platformRigidbody: {fileID: 3083318306589554763}
   moveSpeed: 10
 --- !u!1001 &7203887550257420090

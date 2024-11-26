@@ -50,7 +50,7 @@ public class pigeonMove : MonoBehaviour
         Stamina = MaxStamina;
 
         FaceRight = transform.localScale.x > 0;
-        baseSpeed = 30f;
+        // baseSpeed = 30f;
           if (SceneManager.GetActiveScene().name != "Level 1")
         {
             isAlive = true;
