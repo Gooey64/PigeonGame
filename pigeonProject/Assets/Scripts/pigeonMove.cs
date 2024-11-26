@@ -11,7 +11,7 @@ public class pigeonMove : MonoBehaviour
     public bool isAlive = true;
     public bool onPlat = false;
     public bool leftPlat = false;
-    private Rigidbody2D platformRigidBody;  // record the platform player is standing
+    private Rigidbody2D platformRigidBody;  
 
     public GameObject WallTop;
     public GameObject WallBottom;
@@ -53,6 +53,7 @@ public class pigeonMove : MonoBehaviour
         // baseSpeed = 30f;
           if (SceneManager.GetActiveScene().name != "Level 1")
         {
+            TutorialManager.tutorialCompleted = true; 
             isAlive = true;
         }
     }
