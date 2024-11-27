@@ -2736,6 +2736,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 621779263}
     - target: {fileID: 5809687458480650180, guid: 58a7ce59f012943a1a60c9a7b494a78e, type: 3}
+      propertyPath: winClip
+      value: 
+      objectReference: {fileID: 8300000, guid: f0a3bcb7e4c37447080a2aae86d482c9, type: 3}
+    - target: {fileID: 5809687458480650180, guid: 58a7ce59f012943a1a60c9a7b494a78e, type: 3}
       propertyPath: pigeonBeakPos
       value: 
       objectReference: {fileID: 443655215}
@@ -3422,6 +3426,10 @@ PrefabInstance:
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 820640090}
+    - target: {fileID: 1726147154343922713, guid: cdb3003cd9af241a08a28ea1fa32e8ed, type: 3}
+      propertyPath: damageClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 8b5c2c4c119b849ef8c8ce7e3c9aa061, type: 3}
     - target: {fileID: 3659212480453916626, guid: cdb3003cd9af241a08a28ea1fa32e8ed, type: 3}
       propertyPath: m_RootOrder
       value: 1
