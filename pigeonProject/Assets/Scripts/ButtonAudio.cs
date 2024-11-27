@@ -9,7 +9,7 @@ public class ButtonAudio : MonoBehaviour
 
     public void Play()
     {
-        SoundFXManager.instance.PlaySoundFXClip(clip, transform, 1);
+        SoundFXManager.instance.PlaySoundFXClip(clip);
     }
     void Start()
     {

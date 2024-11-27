@@ -2962,6 +2962,7 @@ GameObject:
   - component: {fileID: 2069229271}
   - component: {fileID: 2069229270}
   - component: {fileID: 2069229269}
+  - component: {fileID: 2069229272}
   m_Layer: 5
   m_Name: Play
   m_TagString: Untagged
@@ -3057,8 +3058,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 1058627175}
-        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+      - m_Target: {fileID: 2069229272}
+        m_TargetAssemblyTypeName: ButtonAudio, Assembly-CSharp
         m_MethodName: Play
         m_Mode: 1
         m_Arguments:
@@ -3107,6 +3108,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2069229267}
   m_CullTransparentMesh: 1
+--- !u!114 &2069229272
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2069229267}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c53d1aa0ae4c4469bd22df380658882, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clip: {fileID: 8300000, guid: 8b5c2c4c119b849ef8c8ce7e3c9aa061, type: 3}
 --- !u!1 &2091502826
 GameObject:
   m_ObjectHideFlags: 0

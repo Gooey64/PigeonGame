@@ -38,9 +38,9 @@ public class pigeonMove : MonoBehaviour
     
     public bool canFly = false;
 
-    public AudioSource flySFX1;
-    public AudioSource flySFX2;
-    public AudioSource flySFX3;
+    //public AudioSource flySFX1;
+    //public AudioSource flySFX2;
+    //public AudioSource flySFX3;
     private AudioSource flySFX;
 
     void Start()
@@ -62,16 +62,16 @@ public class pigeonMove : MonoBehaviour
     {
         rb2D.velocity = Vector2.up * (flyingUp / 2);
 
-        int flyNum = Random.Range(0, 3);
-        if (flyNum == 0) { flySFX = flySFX1; }
-        else if (flyNum == 1) { flySFX = flySFX2; }
-        else if (flyNum == 2) { flySFX = flySFX3; }
-        else { flySFX = flySFX1; }
+        //int flyNum = Random.Range(0, 3);
+        //if (flyNum == 0) { flySFX = flySFX1; }
+        //else if (flyNum == 1) { flySFX = flySFX2; }
+        //else if (flyNum == 2) { flySFX = flySFX3; }
+        //else { flySFX = flySFX1; }
 
-        if (!flySFX.isPlaying)
-        {
-            flySFX.Play();
-        }
+        //if (!flySFX.isPlaying)
+        //{
+        //    flySFX.Play();
+        //}
 
         StopCoroutine(BirdDrop());
         StartCoroutine(BirdDrop());
@@ -106,24 +106,34 @@ void Update()
                 horizontalMove = Input.GetAxis("Horizontal") * baseSpeed * Time.deltaTime; 
             }
 
-            if (!onPlat)
-            {
-                Stamina -= RunCost * Time.deltaTime;
-                if (Stamina < 0) Stamina = 0;
-
-                StaminaBar.fillAmount = Stamina / MaxStamina;
-
-                if (recharge != null)
+                if (!onPlat)
                 {
-                    StopCoroutine(recharge);
-                    recharge = null;
-                }
+                    Stamina -= RunCost * Time.deltaTime;
+                    if (Stamina < 0) Stamina = 0;
 
-                if (!SoundFXManager.instance.IsPlaying())
-                {
-                    SoundFXManager.instance.PlaySoundFXClip(flyingClip, transform, 1f);
+                    StaminaBar.fillAmount = Stamina / MaxStamina;
+
+                    if (recharge != null)
+                    {
+                        StopCoroutine(recharge);
+                        recharge = null;
+                    }
+
+
+
+                    if (flySFX == null)
+                    {
+                        flySFX = SoundFXManager.instance.StartLoopingSoundFXClip(flyingClip);
+                    }
+                    else
+                    {
+                        if (!flySFX.isPlaying)
+                        {
+                            flySFX.Play();
+                        }
+                    }
                 }
-            }
+                
         }
         else if (Input.GetAxis("Vertical") < 0 && !onPlat)
         {
@@ -138,7 +148,11 @@ void Update()
                 recharge = StartCoroutine(RechargeStamina());
             }
 
-            SoundFXManager.instance.StopSoundFX();
+            if (flySFX != null)
+            {
+                flySFX.Stop();
+            }
+            //SoundFXManager.instance.StopSoundFX();
         }
 
         if (!onPlat)

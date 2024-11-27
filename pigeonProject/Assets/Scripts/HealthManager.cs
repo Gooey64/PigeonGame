@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class HealthManager : MonoBehaviour
 {
     [SerializeField] private AudioClip clip;
+    [SerializeField] private AudioClip damageClip;
     public float healthAmount = 100f;
     public Image healthBar;
 
@@ -15,10 +16,11 @@ public class HealthManager : MonoBehaviour
         if (healthAmount <= 0) 
         {
             Debug.Log("Health depleted. Reloading level...");
-            if (clip != null)
-            {
-                SoundFXManager.instance.PlaySoundFXClip(clip, transform, 1);
-            }
+            //Debug.Log(clip);
+            //if (clip != null)
+            //{
+                SoundFXManager.instance.PlaySoundFXClip(clip);
+            //}
             ReloadLevel();
         }
 
@@ -31,6 +33,7 @@ public class HealthManager : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
+        SoundFXManager.instance.PlaySoundFXClip(damageClip);
         healthAmount -= damage;
         healthAmount = Mathf.Clamp(healthAmount, 0, 100); 
         UpdateHealthBar();

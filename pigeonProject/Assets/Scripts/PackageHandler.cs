@@ -6,7 +6,7 @@ using UnityEngine.UIElements;
 
 public class PackageHandler : MonoBehaviour
 {
-
+    [SerializeField] private AudioClip winClip;
     public int packagePicked = 0;
     public delegate void PackageEvents(GameObject gameObject);
     public event PackageEvents OnPackagePicked; // event called when package picked up
@@ -83,8 +83,10 @@ public class PackageHandler : MonoBehaviour
     }
 
     public void DeliverPackage(GameObject obj) {
+        SoundFXManager.instance.PlaySoundFXClip(winClip);
         this.OnPackageDelivery?.Invoke(obj);
         Debug.Log("package delivered!");
+
     }
 
     public void ShowLevelFishedPanel(GameObject _) {

@@ -6,7 +6,6 @@ public class SoundFXManager : MonoBehaviour
     public static SoundFXManager instance;
 
     [SerializeField] private AudioSource soundFXObject;
-    private AudioSource currentAudioSource;
 
     private void Awake()
     {
@@ -21,57 +20,37 @@ public class SoundFXManager : MonoBehaviour
         }
     }
 
-    public void PlaySoundFXClip(AudioClip audioClip, Transform spanTransform, float volume)
+    public void PlaySoundFXClip(AudioClip audioClip)
     {
-        if (currentAudioSource != null)
-        {
-            Destroy(currentAudioSource.gameObject);
-        }
-
-        currentAudioSource = Instantiate(soundFXObject, spanTransform.position, Quaternion.identity);
+        Debug.Log(audioClip);
+        AudioSource currentAudioSource = Instantiate(soundFXObject, this.transform);
         currentAudioSource.clip = audioClip;
-        currentAudioSource.volume = volume;
+        currentAudioSource.volume = 1f;
         currentAudioSource.Play();
 
         Destroy(currentAudioSource.gameObject, currentAudioSource.clip.length);
     }
 
-    public void PlayRandomSoundFXClip(AudioClip[] audioClip, Transform spanTransform, float volume)
+    public void PlayRandomSoundFXClip(AudioClip[] audioClip)
     {
         int rand = Random.Range(0, audioClip.Length);
 
-        if (currentAudioSource != null)
-        {
-            Destroy(currentAudioSource.gameObject);
-        }
-
-        currentAudioSource = Instantiate(soundFXObject, spanTransform.position, Quaternion.identity);
+        AudioSource currentAudioSource = Instantiate(soundFXObject, this.transform);
         currentAudioSource.clip = audioClip[rand];
-        currentAudioSource.volume = volume;
+        currentAudioSource.volume = 1f;
         currentAudioSource.Play();
 
         Destroy(currentAudioSource.gameObject, currentAudioSource.clip.length);
     }
 
-    public bool IsPlaying()
+    public AudioSource StartLoopingSoundFXClip(AudioClip audioClip)
     {
-        return currentAudioSource != null && currentAudioSource.isPlaying;
-    }
+        AudioSource currentAudioSource = Instantiate(soundFXObject, this.transform);
+        currentAudioSource.loop = true;
+        currentAudioSource.clip = audioClip;
+        currentAudioSource.volume = 1f;
+        currentAudioSource.Play();
 
-    public void StopSoundFX()
-    {
-        if (currentAudioSource != null && currentAudioSource.isPlaying)
-        {
-            currentAudioSource.Stop();
-        }
+        return currentAudioSource;
     }
-
-    public void SetVolume(float volume)
-    {
-        if (currentAudioSource != null)
-        {
-            currentAudioSource.volume = volume;
-        }
-    }
-
 }
