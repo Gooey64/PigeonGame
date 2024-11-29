@@ -38,10 +38,15 @@ public class pigeonMove : MonoBehaviour
     
     public bool canFly = false;
 
+    public GameObject flyingObject; 
+    public GameObject walkingObject;
+
     //public AudioSource flySFX1;
     //public AudioSource flySFX2;
     //public AudioSource flySFX3;
     private AudioSource flySFX;
+
+    private HealthManager healthManager; // Reference to HealthManager
 
     void Start()
     {
@@ -56,6 +61,12 @@ public class pigeonMove : MonoBehaviour
             TutorialManager.tutorialCompleted = true; 
             isAlive = true;
         }
+
+        UpdateSpriteState();
+
+          healthManager = FindObjectOfType<HealthManager>();
+
+        
     }
 
     public void Fly()
@@ -96,44 +107,27 @@ void Update()
 
         if (Input.GetAxis("Vertical") > 0 && Stamina > 0)
         {
+            Debug.Log(Input.GetAxis("Vertical"));
+            verticalMove = flyingUp * Time.deltaTime;
 
-                Debug.Log(Input.GetAxis("Vertical"));
-                verticalMove = flyingUp * Time.deltaTime;
-
-            
             if (Input.GetAxis("Horizontal") != 0)
             {
                 horizontalMove = Input.GetAxis("Horizontal") * baseSpeed * Time.deltaTime; 
             }
 
-                if (!onPlat)
+            if (!onPlat)
+            {
+                Stamina -= RunCost * Time.deltaTime;
+                if (Stamina < 0) Stamina = 0;
+
+                StaminaBar.fillAmount = Stamina / MaxStamina;
+
+                if (recharge != null)
                 {
-                    Stamina -= RunCost * Time.deltaTime;
-                    if (Stamina < 0) Stamina = 0;
-
-                    StaminaBar.fillAmount = Stamina / MaxStamina;
-
-                    if (recharge != null)
-                    {
-                        StopCoroutine(recharge);
-                        recharge = null;
-                    }
-
-
-
-                    if (flySFX == null)
-                    {
-                        flySFX = SoundFXManager.instance.StartLoopingSoundFXClip(flyingClip);
-                    }
-                    else
-                    {
-                        if (!flySFX.isPlaying)
-                        {
-                            flySFX.Play();
-                        }
-                    }
+                    StopCoroutine(recharge);
+                    recharge = null;
                 }
-                
+            }
         }
         else if (Input.GetAxis("Vertical") < 0 && !onPlat)
         {
@@ -147,12 +141,6 @@ void Update()
             {
                 recharge = StartCoroutine(RechargeStamina());
             }
-
-            if (flySFX != null)
-            {
-                flySFX.Stop();
-            }
-            //SoundFXManager.instance.StopSoundFX();
         }
 
         if (!onPlat)
@@ -163,7 +151,6 @@ void Update()
         {
             horizontalMove = Input.GetAxis("Horizontal") * baseSpeed * Time.deltaTime * 0.3f;
         }
-
 
         transform.position = new Vector3(
             Mathf.Clamp(transform.position.x + horizontalMove, WallLeft.transform.position.x + 1, WallRight.transform.position.x - 1),
@@ -180,18 +167,23 @@ void Update()
             playerTurn();
         }
 
-        if (onPlat)
-        {
-            spriteRenderer.sprite = groundSprite;
-        }
-        else
-        {
-            spriteRenderer.sprite = null; 
-        }
-
+        UpdateSpriteState();
     }
 }
 
+void UpdateSpriteState()
+{
+    if (onPlat)
+    {
+        flyingObject.SetActive(false);
+        walkingObject.SetActive(true);
+    }
+    else
+    {
+        flyingObject.SetActive(true);
+        walkingObject.SetActive(false);
+    }
+}
 
 
     private IEnumerator RechargeStamina()
@@ -250,6 +242,20 @@ void Update()
             onPlat = true;
             platformRigidBody = other.GetComponent<Rigidbody2D>();
         }
+        if (other.gameObject.CompareTag("Sidewalk"))
+        {
+            onPlat = true;
+        }
+         if (SceneManager.GetActiveScene().name == "Level 3" && other.gameObject.CompareTag("ground"))
+        {
+            Debug.Log("Hello");
+            if (healthManager != null)
+            {
+                healthManager.TakeDamage(10f); // Deduct health using HealthManager
+                Debug.Log("Pigeon hit a wall!");
+            }
+        }
+        
     }
 
     void OnTriggerStay2D(Collider2D other) {
@@ -268,6 +274,10 @@ void Update()
             StartCoroutine(LeftPlat());
             StopCoroutine(LeftPlat());
             StartCoroutine(LeftPlatMomentum());
+        }
+        if (other.gameObject.CompareTag("Sidewalk")) 
+        {
+            onPlat = false;
         }
     }
 

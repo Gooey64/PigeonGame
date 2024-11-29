@@ -30,7 +30,7 @@ public class LevelMenu : MonoBehaviour
     {
         for (int i = 0; i < buttons.Length; i++)
         {
-            if (PlayerPrefs.GetInt($"Level_{i}_Unlocked", 0) == 1)
+            if (i == 0 || PlayerPrefs.GetInt($"Level_{i}_Unlocked", 0) == 1)
             {
                 buttons[i].interactable = true;
                 buttons[i].GetComponent<Image>().color = unlockedColor;
@@ -42,6 +42,7 @@ public class LevelMenu : MonoBehaviour
             }
         }
     }
+
 
     public void OpenLevel(int levelID)
     {

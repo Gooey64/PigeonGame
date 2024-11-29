@@ -7,7 +7,7 @@ public class PackageCollider : MonoBehaviour
 {
     public bool isTrigger = false;
 
-    private readonly KeyCode getPackageKey = KeyCode.E;
+    // private readonly KeyCode getPackageKey = KeyCode.E;
     private GameObject package;
     private GameObject packageHandler;
 
