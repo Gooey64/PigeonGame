@@ -1482,38 +1482,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-<<<<<<< Updated upstream
---- !u!1 &881593959 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1677964092160426518, guid: be09b4eefac114acea5bc8e0f47db366, type: 3}
-  m_PrefabInstance: {fileID: 709857181242247847}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &881593961
-MonoBehaviour:
-=======
 --- !u!1 &1039471254
 GameObject:
->>>>>>> Stashed changes
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< Updated upstream
-  m_GameObject: {fileID: 881593959}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4c53d1aa0ae4c4469bd22df380658882, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  clip: {fileID: 8300000, guid: 8b5c2c4c119b849ef8c8ce7e3c9aa061, type: 3}
---- !u!1 &882906530 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2037470725286006162, guid: be09b4eefac114acea5bc8e0f47db366, type: 3}
-  m_PrefabInstance: {fileID: 709857181242247847}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &882906532
-MonoBehaviour:
-=======
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1039471257}
@@ -1529,20 +1503,10 @@ MonoBehaviour:
 --- !u!95 &1039471255
 Animator:
   serializedVersion: 5
->>>>>>> Stashed changes
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< Updated upstream
-  m_GameObject: {fileID: 882906530}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4c53d1aa0ae4c4469bd22df380658882, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  clip: {fileID: 8300000, guid: 8b5c2c4c119b849ef8c8ce7e3c9aa061, type: 3}
-=======
   m_GameObject: {fileID: 1039471254}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
@@ -1624,7 +1588,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 41
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
->>>>>>> Stashed changes
 --- !u!114 &1044314158 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8940613894376099369, guid: be09b4eefac114acea5bc8e0f47db366, type: 3}
@@ -3517,6 +3480,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 58a7ce59f012943a1a60c9a7b494a78e, type: 3}
+--- !u!1 &1887916249 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5698848009010293639, guid: cdb3003cd9af241a08a28ea1fa32e8ed, type: 3}
+  m_PrefabInstance: {fileID: 1093383550271298428}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1912766098
 GameObject:
   m_ObjectHideFlags: 0
@@ -3731,6 +3699,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1940781955 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6953778287892767634, guid: cdb3003cd9af241a08a28ea1fa32e8ed, type: 3}
+  m_PrefabInstance: {fileID: 1093383550271298428}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1958932242 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2146130678453879966, guid: be09b4eefac114acea5bc8e0f47db366, type: 3}
@@ -4248,15 +4221,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4078106267061196505, guid: be09b4eefac114acea5bc8e0f47db366, type: 3}
       insertIndex: -1
       addedObject: {fileID: 11862099}
-    - targetCorrespondingSourceObject: {fileID: 1677964092160426518, guid: be09b4eefac114acea5bc8e0f47db366, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 881593961}
     - targetCorrespondingSourceObject: {fileID: 8433848715153951790, guid: be09b4eefac114acea5bc8e0f47db366, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1144692486}
-    - targetCorrespondingSourceObject: {fileID: 2037470725286006162, guid: be09b4eefac114acea5bc8e0f47db366, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 882906532}
     - targetCorrespondingSourceObject: {fileID: 2146130678453879966, guid: be09b4eefac114acea5bc8e0f47db366, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1958932244}
@@ -4430,6 +4397,34 @@ PrefabInstance:
       propertyPath: WallBottom
       value: 
       objectReference: {fileID: 137923824}
+    - target: {fileID: 4315065522020657704, guid: cdb3003cd9af241a08a28ea1fa32e8ed, type: 3}
+      propertyPath: flyingObject
+      value: 
+      objectReference: {fileID: 1940781955}
+    - target: {fileID: 4315065522020657704, guid: cdb3003cd9af241a08a28ea1fa32e8ed, type: 3}
+      propertyPath: walkingObject
+      value: 
+      objectReference: {fileID: 1887916249}
+    - target: {fileID: 4683003533979672100, guid: cdb3003cd9af241a08a28ea1fa32e8ed, type: 3}
+      propertyPath: m_FlipX
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4683003533979672100, guid: cdb3003cd9af241a08a28ea1fa32e8ed, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4683003533979672100, guid: cdb3003cd9af241a08a28ea1fa32e8ed, type: 3}
+      propertyPath: m_SortingOrder
+      value: 999
+      objectReference: {fileID: 0}
+    - target: {fileID: 5942622545808403043, guid: cdb3003cd9af241a08a28ea1fa32e8ed, type: 3}
+      propertyPath: m_FlipX
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5942622545808403043, guid: cdb3003cd9af241a08a28ea1fa32e8ed, type: 3}
+      propertyPath: m_SortingOrder
+      value: 999
+      objectReference: {fileID: 0}
     - target: {fileID: 6953778287892767634, guid: cdb3003cd9af241a08a28ea1fa32e8ed, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -4437,6 +4432,10 @@ PrefabInstance:
     - target: {fileID: 7194996621223870834, guid: cdb3003cd9af241a08a28ea1fa32e8ed, type: 3}
       propertyPath: m_Name
       value: Pigeon
+      objectReference: {fileID: 0}
+    - target: {fileID: 7194996621223870834, guid: cdb3003cd9af241a08a28ea1fa32e8ed, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
