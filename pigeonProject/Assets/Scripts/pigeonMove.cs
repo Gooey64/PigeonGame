@@ -251,7 +251,7 @@ void UpdateSpriteState()
             Debug.Log("Hello");
             if (healthManager != null)
             {
-                healthManager.TakeDamage(10f); // Deduct health using HealthManager
+                healthManager.TakeDamage(10f); 
                 Debug.Log("Pigeon hit a wall!");
             }
         }

@@ -12,7 +12,6 @@ public class HealthManager : MonoBehaviour
 
     void Update()
     {
-        // Check for health depletion
         if (healthAmount <= 0) 
         {
             Debug.Log("Health depleted. Reloading level...");
@@ -24,7 +23,6 @@ public class HealthManager : MonoBehaviour
             ReloadLevel();
         }
 
-        // Debug key to simulate taking damage
         if (Input.GetKeyDown(KeyCode.Return)) 
         {
             TakeDamage(20);
@@ -34,7 +32,7 @@ public class HealthManager : MonoBehaviour
     public void TakeDamage(float damage)
     {
         SoundFXManager.instance.PlaySoundFXClip(damageClip);
-        healthAmount -= damage;
+        healthAmount -= 30;
         healthAmount = Mathf.Clamp(healthAmount, 0, 100); 
         UpdateHealthBar();
     }
@@ -56,7 +54,6 @@ public class HealthManager : MonoBehaviour
 
     private void ReloadLevel()
     {
-        // Reset health amount (optional, depends on game flow)
         healthAmount = 100f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex); 
     }
