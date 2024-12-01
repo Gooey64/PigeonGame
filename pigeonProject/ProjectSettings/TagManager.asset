@@ -15,6 +15,7 @@ TagManager:
   - Enemy
   - Projectile
   - Sidewalk
+  - Food
   layers:
   - Default
   - TransparentFX
