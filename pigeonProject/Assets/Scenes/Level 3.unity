@@ -1233,6 +1233,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4315065522020657704, guid: cdb3003cd9af241a08a28ea1fa32e8ed, type: 3}
+      propertyPath: RunCost
+      value: 35
+      objectReference: {fileID: 0}
+    - target: {fileID: 4315065522020657704, guid: cdb3003cd9af241a08a28ea1fa32e8ed, type: 3}
+      propertyPath: Stamina
+      value: 140
+      objectReference: {fileID: 0}
+    - target: {fileID: 4315065522020657704, guid: cdb3003cd9af241a08a28ea1fa32e8ed, type: 3}
       propertyPath: WallTop
       value: 
       objectReference: {fileID: 1435255845}
@@ -1251,6 +1259,14 @@ PrefabInstance:
     - target: {fileID: 4315065522020657704, guid: cdb3003cd9af241a08a28ea1fa32e8ed, type: 3}
       propertyPath: baseSpeed
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4315065522020657704, guid: cdb3003cd9af241a08a28ea1fa32e8ed, type: 3}
+      propertyPath: ChargeRate
+      value: 35
+      objectReference: {fileID: 0}
+    - target: {fileID: 4315065522020657704, guid: cdb3003cd9af241a08a28ea1fa32e8ed, type: 3}
+      propertyPath: MaxStamina
+      value: 140
       objectReference: {fileID: 0}
     - target: {fileID: 4315065522020657704, guid: cdb3003cd9af241a08a28ea1fa32e8ed, type: 3}
       propertyPath: StaminaBar
