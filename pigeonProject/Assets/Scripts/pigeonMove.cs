@@ -19,6 +19,7 @@ public class pigeonMove : MonoBehaviour
     public GameObject WallRight;
 
     [SerializeField] private AudioClip flyingClip;
+    [SerializeField] private AudioClip walkingClip;
     public float fallSpeed = 10f;
     public float fastFallSpeed = 10f;
 
@@ -45,6 +46,7 @@ public class pigeonMove : MonoBehaviour
     //public AudioSource flySFX2;
     //public AudioSource flySFX3;
     private AudioSource flySFX;
+    private AudioSource walkSFX;
 
     private HealthManager healthManager; // Reference to HealthManager
 
@@ -72,7 +74,7 @@ public class pigeonMove : MonoBehaviour
     public void Fly()
     {
         rb2D.velocity = Vector2.up * (flyingUp / 2);
-
+        Debug.Log("flying!");
         //int flyNum = Random.Range(0, 3);
         //if (flyNum == 0) { flySFX = flySFX1; }
         //else if (flyNum == 1) { flySFX = flySFX2; }
@@ -107,8 +109,16 @@ void Update()
 
         if (Input.GetAxis("Vertical") > 0 && Stamina > 0)
         {
-            Debug.Log(Input.GetAxis("Vertical"));
             verticalMove = flyingUp * Time.deltaTime;
+
+            if (flySFX == null)
+            {
+                flySFX = SoundFXManager.instance.StartLoopingSoundFXClip(flyingClip);
+            }
+            else if(!flySFX.isPlaying)
+            {
+                flySFX.Play();
+            }
 
             if (Input.GetAxis("Horizontal") != 0)
             {
@@ -135,6 +145,10 @@ void Update()
         }
         else if (!onPlat)
         {
+            if(flySFX != null && flySFX.isPlaying)
+            {
+                flySFX.Stop();
+            }
             verticalMove = -fallSpeed * Time.deltaTime;
 
             if (recharge == null && Stamina < MaxStamina)
@@ -145,11 +159,33 @@ void Update()
 
         if (!onPlat)
         {
+            if(walkSFX != null && walkSFX.isPlaying)
+            {
+                walkSFX.Stop();
+            }
             horizontalMove = Input.GetAxis("Horizontal") * baseSpeed * Time.deltaTime;
         }
         else if (onPlat)
         {
             horizontalMove = Input.GetAxis("Horizontal") * baseSpeed * Time.deltaTime * 0.3f;
+            if(horizontalMove != 0)
+            {
+                if(walkSFX == null)
+                {
+                    walkSFX = SoundFXManager.instance.StartLoopingSoundFXClip(walkingClip);
+                }
+                else if(!walkSFX.isPlaying)
+                {
+                    walkSFX.Play();
+                }
+            }
+            else
+            {
+                if(walkSFX != null && walkSFX.isPlaying)
+                {
+                    walkSFX.Stop();
+                }
+            }
         }
 
         transform.position = new Vector3(

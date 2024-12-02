@@ -1392,10 +1392,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1530604374}
     - target: {fileID: 5809687458480650180, guid: 58a7ce59f012943a1a60c9a7b494a78e, type: 3}
-      propertyPath: winClip
-      value: 
-      objectReference: {fileID: 8300000, guid: f0a3bcb7e4c37447080a2aae86d482c9, type: 3}
-    - target: {fileID: 5809687458480650180, guid: 58a7ce59f012943a1a60c9a7b494a78e, type: 3}
       propertyPath: pigeonBeakPos
       value: 
       objectReference: {fileID: 266558413}
@@ -1403,10 +1399,6 @@ PrefabInstance:
       propertyPath: pigeonFeetPos
       value: 
       objectReference: {fileID: 1422307440}
-    - target: {fileID: 5809687458480650180, guid: 58a7ce59f012943a1a60c9a7b494a78e, type: 3}
-      propertyPath: packageOnPigeon
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 5809687458480650180, guid: 58a7ce59f012943a1a60c9a7b494a78e, type: 3}
       propertyPath: LevelFinishedPanel
       value: 
@@ -4269,7 +4261,7 @@ AudioSource:
   m_GameObject: {fileID: 1768391309}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 451469203757669592, guid: 522197186b0354a089ed133ec9eebb00, type: 2}
   m_audioClip: {fileID: 8300000, guid: 91d4085ce62fa4a379fc66214a3ca2ea, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.6

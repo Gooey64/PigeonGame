@@ -62,14 +62,14 @@ public class PackageHandler : MonoBehaviour
 
     void DropPackage() {
         this.packagePicked--;
-        gameObject.GetComponent<AudioSource>().PlayOneShot(DropAudio);
+        SoundFXManager.instance.PlaySoundFXClip(DropAudio);
         GenerateNewPackage(player.transform);
         this.packageOnPigeon.SetActive(false);
     }
 
     public void PickUpPackage(GameObject obj) {
         this.OnPackagePicked?.Invoke(obj);
-        gameObject.GetComponent<AudioSource>().PlayOneShot(PickAudio);
+        SoundFXManager.instance.PlaySoundFXClip(PickAudio);
         Debug.Log("package picked up!");
     }
 

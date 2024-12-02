@@ -401,6 +401,7 @@ MonoBehaviour:
   WallLeft: {fileID: 0}
   WallRight: {fileID: 0}
   flyingClip: {fileID: 8300000, guid: 4d5a2c35d049c4562addb764981e43ae, type: 3}
+  walkingClip: {fileID: 8300000, guid: d4e2264d50d5243c5ad896131545c251, type: 3}
   fallSpeed: 10
   fastFallSpeed: 10
   StaminaBar: {fileID: 0}
@@ -413,9 +414,8 @@ MonoBehaviour:
   launched: 0
   groundSprite: {fileID: 1671843650, guid: da65f3044ae1744c699731a5150b63c4, type: 3}
   canFly: 0
-  flySFX1: {fileID: 0}
-  flySFX2: {fileID: 0}
-  flySFX3: {fileID: 0}
+  flyingObject: {fileID: 0}
+  walkingObject: {fileID: 0}
 --- !u!61 &4806971940062541633
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -500,6 +500,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1c6533230fce4784b0eadce4a630854, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  clip: {fileID: 0}
+  damageClip: {fileID: 0}
   healthAmount: 100
   healthBar: {fileID: 0}
 --- !u!212 &4683003533979672100
