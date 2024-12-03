@@ -4562,6 +4562,10 @@ PrefabInstance:
       propertyPath: damageClip
       value: 
       objectReference: {fileID: 8300000, guid: 992b32bb1798e457fb1313e40459859b, type: 3}
+    - target: {fileID: 2929515951487129857, guid: cdb3003cd9af241a08a28ea1fa32e8ed, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 939636433, guid: 0eedbdceb298b41dfb7c124bf9a470dd, type: 3}
     - target: {fileID: 3659212480453916626, guid: cdb3003cd9af241a08a28ea1fa32e8ed, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -4650,6 +4654,14 @@ PrefabInstance:
       propertyPath: WallBottom
       value: 
       objectReference: {fileID: 755224520}
+    - target: {fileID: 5942622545808403043, guid: cdb3003cd9af241a08a28ea1fa32e8ed, type: 3}
+      propertyPath: m_FlipX
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5942622545808403043, guid: cdb3003cd9af241a08a28ea1fa32e8ed, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 239570018, guid: acd1f34622e5b49cab7b73c4dca54208, type: 3}
     - target: {fileID: 6953778287892767634, guid: cdb3003cd9af241a08a28ea1fa32e8ed, type: 3}
       propertyPath: m_IsActive
       value: 1
