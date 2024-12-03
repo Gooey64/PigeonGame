@@ -23,7 +23,7 @@ public class SoundFXManager : MonoBehaviour
     public void PlaySoundFXClip(AudioClip audioClip)
     {
         Debug.Log(audioClip);
-        AudioSource currentAudioSource = Instantiate(soundFXObject);
+        AudioSource currentAudioSource = Instantiate(soundFXObject, this.transform);
         currentAudioSource.clip = audioClip;
         currentAudioSource.volume = 1f;
         currentAudioSource.Play();
@@ -35,7 +35,7 @@ public class SoundFXManager : MonoBehaviour
     {
         int rand = Random.Range(0, audioClip.Length);
 
-        AudioSource currentAudioSource = Instantiate(soundFXObject);
+        AudioSource currentAudioSource = Instantiate(soundFXObject, this.transform);
         currentAudioSource.clip = audioClip[rand];
         currentAudioSource.volume = 1f;
         currentAudioSource.Play();
@@ -45,7 +45,7 @@ public class SoundFXManager : MonoBehaviour
 
     public AudioSource StartLoopingSoundFXClip(AudioClip audioClip)
     {
-        AudioSource currentAudioSource = Instantiate(soundFXObject);
+        AudioSource currentAudioSource = Instantiate(soundFXObject, this.transform);
         currentAudioSource.loop = true;
         currentAudioSource.clip = audioClip;
         currentAudioSource.volume = 1f;
