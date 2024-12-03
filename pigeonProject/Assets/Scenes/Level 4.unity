@@ -4654,6 +4654,14 @@ PrefabInstance:
       propertyPath: WallBottom
       value: 
       objectReference: {fileID: 755224520}
+    - target: {fileID: 4315065522020657704, guid: cdb3003cd9af241a08a28ea1fa32e8ed, type: 3}
+      propertyPath: flyingObject
+      value: 
+      objectReference: {fileID: 514725921}
+    - target: {fileID: 4315065522020657704, guid: cdb3003cd9af241a08a28ea1fa32e8ed, type: 3}
+      propertyPath: walkingObject
+      value: 
+      objectReference: {fileID: 514725921}
     - target: {fileID: 5942622545808403043, guid: cdb3003cd9af241a08a28ea1fa32e8ed, type: 3}
       propertyPath: m_FlipX
       value: 0
