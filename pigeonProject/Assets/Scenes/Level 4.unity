@@ -2267,6 +2267,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6822150884372839629, guid: 8151ac102b182ec42a2f3ad7373fafa4, type: 3}
+      propertyPath: catnoise
+      value: 
+      objectReference: {fileID: 8300000, guid: 37f0199553bc94303a01875c29c7572c, type: 3}
     - target: {fileID: 8474778951438526226, guid: 8151ac102b182ec42a2f3ad7373fafa4, type: 3}
       propertyPath: m_Name
       value: Cat
