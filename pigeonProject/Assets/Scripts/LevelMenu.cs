@@ -3,16 +3,22 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using TMPro;
 
 public class LevelMenu : MonoBehaviour
 {
     public Button[] buttons;
+    public Button nextButton; 
+    public TextMeshProUGUI youWinText;
     public Color unlockedColor = Color.white;
     public Color lockedColor = new Color(1f, 1f, 1f, 0.5f);
+
+    private bool isPaused = false;
 
     private void Awake()
     {
         UpdateLevelButtons();
+        UpdateNextButtonAndWinText(); // Update Next button and "You Win" text visibility
         Debug.Log($"Loaded Scene: {SceneManager.GetActiveScene().name}, Index: {SceneManager.GetActiveScene().buildIndex}");
     }
 
@@ -39,6 +45,30 @@ public class LevelMenu : MonoBehaviour
             {
                 buttons[i].interactable = false;
                 buttons[i].GetComponent<Image>().color = lockedColor;
+            }
+        }
+    }
+
+    private void UpdateNextButtonAndWinText()
+    {
+        if (nextButton != null)
+        {
+            if (ScoreManager.Instance.HasReachedTargetScore())
+            {
+                nextButton.gameObject.SetActive(true); // Show the Next button
+                if (youWinText != null)
+                {
+                    youWinText.gameObject.SetActive(true); // Show "You Win" text
+                    PauseGame(); // Pause the game when the player wins
+                }
+            }
+            else
+            {
+                nextButton.gameObject.SetActive(false); // Hide the Next button
+                if (youWinText != null)
+                {
+                    youWinText.gameObject.SetActive(false); // Hide "You Win" text
+                }
             }
         }
     }
@@ -72,12 +102,12 @@ public class LevelMenu : MonoBehaviour
         {
             if (currentSceneIndex + 1 < SceneManager.sceneCountInBuildSettings)
             {
-                int nextSceneIndex = currentSceneIndex;
+                int nextSceneIndex = currentSceneIndex + 1;
                 Debug.Log($"Loading Next Level: {nextSceneIndex}");
 
                 UnlockNextLevel(nextSceneIndex);
 
-                SceneManager.LoadScene(nextSceneIndex + 1);
+                SceneManager.LoadScene(nextSceneIndex);
             }
             else
             {
@@ -109,6 +139,26 @@ public class LevelMenu : MonoBehaviour
         {
             buttons[nextLevelIndex].interactable = true;
             buttons[nextLevelIndex].GetComponent<Image>().color = unlockedColor;
+        }
+    }
+
+    public void PauseGame()
+    {
+        if (!isPaused)
+        {
+            isPaused = true;
+            Time.timeScale = 0; // Pause the game
+            Debug.Log("Game Paused!");
+        }
+    }
+
+    public void ResumeGame()
+    {
+        if (isPaused)
+        {
+            isPaused = false;
+            Time.timeScale = 1; // Resume the game
+            Debug.Log("Game Resumed!");
         }
     }
 
