@@ -191,7 +191,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2f724698d4b34a4ea694f70400c5781, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  catnoise: {fileID: 0}
   distance: 2
+  catNoiseInterval: 10
 --- !u!61 &3561377360250036914
 BoxCollider2D:
   m_ObjectHideFlags: 0
