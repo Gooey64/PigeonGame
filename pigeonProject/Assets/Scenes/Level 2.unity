@@ -8515,6 +8515,10 @@ PrefabInstance:
       propertyPath: catnoise
       value: 
       objectReference: {fileID: 8300000, guid: 37f0199553bc94303a01875c29c7572c, type: 3}
+    - target: {fileID: 5113754780278769299, guid: 4150cf7ad8c7f4ec6a3b6035de9b4dfe, type: 3}
+      propertyPath: catNoiseInterval
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 6213374642198263192, guid: 4150cf7ad8c7f4ec6a3b6035de9b4dfe, type: 3}
       propertyPath: m_Name
       value: Cat 1

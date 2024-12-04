@@ -14,7 +14,7 @@ public class CatScript : MonoBehaviour
    Vector3 RightFace = new Vector3(2, 2, 2);
    Vector3 LeftFace = new Vector3(-2, 2, 2);
     bool catNoiseFlag = true;
-    public float catNoiseInterval = 10f;
+    public float catNoiseInterval = 5f;
 
 
     // Start is called before the first frame update
