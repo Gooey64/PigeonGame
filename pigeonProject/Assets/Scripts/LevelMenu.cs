@@ -18,7 +18,7 @@ public class LevelMenu : MonoBehaviour
     private void Awake()
     {
         UpdateLevelButtons();
-        UpdateNextButtonAndWinText(); // Update Next button and "You Win" text visibility
+        UpdateNextButtonAndWinText(); 
         Debug.Log($"Loaded Scene: {SceneManager.GetActiveScene().name}, Index: {SceneManager.GetActiveScene().buildIndex}");
     }
 
@@ -55,19 +55,19 @@ public class LevelMenu : MonoBehaviour
         {
             if (ScoreManager.Instance.HasReachedTargetScore())
             {
-                nextButton.gameObject.SetActive(true); // Show the Next button
+                nextButton.gameObject.SetActive(true); 
                 if (youWinText != null)
                 {
-                    youWinText.gameObject.SetActive(true); // Show "You Win" text
-                    PauseGame(); // Pause the game when the player wins
+                    youWinText.gameObject.SetActive(true); 
+                    PauseGame(); 
                 }
             }
             else
             {
-                nextButton.gameObject.SetActive(false); // Hide the Next button
+                nextButton.gameObject.SetActive(false); 
                 if (youWinText != null)
                 {
-                    youWinText.gameObject.SetActive(false); // Hide "You Win" text
+                    youWinText.gameObject.SetActive(false); 
                 }
             }
         }
@@ -76,6 +76,7 @@ public class LevelMenu : MonoBehaviour
     public void OpenLevel(int levelID)
     {
         string levelName = "Level " + levelID; 
+        ResumeGame(); 
         SceneManager.LoadScene(levelName);
     }
 
@@ -83,11 +84,13 @@ public class LevelMenu : MonoBehaviour
     {
         ResetLevels();
         Debug.Log("Starting at Level 0");
+        ResumeGame();
         SceneManager.LoadScene(1); 
     }
 
     public void GoToMainMenu()
     {
+        ResumeGame();
         SceneManager.LoadScene(0); 
     }
 
@@ -107,6 +110,7 @@ public class LevelMenu : MonoBehaviour
 
                 UnlockNextLevel(nextSceneIndex);
 
+                ResumeGame(); 
                 SceneManager.LoadScene(nextSceneIndex);
             }
             else
@@ -147,17 +151,17 @@ public class LevelMenu : MonoBehaviour
         if (!isPaused)
         {
             isPaused = true;
-            Time.timeScale = 0; // Pause the game
+            Time.timeScale = 0; 
             Debug.Log("Game Paused!");
         }
     }
 
     public void ResumeGame()
     {
-        if (isPaused)
+        if (isPaused || Time.timeScale == 0)
         {
             isPaused = false;
-            Time.timeScale = 1; // Resume the game
+            Time.timeScale = 1; 
             Debug.Log("Game Resumed!");
         }
     }
