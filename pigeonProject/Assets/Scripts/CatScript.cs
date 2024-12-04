@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CatScript : MonoBehaviour
 {
+    [SerializeField] private AudioClip catnoise;
    public float distance;
     float min;
     float max;
@@ -12,6 +13,8 @@ public class CatScript : MonoBehaviour
 
    Vector3 RightFace = new Vector3(2, 2, 2);
    Vector3 LeftFace = new Vector3(-2, 2, 2);
+    bool catNoiseFlag = true;
+    public float catNoiseInterval = 20f;
 
 
     // Start is called before the first frame update
@@ -65,7 +68,11 @@ public class CatScript : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-          sighted = true;
+            sighted = true;
+            if (catNoiseFlag)
+            {
+                StartCoroutine(catMakeNoise());
+            }
         }
     }
      void OnTriggerExit2D(Collider2D other)
@@ -74,6 +81,14 @@ public class CatScript : MonoBehaviour
         {
           sighted = false;
         }
+    }
+
+    IEnumerator catMakeNoise()
+    {
+        SoundFXManager.instance.PlaySoundFXClip(catnoise);
+        catNoiseFlag = false;
+        yield return new WaitForSeconds(catNoiseInterval);
+        catNoiseFlag = true;
     }
 
 
