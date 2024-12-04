@@ -34,7 +34,6 @@ public class TutorialManager : MonoBehaviour
     {
         if (awaitingKeyPress)
         {
-            // Check for movement key press
             if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.LeftArrow) ||
                 Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.DownArrow))
             {

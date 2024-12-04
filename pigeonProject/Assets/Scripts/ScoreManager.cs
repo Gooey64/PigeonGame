@@ -9,7 +9,8 @@ public class ScoreManager : MonoBehaviour
     public static ScoreManager Instance;
 
     public int score = 0;
-    public TextMeshProUGUI scoreText; 
+    public int targetScore = 50; // Set the target score to move to the next level
+    public TextMeshProUGUI scoreText;
 
     void Awake()
     {
@@ -29,11 +30,16 @@ public class ScoreManager : MonoBehaviour
         UpdateScoreText();
     }
 
+    public bool HasReachedTargetScore()
+    {
+        return score >= targetScore;
+    }
+
     private void UpdateScoreText()
     {
         if (scoreText != null)
         {
-            scoreText.text = "Score: " + score.ToString();
+            scoreText.text = "Score: " + score.ToString() + " / " + targetScore.ToString();
         }
     }
 }

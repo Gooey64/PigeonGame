@@ -7,8 +7,8 @@ using UnityEngine.UI;
 public class LevelMenu : MonoBehaviour
 {
     public Button[] buttons;
-    public Color unlockedColor = Color.white; 
-    public Color lockedColor = new Color(1f, 1f, 1f, 0.5f); 
+    public Color unlockedColor = Color.white;
+    public Color lockedColor = new Color(1f, 1f, 1f, 0.5f);
 
     private void Awake()
     {
@@ -43,7 +43,6 @@ public class LevelMenu : MonoBehaviour
         }
     }
 
-
     public void OpenLevel(int levelID)
     {
         string levelName = "Level " + levelID; 
@@ -69,18 +68,25 @@ public class LevelMenu : MonoBehaviour
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         Debug.Log($"Current Scene Index: {currentSceneIndex}");
 
-        if (currentSceneIndex + 1 < SceneManager.sceneCountInBuildSettings)
+        if (ScoreManager.Instance.HasReachedTargetScore())
         {
-            int nextSceneIndex = currentSceneIndex;
-            Debug.Log($"Loading Next Level: {nextSceneIndex}");
+            if (currentSceneIndex + 1 < SceneManager.sceneCountInBuildSettings)
+            {
+                int nextSceneIndex = currentSceneIndex;
+                Debug.Log($"Loading Next Level: {nextSceneIndex}");
 
-            UnlockNextLevel(nextSceneIndex);
+                UnlockNextLevel(nextSceneIndex);
 
-            SceneManager.LoadScene(nextSceneIndex + 1);
+                SceneManager.LoadScene(nextSceneIndex + 1);
+            }
+            else
+            {
+                Debug.Log("No more levels to load!");
+            }
         }
         else
         {
-            Debug.Log("No more levels to load!");
+            Debug.Log("Target score not reached. Cannot proceed to the next level.");
         }
     }
 
