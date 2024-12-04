@@ -342,6 +342,10 @@ PrefabInstance:
       propertyPath: m_SpriteTilingProperty.oldSize.y
       value: 1.32
       objectReference: {fileID: 0}
+    - target: {fileID: 7881403725971969644, guid: c44f33bf7bab44a34b4f55bc577f22fa, type: 3}
+      propertyPath: scorenoise
+      value: 
+      objectReference: {fileID: 8300000, guid: b9287c54edcd94d78bebc4c96b7cad70, type: 3}
     - target: {fileID: 7956570015740529967, guid: c44f33bf7bab44a34b4f55bc577f22fa, type: 3}
       propertyPath: m_Name
       value: popcorn
@@ -710,6 +714,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4dda48bf9a6bd46bc99a61bba07013e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scorenoise: {fileID: 8300000, guid: b9287c54edcd94d78bebc4c96b7cad70, type: 3}
   scoreValue: 10
 --- !u!1 &417314372
 GameObject:
@@ -1233,6 +1238,10 @@ PrefabInstance:
       propertyPath: m_SpriteTilingProperty.oldSize.y
       value: 1.02
       objectReference: {fileID: 0}
+    - target: {fileID: 7881403725971969644, guid: c44f33bf7bab44a34b4f55bc577f22fa, type: 3}
+      propertyPath: scorenoise
+      value: 
+      objectReference: {fileID: 8300000, guid: b9287c54edcd94d78bebc4c96b7cad70, type: 3}
     - target: {fileID: 7956570015740529967, guid: c44f33bf7bab44a34b4f55bc577f22fa, type: 3}
       propertyPath: m_Name
       value: cookies
@@ -8144,9 +8153,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7f3d696c81cf4e93a8df59405bed709, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pigeon: {fileID: 1824064218}
-  arrow: {fileID: 0}
-  closestFood: {fileID: 0}
 --- !u!1 &1503929864
 GameObject:
   m_ObjectHideFlags: 0
@@ -9127,6 +9133,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4dda48bf9a6bd46bc99a61bba07013e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scorenoise: {fileID: 0}
   scoreValue: 10
 --- !u!50 &1785928492
 Rigidbody2D:
@@ -9413,9 +9420,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7f3d696c81cf4e93a8df59405bed709, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pigeon: {fileID: 1824064218}
-  arrow: {fileID: 0}
-  closestFood: {fileID: 0}
 --- !u!1001 &1830765814
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10355,6 +10359,10 @@ PrefabInstance:
       propertyPath: m_SpriteTilingProperty.oldSize.y
       value: 1.29
       objectReference: {fileID: 0}
+    - target: {fileID: 7881403725971969644, guid: c44f33bf7bab44a34b4f55bc577f22fa, type: 3}
+      propertyPath: scorenoise
+      value: 
+      objectReference: {fileID: 8300000, guid: b9287c54edcd94d78bebc4c96b7cad70, type: 3}
     - target: {fileID: 7956570015740529967, guid: c44f33bf7bab44a34b4f55bc577f22fa, type: 3}
       propertyPath: m_Name
       value: hotdog
@@ -10402,9 +10410,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7f3d696c81cf4e93a8df59405bed709, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pigeon: {fileID: 1824064218}
-  arrow: {fileID: 0}
-  closestFood: {fileID: 0}
 --- !u!1 &2117521542
 GameObject:
   m_ObjectHideFlags: 0

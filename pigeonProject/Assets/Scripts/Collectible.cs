@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Collectible : MonoBehaviour
 {
+    [SerializeField] private AudioClip scorenoise;
     public int scoreValue = 10; 
 
     void OnTriggerEnter2D(Collider2D other)
@@ -11,6 +12,7 @@ public class Collectible : MonoBehaviour
         if (other.CompareTag("Player")) 
         {
             Debug.Log("Collectible picked up!");
+            SoundFXManager.instance.PlaySoundFXClip(scorenoise);
 
             ScoreManager.Instance.AddScore(scoreValue);
 
