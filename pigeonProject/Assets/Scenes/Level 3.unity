@@ -507,7 +507,15 @@ PrefabInstance:
     - target: {fileID: 8269465267238295758, guid: be09b4eefac114acea5bc8e0f47db366, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 919583163}
+      objectReference: {fileID: 175970435}
+    - target: {fileID: 8269465267238295758, guid: be09b4eefac114acea5bc8e0f47db366, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: Play
+      objectReference: {fileID: 0}
+    - target: {fileID: 8269465267238295758, guid: be09b4eefac114acea5bc8e0f47db366, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: ButtonAudio, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 8285448662082623805, guid: be09b4eefac114acea5bc8e0f47db366, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -597,10 +605,31 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8433848715153951790, guid: be09b4eefac114acea5bc8e0f47db366, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1987203293}
+    - targetCorrespondingSourceObject: {fileID: 2037470725286006162, guid: be09b4eefac114acea5bc8e0f47db366, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 175970435}
     - targetCorrespondingSourceObject: {fileID: 2146130678453879966, guid: be09b4eefac114acea5bc8e0f47db366, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1093446667}
   m_SourcePrefab: {fileID: 100100000, guid: be09b4eefac114acea5bc8e0f47db366, type: 3}
+--- !u!1 &175970434 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2037470725286006162, guid: be09b4eefac114acea5bc8e0f47db366, type: 3}
+  m_PrefabInstance: {fileID: 175970433}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &175970435
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 175970434}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c53d1aa0ae4c4469bd22df380658882, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clip: {fileID: 8300000, guid: 8b5c2c4c119b849ef8c8ce7e3c9aa061, type: 3}
 --- !u!1 &221399440
 GameObject:
   m_ObjectHideFlags: 0
@@ -1064,6 +1093,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttons: []
+  nextButton: {fileID: 0}
+  youWinText: {fileID: 0}
   unlockedColor: {r: 1, g: 1, b: 1, a: 1}
   lockedColor: {r: 1, g: 1, b: 1, a: 0.5}
 --- !u!4 &499568655
