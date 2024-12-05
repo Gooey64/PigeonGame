@@ -1,12 +1,31 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI; // Required for Button
 
 public class PauseMenu : MonoBehaviour
 {
     [SerializeField] private GameObject pauseMenu;       
     [SerializeField] private GameObject dimBackground;  
+    public Button restartButton; 
+
+    public static bool restartClicked = false; 
+
+    private void Start()
+    {
+        if (restartButton != null)
+        {
+            restartButton.onClick.AddListener(OnRestartButtonClicked);
+        }
+    }
+
+    private void OnRestartButtonClicked()
+    {
+        Debug.Log("Restart button clicked.");
+        restartClicked = true; 
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        Time.timeScale = 1;
+    }
 
     public void Pause()
     {
@@ -32,11 +51,5 @@ public class PauseMenu : MonoBehaviour
             dimBackground.SetActive(false);
         }
         Time.timeScale = 1; 
-    }
-
-    public void Restart() 
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        Time.timeScale = 1;
     }
 }

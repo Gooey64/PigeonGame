@@ -2,7 +2,8 @@ using UnityEngine;
 
 public class EnvelopeInteraction : MonoBehaviour
 {
-    public GameObject bubbleSpeech; 
+    public GameObject bubbleSpeech;
+
     private bool isPlayerNearby = false;
     private bool isPickedUp = false; 
     private bool isLeftArrowPressed = false; 
@@ -22,7 +23,6 @@ public class EnvelopeInteraction : MonoBehaviour
             isLeftArrowPressed = false;
         }
 
-      
         if (isPlayerNearby && Input.GetKeyDown(KeyCode.E) && !isPickedUp)
         {
             TryPickUpEnvelope();
@@ -33,9 +33,16 @@ public class EnvelopeInteraction : MonoBehaviour
     {
         if (other.CompareTag("Player") && !isPickedUp && !isLeftArrowPressed)
         {
-            Debug.Log("Player entered trigger zone.");
-            isPlayerNearby = true;
-            bubbleSpeech.SetActive(true); 
+            if (!PauseMenu.restartClicked) 
+            {
+                Debug.Log("Player entered trigger zone: Showing bubble speech.");
+                isPlayerNearby = true;
+                bubbleSpeech.SetActive(true); 
+            }
+            else
+            {
+                Debug.Log("Restart button was clicked. Skipping bubble speech.");
+            }
         }
     }
 

@@ -11,12 +11,23 @@ public class PackageCollider : MonoBehaviour
     private GameObject package;
     private GameObject packageHandler;
 
-    void Start()
+  void Start()
+{
+    this.package = transform.parent.gameObject;
+    this.packageHandler = GameObject.FindWithTag("PackageHandler");
+    packageHandler.GetComponent<PackageHandler>().OnPackageDelivery += this.DeliverPackage;
+
+    // Adjust the size of the collider for a longer pickup range
+    Collider2D collider = GetComponent<Collider2D>();
+    if (collider is BoxCollider2D boxCollider)
     {
-        this.package = transform.parent.gameObject;
-        this.packageHandler = GameObject.FindWithTag("PackageHandler");
-        packageHandler.GetComponent<PackageHandler>().OnPackageDelivery += this.DeliverPackage;
+        boxCollider.size = new Vector2(8f, 5f); // Example size
     }
+    else if (collider is CircleCollider2D circleCollider)
+    {
+        circleCollider.radius = 5f; // Example radius
+    }
+}
 
     void Update()
     {

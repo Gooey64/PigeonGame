@@ -14,6 +14,7 @@ public class UIElementShaker : MonoBehaviour
 
     void Start()
     {
+        // Save the original positions
         if (textRectTransform != null)
         {
             originalTextPosition = textRectTransform.localPosition;
@@ -23,14 +24,21 @@ public class UIElementShaker : MonoBehaviour
             originalStaminaPosition = staminaBar.transform.localPosition;
         }
 
-        // Check if the level is being replayed
-        if (PlayerPrefs.GetInt("LevelReplayed", 0) == 0)
+        // Check if shaking should be skipped
+        if (PlayerPrefs.GetInt("RestartButtonClicked", 0) == 1)
         {
+            Debug.Log("Restart button clicked: Skipping shake effect.");
+            PlayerPrefs.SetInt("RestartButtonClicked", 0); // Reset flag
+            PlayerPrefs.Save();
+        }
+        else if (!HealthManager.PlayerDied) // Check if the player hasn't died
+        {
+            Debug.Log("Player alive: Starting shake effect.");
             StartCoroutine(ShakeElements());
         }
         else
         {
-            Debug.Log("Level is being replayed. Skipping shake effect.");
+            Debug.Log("Player died: Skipping shake effect.");
         }
     }
 

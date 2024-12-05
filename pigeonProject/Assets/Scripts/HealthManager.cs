@@ -10,27 +10,35 @@ public class HealthManager : MonoBehaviour
     public float healthAmount = 100f;
     public Image healthBar;
 
-    public GameObject instructionsPanel1; // First instruction panel
-    public GameObject instructionsPanel2; // Second instruction panel
-    public GameObject instructionsPanel3; // Third instruction panel
-    public Canvas instructionsCanvas; // Canvas to hide
+    public GameObject instructionsPanel1;
+    public GameObject instructionsPanel2;
+    public GameObject instructionsPanel3;
+    public Canvas instructionsCanvas;
+
+    public static bool PlayerDied = false; 
 
     private void Start()
     {
+       
+        if (PlayerPrefs.GetInt("LevelReplayed", 0) == 0)
+        {
+            PlayerDied = false;
+        }
+
         HandleReplayFlags();
     }
 
     void Update()
     {
-        if (healthAmount <= 0) 
+        if (healthAmount <= 0)
         {
             Debug.Log("Health depleted. Reloading level...");
+            PlayerDied = true; // Mark the player as dead
             SoundFXManager.instance.PlaySoundFXClip(clip);
-            RecordReplay();
             ReloadLevel();
         }
 
-        if (Input.GetKeyDown(KeyCode.Return)) 
+        if (Input.GetKeyDown(KeyCode.Return))
         {
             TakeDamage(20);
         }
@@ -40,14 +48,14 @@ public class HealthManager : MonoBehaviour
     {
         SoundFXManager.instance.PlaySoundFXClip(damageClip);
         healthAmount -= damage;
-        healthAmount = Mathf.Clamp(healthAmount, 0, 100); 
+        healthAmount = Mathf.Clamp(healthAmount, 0, 100);
         UpdateHealthBar();
     }
 
     public void Heal(float healingAmount)
     {
         healthAmount += healingAmount;
-        healthAmount = Mathf.Clamp(healthAmount, 0, 100); 
+        healthAmount = Mathf.Clamp(healthAmount, 0, 100);
         UpdateHealthBar();
     }
 
@@ -55,78 +63,43 @@ public class HealthManager : MonoBehaviour
     {
         if (healthBar != null)
         {
-            healthBar.fillAmount = healthAmount / 100f; 
+            healthBar.fillAmount = healthAmount / 100f;
         }
     }
 
     private void ReloadLevel()
     {
         healthAmount = 100f;
-
-        // Set replay flag in PlayerPrefs
-        RecordReplay();
-
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex); 
-    }
-
-    private void RecordReplay()
-    {
-        PlayerPrefs.SetInt("LevelReplayed", 1); // Mark the level as being replayed
+        PlayerPrefs.SetInt("LevelReplayed", 1);
         PlayerPrefs.Save();
+
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     private void HandleReplayFlags()
     {
-        // Check if the level is being replayed
         bool isReplaying = PlayerPrefs.GetInt("LevelReplayed", 0) == 1;
-
-        Debug.Log($"Replay Flag: {isReplaying}");
 
         if (isReplaying)
         {
-            // Disable all instruction panels and the canvas if it's a replay
+            Debug.Log("Replay detected: Hiding instructions.");
+
             if (instructionsPanel1 != null) instructionsPanel1.SetActive(false);
             if (instructionsPanel2 != null) instructionsPanel2.SetActive(false);
             if (instructionsPanel3 != null) instructionsPanel3.SetActive(false);
-
-            if (instructionsCanvas != null)
-            {
-                instructionsCanvas.gameObject.SetActive(false);
-                Debug.Log("Instructions Canvas hidden on replay.");
-            }
+            if (instructionsCanvas != null) instructionsCanvas.gameObject.SetActive(false);
         }
         else
         {
-            // First playthrough: Ensure all instruction panels and canvas are active
+            Debug.Log("First playthrough: Showing instructions.");
+
             if (instructionsPanel1 != null) instructionsPanel1.SetActive(true);
             if (instructionsPanel2 != null) instructionsPanel2.SetActive(true);
             if (instructionsPanel3 != null) instructionsPanel3.SetActive(true);
+            if (instructionsCanvas != null) instructionsCanvas.gameObject.SetActive(true);
 
-            if (instructionsCanvas != null)
-            {
-                instructionsCanvas.gameObject.SetActive(true);
-                Debug.Log("Instructions Canvas displayed on first playthrough.");
-            }
-
-            // Reset replay flag for subsequent levels
             PlayerPrefs.SetInt("LevelReplayed", 0);
             PlayerPrefs.Save();
         }
-    }
-
-    [ContextMenu("Reset Replay Flag")]
-    public void ResetReplayFlag()
-    {
-        PlayerPrefs.SetInt("LevelReplayed", 0);
-        PlayerPrefs.Save();
-        Debug.Log("Replay flag reset.");
-    }
-
-    [ContextMenu("Clear PlayerPrefs")]
-    public void ClearPlayerPrefs()
-    {
-        PlayerPrefs.DeleteAll();
-        PlayerPrefs.Save();
-        Debug.Log("PlayerPrefs cleared.");
     }
 }
