@@ -9,30 +9,30 @@ public class FlyControlTutorial : MonoBehaviour
 
     void Start()
     {
-        Time.timeScale = 0;
-        ShowHighlight();
+        // Time.timeScale = 0;
+        // ShowHighlight();
     }
 
     void Update()
     {
-        if (tutorialActive && Input.GetKeyDown(KeyCode.UpArrow)) 
-        {
-            EndTutorial();
-        }
+        // if (tutorialActive && Input.GetKeyDown(KeyCode.UpArrow)) 
+        // {
+        //     EndTutorial();
+        // }
     }
 
     void ShowHighlight()
     {
-        highlightArrow.SetActive(true);
-        instructionText.text = "Press [Up] to flap your wings!";
-        instructionText.gameObject.SetActive(true);
+        // highlightArrow.SetActive(true);
+        // instructionText.text = "Press [Up] to flap your wings!";
+        // instructionText.gameObject.SetActive(true);
     }
 
     void EndTutorial()
     {
-        highlightArrow.SetActive(false);
-        instructionText.gameObject.SetActive(false);
-        tutorialActive = false;
-        Time.timeScale = 1; 
+        // highlightArrow.SetActive(false);
+        // instructionText.gameObject.SetActive(false);
+        // tutorialActive = false;
+        // Time.timeScale = 1; 
     }
 }

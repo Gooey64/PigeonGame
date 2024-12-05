@@ -2,24 +2,20 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
 
-
 public class Timer : MonoBehaviour
 {
-    [SerializeField] private TextMeshProUGUI timerText; 
-    [SerializeField] private float remainingTime = 60f; 
+    [SerializeField] private TextMeshProUGUI timerText;
+    [SerializeField] private float remainingTime = 60f;
 
     private bool isTimerRunning = false;
 
     void Start()
     {
-        if (SceneManager.GetActiveScene().name == "Level 1")
+        if (SceneManager.GetActiveScene().name != "Level 1")
         {
-            if (TutorialManager.tutorialCompleted)
-            {
-                StartTimer();
-            }
+            StartTimer();
         }
-        else
+        else if (TutorialManager.tutorialCompleted)
         {
             StartTimer();
         }
@@ -27,7 +23,7 @@ public class Timer : MonoBehaviour
 
     void Update()
     {
-        if (!isTimerRunning || timerText == null)
+        if (!isTimerRunning || timerText == null || SceneManager.GetActiveScene().name == "Level 1")
             return;
 
         if (remainingTime > 0)
@@ -42,7 +38,7 @@ public class Timer : MonoBehaviour
         else
         {
             remainingTime = 0;
-            isTimerRunning = false; 
+            isTimerRunning = false;
             ResetLevel();
         }
 
@@ -66,4 +62,3 @@ public class Timer : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
-
