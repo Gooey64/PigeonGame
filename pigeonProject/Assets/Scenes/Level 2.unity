@@ -235,6 +235,10 @@ MonoBehaviour:
   damageClip: {fileID: 0}
   healthAmount: 100
   healthBar: {fileID: 820640090}
+  instructionsPanel1: {fileID: 0}
+  instructionsPanel2: {fileID: 0}
+  instructionsPanel3: {fileID: 0}
+  instructionsCanvas: {fileID: 0}
 --- !u!4 &62510809
 Transform:
   m_ObjectHideFlags: 0
@@ -8425,6 +8429,10 @@ PrefabInstance:
       propertyPath: catnoise
       value: 
       objectReference: {fileID: 8300000, guid: 37f0199553bc94303a01875c29c7572c, type: 3}
+    - target: {fileID: 5113754780278769299, guid: 4150cf7ad8c7f4ec6a3b6035de9b4dfe, type: 3}
+      propertyPath: moveSpeed
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 5113754780278769299, guid: 4150cf7ad8c7f4ec6a3b6035de9b4dfe, type: 3}
       propertyPath: catNoiseInterval
       value: 5
