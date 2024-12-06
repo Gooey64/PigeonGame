@@ -1,7 +1,6 @@
-using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI; // Required for Button
+using UnityEngine.UI; 
 
 public class PauseMenu : MonoBehaviour
 {
@@ -23,8 +22,8 @@ public class PauseMenu : MonoBehaviour
     {
         Debug.Log("Restart button clicked.");
         restartClicked = true; 
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        Time.timeScale = 1;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex); 
+        Time.timeScale = 1; 
     }
 
     public void Pause()
@@ -40,7 +39,7 @@ public class PauseMenu : MonoBehaviour
     public void Home() 
     {
         SceneManager.LoadScene("Main Menu");
-        Time.timeScale = 1;
+        Time.timeScale = 1; 
     }
 
     public void Resume()
@@ -51,5 +50,10 @@ public class PauseMenu : MonoBehaviour
             dimBackground.SetActive(false);
         }
         Time.timeScale = 1; 
+    }
+
+    public static bool IsRestartClicked()
+    {
+        return restartClicked;
     }
 }

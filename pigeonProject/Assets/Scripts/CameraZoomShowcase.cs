@@ -4,17 +4,16 @@ using System.Collections;
 public class UIElementShaker : MonoBehaviour
 {
     public RectTransform textRectTransform;
-    public GameObject staminaBar;
-    public float shakeDuration = 1f;
-    public float shakeAmount = 10f;
-    public float shakeSpeed = 50f;
+    public GameObject staminaBar;           
+    public float shakeDuration = 1f;       
+    public float shakeAmount = 10f;        
+    public float shakeSpeed = 50f;         
 
     private Vector3 originalTextPosition;
     private Vector3 originalStaminaPosition;
 
     void Start()
     {
-        // Save the original positions
         if (textRectTransform != null)
         {
             originalTextPosition = textRectTransform.localPosition;
@@ -24,14 +23,13 @@ public class UIElementShaker : MonoBehaviour
             originalStaminaPosition = staminaBar.transform.localPosition;
         }
 
-        // Check if shaking should be skipped
-        if (PlayerPrefs.GetInt("RestartButtonClicked", 0) == 1)
+        if (PauseMenu.IsRestartClicked())
         {
             Debug.Log("Restart button clicked: Skipping shake effect.");
-            PlayerPrefs.SetInt("RestartButtonClicked", 0); // Reset flag
-            PlayerPrefs.Save();
+            return; 
         }
-        else if (!HealthManager.PlayerDied) // Check if the player hasn't died
+
+        if (!HealthManager.PlayerDied)
         {
             Debug.Log("Player alive: Starting shake effect.");
             StartCoroutine(ShakeElements());

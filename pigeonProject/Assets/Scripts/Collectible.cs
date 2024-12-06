@@ -20,7 +20,6 @@ public class Collectible : MonoBehaviour
             else if (Input.GetKeyDown(KeyCode.E))
             {
                 Debug.Log("E key pressed but does not pick up the collectible.");
-                // Ensure no unintended behavior here
             }
         }
     }

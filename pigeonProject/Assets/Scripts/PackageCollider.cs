@@ -23,7 +23,7 @@ public class PackageCollider : MonoBehaviour
     }
     else if (collider is CircleCollider2D circleCollider)
     {
-        circleCollider.radius = 5f; 
+        circleCollider.radius = 5f;
     }
 }
 
@@ -42,6 +42,7 @@ public class PackageCollider : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            // Debug.Log("enter");
             this.isTrigger = true;
         }
     }

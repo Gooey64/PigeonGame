@@ -6,13 +6,13 @@ public class EnvelopeInteraction : MonoBehaviour
 
     private bool isPlayerNearby = false;
     private bool isPickedUp = false; 
-    private bool isKeyForPanelDisablePressed = false; // Consolidated flag for key presses
+    private bool isKeyForPanelDisablePressed = false; 
 
     private void Update()
     {
-        if (HealthManager.PlayerDied) 
+        if (HealthManager.PlayerDied || PauseMenu.IsRestartClicked()) 
         {
-            bubbleSpeech.SetActive(false);
+            bubbleSpeech.SetActive(false); 
             return;
         }
 
@@ -29,15 +29,19 @@ public class EnvelopeInteraction : MonoBehaviour
             isKeyForPanelDisablePressed = false;
         }
 
-        // if (isPlayerNearby && Input.GetKeyDown(KeyCode.T) && !isPickedUp)
-        // {
-        //     TryPickUpEnvelope();
-        // }
+        if (isPlayerNearby && Input.GetKeyDown(KeyCode.E) && !isPickedUp)
+        {
+            TryPickUpEnvelope();
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (HealthManager.PlayerDied) return; 
+        if (HealthManager.PlayerDied || PauseMenu.IsRestartClicked()) 
+        {
+            bubbleSpeech.SetActive(false); 
+            return; 
+        }
 
         if (other.CompareTag("Player") && !isPickedUp && !isKeyForPanelDisablePressed)
         {
