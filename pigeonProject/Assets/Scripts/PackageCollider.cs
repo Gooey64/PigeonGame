@@ -7,7 +7,6 @@ public class PackageCollider : MonoBehaviour
 {
     public bool isTrigger = false;
 
-    // private readonly KeyCode getPackageKey = KeyCode.E;
     private GameObject package;
     private GameObject packageHandler;
 
@@ -17,15 +16,14 @@ public class PackageCollider : MonoBehaviour
     this.packageHandler = GameObject.FindWithTag("PackageHandler");
     packageHandler.GetComponent<PackageHandler>().OnPackageDelivery += this.DeliverPackage;
 
-    // Adjust the size of the collider for a longer pickup range
     Collider2D collider = GetComponent<Collider2D>();
     if (collider is BoxCollider2D boxCollider)
     {
-        boxCollider.size = new Vector2(8f, 5f); // Example size
+        boxCollider.size = new Vector2(8f, 5f); 
     }
     else if (collider is CircleCollider2D circleCollider)
     {
-        circleCollider.radius = 5f; // Example radius
+        circleCollider.radius = 5f; 
     }
 }
 
@@ -44,7 +42,6 @@ public class PackageCollider : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            // Debug.Log("enter");
             this.isTrigger = true;
         }
     }
@@ -63,7 +60,6 @@ public class PackageCollider : MonoBehaviour
         Destroy(package);
     }
 
-    // destroy the package when delivered
     void DeliverPackage(GameObject _) {
         Destroy(package);
     }

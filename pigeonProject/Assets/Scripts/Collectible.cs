@@ -1,22 +1,45 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Collectible : MonoBehaviour
 {
     [SerializeField] private AudioClip scorenoise;
-    public int scoreValue = 10; 
+    public int scoreValue = 10;
+    private bool isPlayerInRange = false;
 
-    void OnTriggerEnter2D(Collider2D other)
+    void Update()
     {
-        if (other.CompareTag("Player")) 
+        if (isPlayerInRange)
         {
-            Debug.Log("Collectible picked up!");
-            SoundFXManager.instance.PlaySoundFXClip(scorenoise);
+            if (Input.GetKeyDown(KeyCode.F))
+            {
+                Debug.Log("Collectible picked up!");
+                SoundFXManager.instance.PlaySoundFXClip(scorenoise);
+                ScoreManager.Instance.AddScore(scoreValue);
+                Destroy(gameObject);
+            }
+            else if (Input.GetKeyDown(KeyCode.E))
+            {
+                Debug.Log("E key pressed but does not pick up the collectible.");
+                // Ensure no unintended behavior here
+            }
+        }
+    }
 
-            ScoreManager.Instance.AddScore(scoreValue);
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            Debug.Log("Player is in range to pick up the collectible.");
+            isPlayerInRange = true;
+        }
+    }
 
-            Destroy(gameObject); 
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            Debug.Log("Player left the range of the collectible.");
+            isPlayerInRange = false;
         }
     }
 }

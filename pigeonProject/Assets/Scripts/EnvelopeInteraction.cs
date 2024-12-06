@@ -6,43 +6,44 @@ public class EnvelopeInteraction : MonoBehaviour
 
     private bool isPlayerNearby = false;
     private bool isPickedUp = false; 
-    private bool isLeftArrowPressed = false; 
+    private bool isKeyForPanelDisablePressed = false; // Consolidated flag for key presses
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        if (HealthManager.PlayerDied) 
         {
-            isLeftArrowPressed = true;
+            bubbleSpeech.SetActive(false);
+            return;
+        }
+
+        if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A))
+        {
+            isKeyForPanelDisablePressed = true;
             if (bubbleSpeech.activeSelf)
             {
                 bubbleSpeech.SetActive(false); 
             }
         }
-        else if (Input.GetKeyUp(KeyCode.LeftArrow))
+        else if (Input.GetKeyUp(KeyCode.LeftArrow) || Input.GetKeyUp(KeyCode.A))
         {
-            isLeftArrowPressed = false;
+            isKeyForPanelDisablePressed = false;
         }
 
-        if (isPlayerNearby && Input.GetKeyDown(KeyCode.E) && !isPickedUp)
-        {
-            TryPickUpEnvelope();
-        }
+        // if (isPlayerNearby && Input.GetKeyDown(KeyCode.T) && !isPickedUp)
+        // {
+        //     TryPickUpEnvelope();
+        // }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player") && !isPickedUp && !isLeftArrowPressed)
+        if (HealthManager.PlayerDied) return; 
+
+        if (other.CompareTag("Player") && !isPickedUp && !isKeyForPanelDisablePressed)
         {
-            if (!PauseMenu.restartClicked) 
-            {
-                Debug.Log("Player entered trigger zone: Showing bubble speech.");
-                isPlayerNearby = true;
-                bubbleSpeech.SetActive(true); 
-            }
-            else
-            {
-                Debug.Log("Restart button was clicked. Skipping bubble speech.");
-            }
+            Debug.Log("Player entered trigger zone: Showing bubble speech.");
+            isPlayerNearby = true;
+            bubbleSpeech.SetActive(true); 
         }
     }
 
