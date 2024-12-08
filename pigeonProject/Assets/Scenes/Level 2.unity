@@ -2967,7 +2967,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!199 &850355711
 ParticleSystemRenderer:
   serializedVersion: 6
@@ -7771,8 +7771,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 850355710}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 50, z: -1}
-  m_LocalScale: {x: 0.075, y: 0.5, z: 1}
+  m_LocalPosition: {x: 84, y: 50, z: -1}
+  m_LocalScale: {x: 0.14, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -11361,8 +11361,12 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1513938534025486764, guid: be09b4eefac114acea5bc8e0f47db366, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -19
+      objectReference: {fileID: 0}
+    - target: {fileID: 1513938534025486764, guid: be09b4eefac114acea5bc8e0f47db366, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -23
+      value: -14
       objectReference: {fileID: 0}
     - target: {fileID: 1647087069209871508, guid: be09b4eefac114acea5bc8e0f47db366, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -11518,11 +11522,11 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: 4d76728f45eb644a0a470d6820650500, type: 3}
     - target: {fileID: 5187914742499596176, guid: be09b4eefac114acea5bc8e0f47db366, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 440
+      value: 470
       objectReference: {fileID: 0}
     - target: {fileID: 5187914742499596176, guid: be09b4eefac114acea5bc8e0f47db366, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 220
+      value: 240
       objectReference: {fileID: 0}
     - target: {fileID: 5187914742499596176, guid: be09b4eefac114acea5bc8e0f47db366, type: 3}
       propertyPath: m_LocalScale.x
@@ -11542,19 +11546,28 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5522281140411360691, guid: be09b4eefac114acea5bc8e0f47db366, type: 3}
       propertyPath: m_text
-      value: '
-
-
-        "Press an arrow key to hide the panel and beware of the
-        timer."'
+      value: "\n\n\"Watch the timer at the top of the screen \u2014 press an arrow
+        key to continue.\""
       objectReference: {fileID: 0}
     - target: {fileID: 5522281140411360691, guid: be09b4eefac114acea5bc8e0f47db366, type: 3}
       propertyPath: m_fontSize
-      value: 18
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 5522281140411360691, guid: be09b4eefac114acea5bc8e0f47db366, type: 3}
+      propertyPath: m_margin.x
+      value: -75.687416
+      objectReference: {fileID: 0}
+    - target: {fileID: 5522281140411360691, guid: be09b4eefac114acea5bc8e0f47db366, type: 3}
+      propertyPath: m_margin.z
+      value: -85.66197
       objectReference: {fileID: 0}
     - target: {fileID: 5522281140411360691, guid: be09b4eefac114acea5bc8e0f47db366, type: 3}
       propertyPath: m_fontSizeBase
-      value: 18
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 5814385738555875978, guid: be09b4eefac114acea5bc8e0f47db366, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 58
       objectReference: {fileID: 0}
     - target: {fileID: 5837420683465584539, guid: be09b4eefac114acea5bc8e0f47db366, type: 3}
       propertyPath: m_SortingOrder
@@ -11866,7 +11879,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3659212480453916626, guid: cdb3003cd9af241a08a28ea1fa32e8ed, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -106.4829
+      value: -107.63
       objectReference: {fileID: 0}
     - target: {fileID: 3659212480453916626, guid: cdb3003cd9af241a08a28ea1fa32e8ed, type: 3}
       propertyPath: m_LocalPosition.y

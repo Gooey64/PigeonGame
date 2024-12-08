@@ -49,7 +49,7 @@ public class LevelMenu : MonoBehaviour
         }
     }
 
-    private void UpdateNextButtonAndWinText()
+    public void UpdateNextButtonAndWinText()
     {
         if (nextButton != null)
         {

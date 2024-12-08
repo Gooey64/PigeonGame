@@ -49,6 +49,9 @@ public class EnvelopeInteraction : MonoBehaviour
             isPlayerNearby = true;
             bubbleSpeech.SetActive(true); 
         }
+        if (Input.GetKeyUp(KeyCode.LeftArrow)) {
+            bubbleSpeech.SetActive(false); 
+        }
     }
 
     private void OnTriggerExit2D(Collider2D other)
