@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ProjectileScript : MonoBehaviour
@@ -8,7 +6,7 @@ public class ProjectileScript : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player")) 
         {
             Debug.Log("Projectile hit the pigeon!");
 

@@ -9,7 +9,7 @@ public class ScoreManager : MonoBehaviour
     public static ScoreManager Instance;
 
     public int score = 0;
-    public int targetScore = 40; // Set the target score to move to the next level
+    public int targetScore = 40; 
     public TextMeshProUGUI scoreText;
 
     void Awake()
