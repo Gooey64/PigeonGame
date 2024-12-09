@@ -57,7 +57,8 @@ public class pigeonMove : MonoBehaviour
         Stamina = MaxStamina;
 
         FaceRight = transform.localScale.x > 0;
-        // baseSpeed = 30f;
+       // baseSpeed = 20f;
+       // flyingUp = 25f;
           if (SceneManager.GetActiveScene().name != "Level 1")
         {
             TutorialManager.tutorialCompleted = true; 
@@ -67,7 +68,6 @@ public class pigeonMove : MonoBehaviour
         UpdateSpriteState();
 
           healthManager = FindObjectOfType<HealthManager>();
-
         
     }
 
@@ -86,8 +86,8 @@ public class pigeonMove : MonoBehaviour
         //    flySFX.Play();
         //}
 
-        StopCoroutine(BirdDrop());
-        StartCoroutine(BirdDrop());
+       StopCoroutine(BirdDrop());
+       StartCoroutine(BirdDrop());
     }
 
     IEnumerator BirdDrop()
@@ -273,7 +273,7 @@ void UpdateSpriteState()
             StopCoroutine(LaunchDelay());
         }
 
-        if (other.gameObject.CompareTag("Platform") && !leftPlat)
+        if (other.gameObject.CompareTag("Platform") && !leftPlat || other.gameObject.CompareTag("platSpecial"))
         {
             onPlat = true;
             platformRigidBody = other.GetComponent<Rigidbody2D>();
@@ -298,17 +298,24 @@ void UpdateSpriteState()
         if(other.gameObject.CompareTag("Platform") && onPlat && platformRigidBody != null)
         {
             rb2D.velocity = new Vector2(platformRigidBody.velocity.x, platformRigidBody.velocity.y);
+          
+        }
+        if(other.gameObject.CompareTag("platSpecial") && onPlat && platformRigidBody != null)
+        {
+           // transform.position = new Vector3 (transform.position.x, other.transform.position.y + 1.5f, 0 );
+            transform.SetParent(other.transform);
         }
     }
 
     void OnTriggerExit2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Platform"))
+        if (other.gameObject.CompareTag("Platform") || other.gameObject.CompareTag("platSpecial") )
         {
             onPlat = false;
             platformRigidBody = null;
+            transform.SetParent(null);
             StartCoroutine(LeftPlat());
-            StopCoroutine(LeftPlat());
+            StopCoroutine(LeftPlat()); 
             StartCoroutine(LeftPlatMomentum());
         }
         if (other.gameObject.CompareTag("Sidewalk")) 

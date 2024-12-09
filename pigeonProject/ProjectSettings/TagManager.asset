@@ -16,6 +16,7 @@ TagManager:
   - Projectile
   - Sidewalk
   - Food
+  - platSpecial
   layers:
   - Default
   - TransparentFX
