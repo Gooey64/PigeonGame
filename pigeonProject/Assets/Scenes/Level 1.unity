@@ -3596,12 +3596,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5113754780278769299, guid: 4150cf7ad8c7f4ec6a3b6035de9b4dfe, type: 3}
+      propertyPath: catnoise
+      value: 
+      objectReference: {fileID: 8300000, guid: f671ffffb65c04c20852afd84880d595, type: 3}
+    - target: {fileID: 5113754780278769299, guid: 4150cf7ad8c7f4ec6a3b6035de9b4dfe, type: 3}
       propertyPath: moveSpeed
       value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 6213374642198263192, guid: 4150cf7ad8c7f4ec6a3b6035de9b4dfe, type: 3}
       propertyPath: m_Name
-      value: Cat 1 (1)
+      value: Rat 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -10178,6 +10182,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5113754780278769299, guid: 4150cf7ad8c7f4ec6a3b6035de9b4dfe, type: 3}
+      propertyPath: catnoise
+      value: 
+      objectReference: {fileID: 8300000, guid: f671ffffb65c04c20852afd84880d595, type: 3}
     - target: {fileID: 5113754780278769299, guid: 4150cf7ad8c7f4ec6a3b6035de9b4dfe, type: 3}
       propertyPath: moveSpeed
       value: 7
