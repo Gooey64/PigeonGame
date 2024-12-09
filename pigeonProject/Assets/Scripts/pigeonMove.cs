@@ -20,6 +20,7 @@ public class pigeonMove : MonoBehaviour
 
     [SerializeField] private AudioClip flyingClip;
     [SerializeField] private AudioClip walkingClip;
+    [SerializeField] private AudioClip windClip;
     public float fallSpeed = 10f;
     public float fastFallSpeed = 10f;
 
@@ -249,24 +250,28 @@ void UpdateSpriteState()
     {
         if (other.gameObject.CompareTag("WindLeft") && launched == false)
         {
+            SoundFXManager.instance.PlaySoundFXClip(windClip);
             rb2D.velocity += new Vector2(-60f, 0);
             StartCoroutine(LaunchDelay());
             StopCoroutine(LaunchDelay());
         }
         if (other.gameObject.CompareTag("WindUp") && launched == false)
         {
+            SoundFXManager.instance.PlaySoundFXClip(windClip);
             rb2D.velocity += new Vector2(0, 60f);
             StartCoroutine(LaunchDelay());
             StopCoroutine(LaunchDelay());
         }
         if (other.gameObject.CompareTag("WindRight") && launched == false)
         {
+            SoundFXManager.instance.PlaySoundFXClip(windClip);
             rb2D.velocity += new Vector2(60f, 0);
             StartCoroutine(LaunchDelay());
             StopCoroutine(LaunchDelay());
         }
         if (other.gameObject.CompareTag("WindDown") && launched == false)
         {
+            SoundFXManager.instance.PlaySoundFXClip(windClip);
             rb2D.velocity += new Vector2(0, -60f);
             StartCoroutine(LaunchDelay());
             StopCoroutine(LaunchDelay());

@@ -11998,6 +11998,10 @@ PrefabInstance:
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4315065522020657704, guid: cdb3003cd9af241a08a28ea1fa32e8ed, type: 3}
+      propertyPath: windClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 1e6156a8e5e7f4d68a5b8ac8bff182c7, type: 3}
+    - target: {fileID: 4315065522020657704, guid: cdb3003cd9af241a08a28ea1fa32e8ed, type: 3}
       propertyPath: WallRight
       value: 
       objectReference: {fileID: 1651724761}
