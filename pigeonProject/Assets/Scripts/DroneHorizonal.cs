@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class DroneHorizonal : MonoBehaviour
 {
-   public float distance;
+    [SerializeField] private AudioClip drone;
+    public float distance;
     float min;
     float max;
     bool right;
@@ -43,6 +44,7 @@ public class DroneHorizonal : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            SoundFXManager.instance.PlaySoundFXClip(drone);
             Debug.Log("DroneH hit the pigeon!");
 
             HealthManager healthManager = other.GetComponent<HealthManager>();

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DroneVertical : MonoBehaviour
 {
-
+    [SerializeField] private AudioClip drone;
     public float distance;
     float min;
     float max;
@@ -42,6 +42,7 @@ public class DroneVertical : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
+        SoundFXManager.instance.PlaySoundFXClip(drone);
         if (other.CompareTag("Player"))
         {
             Debug.Log("DroneV hit the pigeon!");
