@@ -48,7 +48,7 @@ public class pigeonMove : MonoBehaviour
     private AudioSource flySFX;
     private AudioSource walkSFX;
 
-    private HealthManager healthManager; // Reference to HealthManager
+    private HealthManager healthManager; 
 
     void Start()
     {
@@ -57,13 +57,12 @@ public class pigeonMove : MonoBehaviour
         Stamina = MaxStamina;
 
         FaceRight = transform.localScale.x > 0;
-       // baseSpeed = 20f;
-       // flyingUp = 25f;
-          if (SceneManager.GetActiveScene().name != "Level 1")
-        {
+        // baseSpeed = 30f;
+        //   if (SceneManager.GetActiveScene().name != "Level 1")
+        // {
             TutorialManager.tutorialCompleted = true; 
             isAlive = true;
-        }
+        // }
 
         UpdateSpriteState();
 

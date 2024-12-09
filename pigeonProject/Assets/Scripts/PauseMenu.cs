@@ -52,6 +52,26 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 1; 
     }
 
+     public void Restart()
+    {
+        if (pauseMenu != null)
+        {
+            pauseMenu.SetActive(false);
+        }
+        if (dimBackground != null)
+        {
+            dimBackground.SetActive(false);
+        }
+
+        PanelManager panelManager = FindObjectOfType<PanelManager>();
+        if (panelManager != null)
+        {
+            panelManager.OnGameRestart();
+        }
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex); 
+        Time.timeScale = 1; 
+    }
+
     public static bool IsRestartClicked()
     {
         return restartClicked;

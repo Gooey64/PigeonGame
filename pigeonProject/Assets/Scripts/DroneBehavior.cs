@@ -9,6 +9,7 @@ public class DroneBehavior : MonoBehaviour
     public Transform target;
 
     public float moveSpeed = 5f;
+    public float verticalOffset = 2f;
 
     private float fireCooldown = 0f;
 
@@ -16,23 +17,19 @@ public class DroneBehavior : MonoBehaviour
     {
         if (target != null)
         {
-            FollowTargetHorizontally();
-            AimAtTarget();
+            FollowTargetWithOffset();
             ShootAtIntervals();
         }
     }
 
-    void FollowTargetHorizontally()
+    void FollowTargetWithOffset()
     {
-        Vector3 targetPosition = new Vector3(target.position.x, transform.position.y, transform.position.z);
+        Vector3 targetPosition = new Vector3(
+            target.position.x, 
+            target.position.y + verticalOffset, 
+            transform.position.z
+        );
         transform.position = Vector3.MoveTowards(transform.position, targetPosition, moveSpeed * Time.deltaTime);
-    }
-
-    void AimAtTarget()
-    {
-        Vector2 direction = (target.position - transform.position).normalized;
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.Euler(0, 0, angle);
     }
 
     void ShootAtIntervals()

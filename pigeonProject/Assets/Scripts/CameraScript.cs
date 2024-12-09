@@ -9,14 +9,12 @@ public class cameraScript : MonoBehaviour
     public GameObject WallBottom;
     public GameObject WallLeft;
     public GameObject WallRight;
-    public float heightOffset = 5f; // Adjustable height offset
+    public float heightOffset = 5f; 
 
-    // Start is called before the first frame update
     void Start()
     {
     }
 
-    // Update is called once per frame
     void Update()
     {
         transform.position = new Vector3(
