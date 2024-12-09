@@ -1447,6 +1447,10 @@ MonoBehaviour:
   damageClip: {fileID: 0}
   healthAmount: 100
   healthBar: {fileID: 876643381}
+  instructionsPanel1: {fileID: 0}
+  instructionsPanel2: {fileID: 0}
+  instructionsPanel3: {fileID: 0}
+  instructionsCanvas: {fileID: 0}
 --- !u!4 &607542050
 Transform:
   m_ObjectHideFlags: 0
@@ -2651,7 +2655,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: -2519732335289377972, guid: 522197186b0354a089ed133ec9eebb00, type: 2}
   m_audioClip: {fileID: 8300000, guid: 3ce60d09e6e5f4053954b4b9d556bbe9, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.7
   m_Pitch: 1
   Loop: 1
   Mute: 0
