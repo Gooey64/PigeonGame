@@ -6770,6 +6770,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8300000, guid: 992b32bb1798e457fb1313e40459859b, type: 3}
     - target: {fileID: 1726147154343922713, guid: cdb3003cd9af241a08a28ea1fa32e8ed, type: 3}
+      propertyPath: SantaAlaska
+      value: 
+      objectReference: {fileID: 8300000, guid: d3e76732f62714dbba23a0ef54c88a70, type: 3}
+    - target: {fileID: 1726147154343922713, guid: cdb3003cd9af241a08a28ea1fa32e8ed, type: 3}
       propertyPath: screenShake
       value: 
       objectReference: {fileID: 0}
