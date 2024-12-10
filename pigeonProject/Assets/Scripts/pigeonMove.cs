@@ -285,16 +285,18 @@ void UpdateSpriteState()
         if (other.gameObject.CompareTag("Sidewalk"))
         {
             onPlat = true;
-        }
-         if (SceneManager.GetActiveScene().name == "Level 3" && other.gameObject.CompareTag("ground"))
-        {
             Debug.Log("Hello");
-            if (healthManager != null)
-            {
-                healthManager.TakeDamage(10f); 
-                Debug.Log("Pigeon hit a wall!");
-            }
+            
         }
+        //  if (SceneManager.GetActiveScene().name == "Level 3" && other.gameObject.CompareTag("ground"))
+        // {
+        //     Debug.Log("Hello");
+        //     if (healthManager != null)
+        //     {
+        //         healthManager.TakeDamage(10f); 
+        //         Debug.Log("Pigeon hit a wall!");
+        //     }
+        // }
         
     }
 
