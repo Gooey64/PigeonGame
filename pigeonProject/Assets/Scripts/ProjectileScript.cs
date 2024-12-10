@@ -7,7 +7,6 @@ public class ProjectileScript : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        SoundFXManager.instance.PlaySoundFXClip(Santa);
         if (other.CompareTag("Player")) 
         {
             Debug.Log("Projectile hit the pigeon!");
@@ -15,6 +14,7 @@ public class ProjectileScript : MonoBehaviour
             HealthManager healthManager = other.GetComponent<HealthManager>();
             if (healthManager != null)
             {
+                SoundFXManager.instance.PlaySoundFXClip(Santa);
                 healthManager.TakeDamage(damage);
             }
 
