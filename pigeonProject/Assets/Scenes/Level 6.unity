@@ -1728,7 +1728,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   score: 0
-  targetScore: 40
+  targetScore: 80
   scoreText: {fileID: 1285660056}
 --- !u!114 &389678180
 MonoBehaviour:

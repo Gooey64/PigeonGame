@@ -17,6 +17,7 @@ TagManager:
   - Sidewalk
   - Food
   - platSpecial
+  - Car
   layers:
   - Default
   - TransparentFX
