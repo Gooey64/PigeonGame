@@ -229,6 +229,10 @@ PrefabInstance:
       propertyPath: m_SpriteTilingProperty.oldSize.y
       value: 5.68
       objectReference: {fileID: 0}
+    - target: {fileID: 5903780133983915100, guid: 7a4ed51d8d81947f898057c2f149ee06, type: 3}
+      propertyPath: Santa
+      value: 
+      objectReference: {fileID: 8300000, guid: 7a8ab3a5426994ccc9993f9adbc6a134, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1238,7 +1242,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 173d903a13d9b4785b4b8158f5d4f660, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Santa: {fileID: 0}
+  Santa: {fileID: 8300000, guid: 7a8ab3a5426994ccc9993f9adbc6a134, type: 3}
   damage: 10
 --- !u!95 &412898301
 Animator:
@@ -1886,7 +1890,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 173d903a13d9b4785b4b8158f5d4f660, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Santa: {fileID: 0}
+  Santa: {fileID: 8300000, guid: 7a8ab3a5426994ccc9993f9adbc6a134, type: 3}
   damage: 10
 --- !u!95 &517562443
 Animator:
@@ -10173,7 +10177,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 173d903a13d9b4785b4b8158f5d4f660, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Santa: {fileID: 0}
+  Santa: {fileID: 8300000, guid: 7a8ab3a5426994ccc9993f9adbc6a134, type: 3}
   damage: 10
 --- !u!4 &1503929868
 Transform:
