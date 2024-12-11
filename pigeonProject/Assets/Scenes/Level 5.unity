@@ -2828,7 +2828,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   score: 0
-  targetScore: 40
+  targetScore: 30
   scoreText: {fileID: 489410134}
 --- !u!1001 &703719130
 PrefabInstance:
