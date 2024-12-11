@@ -9924,7 +9924,7 @@ PrefabInstance:
     - target: {fileID: 5113754780278769299, guid: 4150cf7ad8c7f4ec6a3b6035de9b4dfe, type: 3}
       propertyPath: catnoise
       value: 
-      objectReference: {fileID: 8300000, guid: 4a538bced347c455bbd1bb2e370aa50e, type: 3}
+      objectReference: {fileID: 8300000, guid: 1aed3404313234c9e9b094b385ea056e, type: 3}
     - target: {fileID: 5113754780278769299, guid: 4150cf7ad8c7f4ec6a3b6035de9b4dfe, type: 3}
       propertyPath: distance
       value: 25
@@ -13455,7 +13455,7 @@ PrefabInstance:
     - target: {fileID: 5113754780278769299, guid: 4150cf7ad8c7f4ec6a3b6035de9b4dfe, type: 3}
       propertyPath: catnoise
       value: 
-      objectReference: {fileID: 8300000, guid: 4a538bced347c455bbd1bb2e370aa50e, type: 3}
+      objectReference: {fileID: 8300000, guid: 1aed3404313234c9e9b094b385ea056e, type: 3}
     - target: {fileID: 5113754780278769299, guid: 4150cf7ad8c7f4ec6a3b6035de9b4dfe, type: 3}
       propertyPath: distance
       value: 25
