@@ -204,7 +204,7 @@ PrefabInstance:
     - target: {fileID: 5113754780278769299, guid: 4150cf7ad8c7f4ec6a3b6035de9b4dfe, type: 3}
       propertyPath: catnoise
       value: 
-      objectReference: {fileID: 8300000, guid: b6d66b86c8d5f48da9740ac8404b8dab, type: 3}
+      objectReference: {fileID: 8300000, guid: f3200e5ae36d04ba0b7b9f691f23c669, type: 3}
     - target: {fileID: 6213374642198263192, guid: 4150cf7ad8c7f4ec6a3b6035de9b4dfe, type: 3}
       propertyPath: m_Name
       value: Shark1
@@ -928,7 +928,7 @@ PrefabInstance:
     - target: {fileID: 5113754780278769299, guid: 4150cf7ad8c7f4ec6a3b6035de9b4dfe, type: 3}
       propertyPath: catnoise
       value: 
-      objectReference: {fileID: 8300000, guid: b6d66b86c8d5f48da9740ac8404b8dab, type: 3}
+      objectReference: {fileID: 8300000, guid: f3200e5ae36d04ba0b7b9f691f23c669, type: 3}
     - target: {fileID: 6213374642198263192, guid: 4150cf7ad8c7f4ec6a3b6035de9b4dfe, type: 3}
       propertyPath: m_Name
       value: Shark4
@@ -2901,7 +2901,7 @@ PrefabInstance:
     - target: {fileID: 5113754780278769299, guid: 4150cf7ad8c7f4ec6a3b6035de9b4dfe, type: 3}
       propertyPath: catnoise
       value: 
-      objectReference: {fileID: 8300000, guid: b6d66b86c8d5f48da9740ac8404b8dab, type: 3}
+      objectReference: {fileID: 8300000, guid: f3200e5ae36d04ba0b7b9f691f23c669, type: 3}
     - target: {fileID: 6213374642198263192, guid: 4150cf7ad8c7f4ec6a3b6035de9b4dfe, type: 3}
       propertyPath: m_Name
       value: Shark2
@@ -8294,7 +8294,7 @@ PrefabInstance:
     - target: {fileID: 5113754780278769299, guid: 4150cf7ad8c7f4ec6a3b6035de9b4dfe, type: 3}
       propertyPath: catnoise
       value: 
-      objectReference: {fileID: 8300000, guid: b6d66b86c8d5f48da9740ac8404b8dab, type: 3}
+      objectReference: {fileID: 8300000, guid: f3200e5ae36d04ba0b7b9f691f23c669, type: 3}
     - target: {fileID: 5113754780278769299, guid: 4150cf7ad8c7f4ec6a3b6035de9b4dfe, type: 3}
       propertyPath: distance
       value: 10
