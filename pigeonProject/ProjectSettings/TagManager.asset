@@ -18,6 +18,7 @@ TagManager:
   - Food
   - platSpecial
   - Car
+  - OnWater
   layers:
   - Default
   - TransparentFX
