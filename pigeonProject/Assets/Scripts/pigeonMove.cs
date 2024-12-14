@@ -45,6 +45,8 @@ public class pigeonMove : MonoBehaviour
 
     public GameObject stayingPutObject; 
 
+    public GameObject floatie;
+
     //public AudioSource flySFX1;
     //public AudioSource flySFX2;
     //public AudioSource flySFX3;
@@ -298,6 +300,17 @@ void UpdateSpriteState()
             Debug.Log("Hello");
             
         }
+        if (other.gameObject.CompareTag("OnWater"))
+        {
+            onPlat = true;
+            if (floatie != null)
+            {
+                floatie.SetActive(true); 
+                floatie.transform.position = transform.position; 
+                floatie.transform.SetParent(transform); 
+            }
+        }
+
         //  if (SceneManager.GetActiveScene().name == "Level 3" && other.gameObject.CompareTag("ground"))
         // {
         //     Debug.Log("Hello");
@@ -338,6 +351,16 @@ void UpdateSpriteState()
         {
             onPlat = false;
         }
+        if (other.gameObject.CompareTag("OnWater"))
+        {
+            onPlat = false;
+            if (floatie != null)
+            {
+                floatie.SetActive(false); 
+                floatie.transform.SetParent(null); 
+            }
+        }
+
     }
 
     IEnumerator LaunchDelay()
