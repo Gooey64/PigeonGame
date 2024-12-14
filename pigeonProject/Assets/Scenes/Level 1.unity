@@ -942,8 +942,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 137923824}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 39.8099, y: -5.76, z: 0}
-  m_LocalScale: {x: 338.98776, y: 1.1103264, z: 1}
+  m_LocalPosition: {x: 69.3, y: -5.76, z: 0}
+  m_LocalScale: {x: 400, y: 1.1103264, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -1305,7 +1305,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 209959688}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -648.83, y: -207.7, z: 0}
+  m_LocalPosition: {x: -619.8, y: -252.9, z: 0}
   m_LocalScale: {x: 2.2, y: 2.2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10585,8 +10585,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttons: []
-  nextButton: {fileID: 0}
-  youWinText: {fileID: 0}
+  nextButton: {fileID: 641099429}
+  youWinText: {fileID: 1596716108}
   unlockedColor: {r: 1, g: 1, b: 1, a: 1}
   lockedColor: {r: 1, g: 1, b: 1, a: 0.5}
 --- !u!4 &1307396050
