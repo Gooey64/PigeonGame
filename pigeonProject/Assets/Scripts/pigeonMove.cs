@@ -43,6 +43,8 @@ public class pigeonMove : MonoBehaviour
     public GameObject flyingObject; 
     public GameObject walkingObject;
 
+    public GameObject stayingPutObject; 
+
     //public AudioSource flySFX1;
     //public AudioSource flySFX2;
     //public AudioSource flySFX3;
@@ -209,15 +211,23 @@ void Update()
 
 void UpdateSpriteState()
 {
-    if (onPlat)
-    {
-        flyingObject.SetActive(false);
-        walkingObject.SetActive(true);
-    }
-    else
+    if (!onPlat) 
     {
         flyingObject.SetActive(true);
         walkingObject.SetActive(false);
+        stayingPutObject.SetActive(false);
+    }
+    else if (onPlat && (Input.GetAxis("Horizontal") != 0)) 
+    {
+        flyingObject.SetActive(false);
+        walkingObject.SetActive(true);
+        stayingPutObject.SetActive(false);
+    }
+    else if (onPlat && Input.GetAxis("Horizontal") == 0) 
+    {
+        flyingObject.SetActive(false);
+        walkingObject.SetActive(false);
+        stayingPutObject.SetActive(true);
     }
 }
 

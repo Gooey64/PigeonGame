@@ -378,7 +378,7 @@ Transform:
   - {fileID: 3179620253425634456}
   - {fileID: 2476953529789044930}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4315065522020657704
 MonoBehaviour:
@@ -402,6 +402,7 @@ MonoBehaviour:
   WallRight: {fileID: 0}
   flyingClip: {fileID: 8300000, guid: 4d5a2c35d049c4562addb764981e43ae, type: 3}
   walkingClip: {fileID: 8300000, guid: d4e2264d50d5243c5ad896131545c251, type: 3}
+  windClip: {fileID: 0}
   fallSpeed: 10
   fastFallSpeed: 10
   StaminaBar: {fileID: 0}
@@ -504,6 +505,10 @@ MonoBehaviour:
   damageClip: {fileID: 0}
   healthAmount: 100
   healthBar: {fileID: 0}
+  instructionsPanel1: {fileID: 0}
+  instructionsPanel2: {fileID: 0}
+  instructionsPanel3: {fileID: 0}
+  instructionsCanvas: {fileID: 0}
 --- !u!212 &4683003533979672100
 SpriteRenderer:
   m_ObjectHideFlags: 0
