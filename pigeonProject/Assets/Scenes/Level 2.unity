@@ -13709,12 +13709,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1824064217}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 423ac6499e3b74f0aa583429461dd7be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  panel: {fileID: 1050100468}
+  initialPanels: []
+  envelopePanels: []
+  arrows: []
 --- !u!114 &1824064233
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13722,7 +13724,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1824064217}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 11a0d6efed0a64194ad3eb3f9a470dda, type: 3}
   m_Name: 
