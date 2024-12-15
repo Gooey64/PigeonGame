@@ -17,18 +17,19 @@ public class EnvelopeInteraction : MonoBehaviour
             return;
         }
 
-        if (gamePaused && (Input.GetKeyDown(KeyCode.RightArrow) || 
+        if (isPlayerNearby && !isPickedUp && gamePaused && Input.GetKeyDown(KeyCode.E)  || 
                            Input.GetButtonDown("Action") || 
-                           Input.GetKeyDown(KeyCode.D)))
+                           Input.GetKeyDown(KeyCode.D))
         {
             ResumeGame();
+             TryPickUpEnvelope();
             bubbleSpeech.SetActive(false); 
         }
 
-        if (isPlayerNearby && Input.GetKeyDown(KeyCode.E) && !isPickedUp)
-        {
-            TryPickUpEnvelope();
-        }
+        // if (isPlayerNearby && Input.GetKeyDown(KeyCode.E) && !isPickedUp)
+        // {
+        //     TryPickUpEnvelope();
+        // }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
