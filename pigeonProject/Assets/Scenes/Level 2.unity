@@ -8999,7 +8999,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6590331500873649195, guid: 4bd1f5a37622147fb9276a050c892b4b, type: 3}
       propertyPath: m_Name
-      value: Pause Menu (1)
+      value: Settings
       objectReference: {fileID: 0}
     - target: {fileID: 7679582068390941098, guid: 4bd1f5a37622147fb9276a050c892b4b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -16520,13 +16520,14 @@ PrefabInstance:
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 1578788051043165425, guid: be09b4eefac114acea5bc8e0f47db366, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 1392427228086463332, guid: be09b4eefac114acea5bc8e0f47db366, type: 3}
-      insertIndex: 6
+      insertIndex: -1
       addedObject: {fileID: 897515962}
     - targetCorrespondingSourceObject: {fileID: 1392427228086463332, guid: be09b4eefac114acea5bc8e0f47db366, type: 3}
-      insertIndex: 7
+      insertIndex: -1
       addedObject: {fileID: 203666403}
     - targetCorrespondingSourceObject: {fileID: 1392427228086463332, guid: be09b4eefac114acea5bc8e0f47db366, type: 3}
       insertIndex: -1
@@ -16705,11 +16706,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3659212480453916626, guid: cdb3003cd9af241a08a28ea1fa32e8ed, type: 3}
       propertyPath: m_LocalScale.x
-      value: 2.5
+      value: 1.8
       objectReference: {fileID: 0}
     - target: {fileID: 3659212480453916626, guid: cdb3003cd9af241a08a28ea1fa32e8ed, type: 3}
       propertyPath: m_LocalScale.y
-      value: 2.5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3659212480453916626, guid: cdb3003cd9af241a08a28ea1fa32e8ed, type: 3}
       propertyPath: m_LocalPosition.x
