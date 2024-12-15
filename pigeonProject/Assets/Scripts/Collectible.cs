@@ -10,7 +10,7 @@ public class Collectible : MonoBehaviour
     {
         if (isPlayerInRange)
         {
-            if (Input.GetKeyDown(KeyCode.F))
+            if (Input.GetButtonDown("Food"))
             {
                 Debug.Log("Collectible picked up!");
                 SoundFXManager.instance.PlaySoundFXClip(scorenoise);

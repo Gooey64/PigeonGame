@@ -32,7 +32,8 @@ public class PigeonMovementWithPanel : MonoBehaviour
 
     void Update()
     {
-        if (gamePaused && Input.GetKeyDown(KeyCode.RightArrow))
+        if (gamePaused && (Input.GetKeyDown(KeyCode.RightArrow) || 
+        Input.GetButtonDown("Action") || (Input.GetKeyDown(KeyCode.D))))
         {
             HideCurrentPanel();
         }
@@ -42,7 +43,8 @@ public class PigeonMovementWithPanel : MonoBehaviour
             PickUpEnvelope();
         }
 
-        if (inSecondPanelArray && Input.GetKeyDown(KeyCode.RightArrow))
+        if (inSecondPanelArray && (Input.GetKeyDown(KeyCode.RightArrow) ||
+         Input.GetButtonDown("Action") || (Input.GetKeyDown(KeyCode.D) )))
         {
             TraverseEnvelopePanels();
         }

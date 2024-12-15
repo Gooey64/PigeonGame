@@ -1107,6 +1107,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Platform
       objectReference: {fileID: 0}
+    - target: {fileID: 7817598837330001696, guid: a178c98d184cba844890b00e1d97208a, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7817598837330001696, guid: a178c98d184cba844890b00e1d97208a, type: 3}
+      propertyPath: m_Color.b
+      value: 0.012056883
+      objectReference: {fileID: 0}
+    - target: {fileID: 7817598837330001696, guid: a178c98d184cba844890b00e1d97208a, type: 3}
+      propertyPath: m_Color.g
+      value: 0.99215686
+      objectReference: {fileID: 0}
+    - target: {fileID: 7817598837330001696, guid: a178c98d184cba844890b00e1d97208a, type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5013,6 +5029,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Platform (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 7817598837330001696, guid: a178c98d184cba844890b00e1d97208a, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7817598837330001696, guid: a178c98d184cba844890b00e1d97208a, type: 3}
+      propertyPath: m_Color.g
+      value: 0.99215686
+      objectReference: {fileID: 0}
+    - target: {fileID: 7817598837330001696, guid: a178c98d184cba844890b00e1d97208a, type: 3}
+      propertyPath: m_Color.r
+      value: 0.03551281
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5391,6 +5419,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2248965544873549451, guid: 2c84c57efff97e844a9cdbe5341159ac, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2248965544873549451, guid: 2c84c57efff97e844a9cdbe5341159ac, type: 3}
+      propertyPath: m_Color.g
+      value: 0.99215686
+      objectReference: {fileID: 0}
+    - target: {fileID: 2248965544873549451, guid: 2c84c57efff97e844a9cdbe5341159ac, type: 3}
+      propertyPath: m_Color.r
+      value: 0.03551281
+      objectReference: {fileID: 0}
     - target: {fileID: 3940753259000253466, guid: 2c84c57efff97e844a9cdbe5341159ac, type: 3}
       propertyPath: m_Name
       value: Drop Ride Base (1)
@@ -5591,6 +5631,22 @@ PrefabInstance:
     - target: {fileID: 4278000714192420939, guid: a178c98d184cba844890b00e1d97208a, type: 3}
       propertyPath: m_Name
       value: Platform (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7817598837330001696, guid: a178c98d184cba844890b00e1d97208a, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7817598837330001696, guid: a178c98d184cba844890b00e1d97208a, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7817598837330001696, guid: a178c98d184cba844890b00e1d97208a, type: 3}
+      propertyPath: m_Color.g
+      value: 0.99215686
+      objectReference: {fileID: 0}
+    - target: {fileID: 7817598837330001696, guid: a178c98d184cba844890b00e1d97208a, type: 3}
+      propertyPath: m_Color.r
+      value: 0.09299011
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5858,6 +5914,110 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1107631818686539167, guid: b0df0a0b69bcb6b428490434e8f3ee1a, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1107631818686539167, guid: b0df0a0b69bcb6b428490434e8f3ee1a, type: 3}
+      propertyPath: m_Color.g
+      value: 0.99215686
+      objectReference: {fileID: 0}
+    - target: {fileID: 1107631818686539167, guid: b0df0a0b69bcb6b428490434e8f3ee1a, type: 3}
+      propertyPath: m_Color.r
+      value: 0.010619969
+      objectReference: {fileID: 0}
+    - target: {fileID: 2463524667559234707, guid: b0df0a0b69bcb6b428490434e8f3ee1a, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2463524667559234707, guid: b0df0a0b69bcb6b428490434e8f3ee1a, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2463524667559234707, guid: b0df0a0b69bcb6b428490434e8f3ee1a, type: 3}
+      propertyPath: m_Color.g
+      value: 0.99215686
+      objectReference: {fileID: 0}
+    - target: {fileID: 2463524667559234707, guid: b0df0a0b69bcb6b428490434e8f3ee1a, type: 3}
+      propertyPath: m_Color.r
+      value: 0.052689787
+      objectReference: {fileID: 0}
+    - target: {fileID: 4114654552693262798, guid: b0df0a0b69bcb6b428490434e8f3ee1a, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4114654552693262798, guid: b0df0a0b69bcb6b428490434e8f3ee1a, type: 3}
+      propertyPath: m_Color.g
+      value: 0.99215686
+      objectReference: {fileID: 0}
+    - target: {fileID: 4114654552693262798, guid: b0df0a0b69bcb6b428490434e8f3ee1a, type: 3}
+      propertyPath: m_Color.r
+      value: 0.07323995
+      objectReference: {fileID: 0}
+    - target: {fileID: 4736307880598768853, guid: b0df0a0b69bcb6b428490434e8f3ee1a, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4736307880598768853, guid: b0df0a0b69bcb6b428490434e8f3ee1a, type: 3}
+      propertyPath: m_Color.g
+      value: 0.99215686
+      objectReference: {fileID: 0}
+    - target: {fileID: 4736307880598768853, guid: b0df0a0b69bcb6b428490434e8f3ee1a, type: 3}
+      propertyPath: m_Color.r
+      value: 0.07908873
+      objectReference: {fileID: 0}
+    - target: {fileID: 5399402700979570136, guid: b0df0a0b69bcb6b428490434e8f3ee1a, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5399402700979570136, guid: b0df0a0b69bcb6b428490434e8f3ee1a, type: 3}
+      propertyPath: m_Color.g
+      value: 0.99215686
+      objectReference: {fileID: 0}
+    - target: {fileID: 5399402700979570136, guid: b0df0a0b69bcb6b428490434e8f3ee1a, type: 3}
+      propertyPath: m_Color.r
+      value: 0.031025719
+      objectReference: {fileID: 0}
+    - target: {fileID: 5471337478834713616, guid: b0df0a0b69bcb6b428490434e8f3ee1a, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5471337478834713616, guid: b0df0a0b69bcb6b428490434e8f3ee1a, type: 3}
+      propertyPath: m_Color.g
+      value: 0.99215686
+      objectReference: {fileID: 0}
+    - target: {fileID: 5471337478834713616, guid: b0df0a0b69bcb6b428490434e8f3ee1a, type: 3}
+      propertyPath: m_Color.r
+      value: 0.09544962
+      objectReference: {fileID: 0}
+    - target: {fileID: 7127586901168750249, guid: b0df0a0b69bcb6b428490434e8f3ee1a, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7127586901168750249, guid: b0df0a0b69bcb6b428490434e8f3ee1a, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7127586901168750249, guid: b0df0a0b69bcb6b428490434e8f3ee1a, type: 3}
+      propertyPath: m_Color.g
+      value: 0.99215686
+      objectReference: {fileID: 0}
+    - target: {fileID: 7127586901168750249, guid: b0df0a0b69bcb6b428490434e8f3ee1a, type: 3}
+      propertyPath: m_Color.r
+      value: 0.003604055
+      objectReference: {fileID: 0}
+    - target: {fileID: 7151058010296539813, guid: b0df0a0b69bcb6b428490434e8f3ee1a, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7151058010296539813, guid: b0df0a0b69bcb6b428490434e8f3ee1a, type: 3}
+      propertyPath: m_Color.g
+      value: 0.99215686
+      objectReference: {fileID: 0}
+    - target: {fileID: 7151058010296539813, guid: b0df0a0b69bcb6b428490434e8f3ee1a, type: 3}
+      propertyPath: m_Color.r
+      value: 0.11917841
+      objectReference: {fileID: 0}
     - target: {fileID: 8505806270759680434, guid: b0df0a0b69bcb6b428490434e8f3ee1a, type: 3}
       propertyPath: m_Name
       value: Ferris Wheel Base
@@ -7135,6 +7295,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Platform (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 7817598837330001696, guid: a178c98d184cba844890b00e1d97208a, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7817598837330001696, guid: a178c98d184cba844890b00e1d97208a, type: 3}
+      propertyPath: m_Color.g
+      value: 0.99215686
+      objectReference: {fileID: 0}
+    - target: {fileID: 7817598837330001696, guid: a178c98d184cba844890b00e1d97208a, type: 3}
+      propertyPath: m_Color.r
+      value: 0.08890444
+      objectReference: {fileID: 0}
+    - target: {fileID: 7817598837330001696, guid: a178c98d184cba844890b00e1d97208a, type: 3}
+      propertyPath: m_SortingOrder
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8214,6 +8390,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Platform (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 7817598837330001696, guid: a178c98d184cba844890b00e1d97208a, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7817598837330001696, guid: a178c98d184cba844890b00e1d97208a, type: 3}
+      propertyPath: m_Color.b
+      value: 0.025006738
+      objectReference: {fileID: 0}
+    - target: {fileID: 7817598837330001696, guid: a178c98d184cba844890b00e1d97208a, type: 3}
+      propertyPath: m_Color.g
+      value: 0.99215686
+      objectReference: {fileID: 0}
+    - target: {fileID: 7817598837330001696, guid: a178c98d184cba844890b00e1d97208a, type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -9292,6 +9484,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2248965544873549451, guid: 2c84c57efff97e844a9cdbe5341159ac, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2248965544873549451, guid: 2c84c57efff97e844a9cdbe5341159ac, type: 3}
+      propertyPath: m_Color.g
+      value: 0.99215686
+      objectReference: {fileID: 0}
+    - target: {fileID: 2248965544873549451, guid: 2c84c57efff97e844a9cdbe5341159ac, type: 3}
+      propertyPath: m_Color.r
+      value: 0.0142469695
+      objectReference: {fileID: 0}
     - target: {fileID: 3940753259000253466, guid: 2c84c57efff97e844a9cdbe5341159ac, type: 3}
       propertyPath: m_Name
       value: Drop Ride Base
