@@ -11727,6 +11727,7 @@ MonoBehaviour:
   initialPanels: []
   envelopePanels: []
   arrows: []
+  objects: []
 --- !u!4 &1830584431 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2235553533341142212, guid: a178c98d184cba844890b00e1d97208a, type: 3}

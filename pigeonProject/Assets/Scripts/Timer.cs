@@ -11,7 +11,7 @@ public class Timer : MonoBehaviour
 
     void Start()
     {
-        if (SceneManager.GetActiveScene().name != "Level 1")
+        if (SceneManager.GetActiveScene().name != "Level 0")
         {
             StartTimer();
         }
@@ -23,7 +23,7 @@ public class Timer : MonoBehaviour
 
     void Update()
     {
-        if (!isTimerRunning || timerText == null || SceneManager.GetActiveScene().name == "Level 1")
+        if (!isTimerRunning || timerText == null || SceneManager.GetActiveScene().name == "Level 0")
             return;
 
         if (remainingTime > 0)
