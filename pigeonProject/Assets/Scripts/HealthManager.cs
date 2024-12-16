@@ -60,15 +60,16 @@ public class HealthManager : MonoBehaviour
 
     private IEnumerator FlashRed()
     {
+        SpriteRenderer[] renderersAtTimeOfDamage = spriteRenderers;
         Debug.Log("We are supposed to flash red now");
-        for (int i = 0; i < spriteRenderers.Length; i++)
+        for (int i = 0; i < renderersAtTimeOfDamage.Length; i++)
         {
-            spriteRenderers[i].color = Color.red;
+            renderersAtTimeOfDamage[i].color = Color.red;
         }
         yield return new WaitForSeconds(0.2f);
-        for (int i = 0; i < spriteRenderers.Length; i++)
+        for (int i = 0; i < renderersAtTimeOfDamage.Length; i++)
         {
-            spriteRenderers[i].color = Color.white;
+            renderersAtTimeOfDamage[i].color = Color.white;
         }
     }
 
