@@ -3,27 +3,35 @@ using System.Collections;
 
 public class PigeonMovementWithPanel : MonoBehaviour
 {
-    public GameObject[] initialPanels; 
-    public GameObject[] envelopePanels; 
-    public GameObject[] arrows; 
-    public GameObject[] objects; 
+    public GameObject[] initialPanels;
+    public GameObject[] envelopePanels;
+    public GameObject[] arrows;
+    public GameObject[] objects;
 
     public SoundMixerManager soundMixerManager;
-    private int currentPanelIndex = 0; 
-    private bool gamePaused = true; 
-    private bool envelopePickedUp = false; 
-    private bool inSecondPanelArray = false; 
-    private bool isTransitioning = false; 
-
+    private int currentPanelIndex = 0;
+    private bool gamePaused = true;
+    private bool envelopePickedUp = false;
+    private bool inSecondPanelArray = false;
+    private bool isTransitioning = false;
 
     void Start()
     {
-        Time.timeScale = 0; 
-        Debug.Log("Game paused.");
-
-        for (int i = 0; i < initialPanels.Length; i++)
+        // Ensure panels appear only if there are contents in the arrays
+        if (initialPanels.Length > 0)
         {
-            initialPanels[i].SetActive(i == 0);
+            Time.timeScale = 0;
+            Debug.Log("Game paused.");
+
+            for (int i = 0; i < initialPanels.Length; i++)
+            {
+                initialPanels[i].SetActive(i == 0);
+            }
+        }
+        else
+        {
+            Debug.LogWarning("No initial panels found. Skipping initial panel setup.");
+            ResumeGame();
         }
 
         foreach (var arrow in arrows)
@@ -45,8 +53,8 @@ public class PigeonMovementWithPanel : MonoBehaviour
 
     void Update()
     {
-        if (gamePaused && (Input.GetKeyDown(KeyCode.RightArrow) || 
-                           Input.GetButtonDown("Action") || 
+        if (gamePaused && (Input.GetKeyDown(KeyCode.RightArrow) ||
+                           Input.GetButtonDown("Action") ||
                            Input.GetKeyDown(KeyCode.D)))
         {
             HideCurrentPanel();
@@ -57,13 +65,20 @@ public class PigeonMovementWithPanel : MonoBehaviour
             PickUpEnvelope();
         }
 
-        if (gamePaused && inSecondPanelArray &&  (Input.GetKeyDown(KeyCode.RightArrow)   || 
-                                   Input.GetButtonDown("Action") || 
-                                   Input.GetKeyDown(KeyCode.D)))
+        if (gamePaused && inSecondPanelArray && (Input.GetKeyDown(KeyCode.RightArrow) ||
+                                                 Input.GetButtonDown("Action") ||
+                                                 Input.GetKeyDown(KeyCode.D)))
         {
-            envelopePanels[0].SetActive(false);
-            ResumeGame();
-            TraverseEnvelopePanels();
+            if (envelopePanels.Length > 0)
+            {
+                envelopePanels[0].SetActive(false);
+                ResumeGame();
+                TraverseEnvelopePanels();
+            }
+            else
+            {
+                Debug.LogWarning("No envelope panels found. Cannot proceed.");
+            }
         }
     }
 
@@ -73,7 +88,7 @@ public class PigeonMovementWithPanel : MonoBehaviour
         {
             if (currentPanelIndex < initialPanels.Length)
             {
-                initialPanels[currentPanelIndex].SetActive(false); 
+                initialPanels[currentPanelIndex].SetActive(false);
                 currentPanelIndex++;
 
                 if (currentPanelIndex < initialPanels.Length)
@@ -85,42 +100,58 @@ public class PigeonMovementWithPanel : MonoBehaviour
                     ResumeGame();
                 }
             }
+            else
+            {
+                Debug.LogWarning("No more initial panels to display.");
+            }
         }
     }
 
     void PickUpEnvelope()
     {
-        envelopePickedUp = true;
-        Debug.Log("Envelope picked up. Showing second panel array after 1.5 seconds.");
-        StartCoroutine(ShowEnvelopePanelsAfterDelay());
+        if (envelopePanels.Length > 0)
+        {
+            envelopePickedUp = true;
+            Debug.Log("Envelope picked up. Showing second panel array after 1.5 seconds.");
+            StartCoroutine(ShowEnvelopePanelsAfterDelay());
+        }
+        else
+        {
+            Debug.LogWarning("No envelope panels available. Skipping.");
+        }
     }
 
     IEnumerator ShowEnvelopePanelsAfterDelay()
     {
-        yield return WaitForTravelDistance(20f); 
+        yield return WaitForTravelDistance(20f);
 
-        currentPanelIndex = 0; 
-        inSecondPanelArray = true;
-
-       
-        for (int i = 0; i < envelopePanels.Length; i++)
+        if (envelopePanels.Length > 0)
         {
-            envelopePanels[i].SetActive(i == 0);
-        }
+            currentPanelIndex = 0;
+            inSecondPanelArray = true;
 
-       
-        if (arrows.Length > 0 && arrows[0] != null)
-        {
-            arrows[0].SetActive(true);
-        }
-        if (objects.Length > 0 && objects[0] != null)
-        {
-            objects[0].SetActive(true);
-        }
+            for (int i = 0; i < envelopePanels.Length; i++)
+            {
+                envelopePanels[i].SetActive(i == 0);
+            }
 
-        PauseGame();
-        
-        Debug.Log("Second panel array is now visible after 1.5 seconds.");
+            if (arrows.Length > 0 && arrows[0] != null)
+            {
+                arrows[0].SetActive(true);
+            }
+            if (objects.Length > 0 && objects[0] != null)
+            {
+                objects[0].SetActive(true);
+            }
+
+            PauseGame();
+
+            Debug.Log("Second panel array is now visible after 1.5 seconds.");
+        }
+        else
+        {
+            Debug.LogWarning("No envelope panels to display.");
+        }
     }
 
     void TraverseEnvelopePanels()
@@ -129,45 +160,56 @@ public class PigeonMovementWithPanel : MonoBehaviour
         {
             StartCoroutine(ShowNextPanelWithDelay());
         }
+        else
+        {
+            Debug.LogWarning("No more envelope panels to traverse.");
+        }
     }
 
     IEnumerator ShowNextPanelWithDelay()
     {
-        isTransitioning = true; 
-
-        envelopePanels[currentPanelIndex].SetActive(false);
-        if (currentPanelIndex < arrows.Length && arrows[currentPanelIndex] != null)
-        {
-            arrows[currentPanelIndex].SetActive(false);
-        }
-        if (currentPanelIndex < objects.Length && objects[currentPanelIndex] != null)
-        {
-            objects[currentPanelIndex].SetActive(false);
-        }
-
-         yield return WaitForTravelDistance(20f); 
-
-        currentPanelIndex++;
+        isTransitioning = true;
 
         if (currentPanelIndex < envelopePanels.Length)
         {
-            envelopePanels[currentPanelIndex].SetActive(true);
-
+            envelopePanels[currentPanelIndex].SetActive(false);
             if (currentPanelIndex < arrows.Length && arrows[currentPanelIndex] != null)
             {
-                arrows[currentPanelIndex].SetActive(true);
+                arrows[currentPanelIndex].SetActive(false);
             }
             if (currentPanelIndex < objects.Length && objects[currentPanelIndex] != null)
             {
-                objects[currentPanelIndex].SetActive(true);
+                objects[currentPanelIndex].SetActive(false);
             }
-            PauseGame();
-            Debug.Log($"Panel {currentPanelIndex}, corresponding arrow, and object displayed.");
+
+            yield return WaitForTravelDistance(20f);
+
+            currentPanelIndex++;
+
+            if (currentPanelIndex < envelopePanels.Length)
+            {
+                envelopePanels[currentPanelIndex].SetActive(true);
+
+                if (currentPanelIndex < arrows.Length && arrows[currentPanelIndex] != null)
+                {
+                    arrows[currentPanelIndex].SetActive(true);
+                }
+                if (currentPanelIndex < objects.Length && objects[currentPanelIndex] != null)
+                {
+                    objects[currentPanelIndex].SetActive(true);
+                }
+                PauseGame();
+                Debug.Log($"Panel {currentPanelIndex}, corresponding arrow, and object displayed.");
+            }
+            else
+            {
+                ResumeGame();
+                inSecondPanelArray = false;
+            }
         }
         else
         {
-            ResumeGame();
-            inSecondPanelArray = false;
+            Debug.LogWarning("No more panels available for transition.");
         }
 
         isTransitioning = false;
@@ -181,16 +223,21 @@ public class PigeonMovementWithPanel : MonoBehaviour
         while (traveledDistance < targetDistance)
         {
             traveledDistance = Vector3.Distance(transform.position, initialPosition);
-            yield return null; // Wait for the next frame
+            yield return null;
         }
     }
 
     void PauseGame()
     {
+        if (initialPanels.Length == 0 && envelopePanels.Length == 0)
+        {
+            Debug.LogWarning("No panels available. Game will not pause.");
+            return;
+        }
+
         gamePaused = true;
         Time.timeScale = 0;
         PauseSFX();
-        // SetSFXVolume(-80f); // Mute SFX
         Debug.Log("Game paused.");
     }
 
@@ -199,11 +246,10 @@ public class PigeonMovementWithPanel : MonoBehaviour
         gamePaused = false;
         Time.timeScale = 1;
         ResumeSFX();
-        // SetSFXVolume(0f);
         Debug.Log("Game resumed.");
     }
 
-     void PauseSFX()
+    void PauseSFX()
     {
         if (soundMixerManager != null)
         {
@@ -211,12 +257,11 @@ public class PigeonMovementWithPanel : MonoBehaviour
         }
     }
 
-     void ResumeSFX()
+    void ResumeSFX()
     {
         if (soundMixerManager != null)
         {
             soundMixerManager.SetSoundFXVolume(1f); // Restore SFX volume
         }
     }
-
 }
