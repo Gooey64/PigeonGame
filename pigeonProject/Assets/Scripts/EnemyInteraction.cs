@@ -2,11 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-using UnityEngine;
-
 public class EnemyInteraction : MonoBehaviour
 {
     public GameObject bubbleSpeech;
+    public SoundMixerManager soundMixerManager;
 
     private bool isPlayerNearby = false;
     private bool isPickedUp = false;
@@ -26,10 +25,8 @@ public class EnemyInteraction : MonoBehaviour
                            Input.GetKeyDown(KeyCode.D)))
         {
             ResumeGame();
-            bubbleSpeech.SetActive(false); 
+            bubbleSpeech.SetActive(false);
         }
-
-       
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -42,11 +39,10 @@ public class EnemyInteraction : MonoBehaviour
 
         if (other.CompareTag("Player") && !isPickedUp && !hasPanelDisplayed)
         {
-            Debug.Log("Player entered trigger zone: Showing bubble speech and freezing game.");
             isPlayerNearby = true;
             bubbleSpeech.SetActive(true);
             PauseGame();
-            hasPanelDisplayed = true; 
+            hasPanelDisplayed = true;
         }
     }
 
@@ -54,22 +50,38 @@ public class EnemyInteraction : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            Debug.Log("Player exited trigger zone.");
             isPlayerNearby = false;
             bubbleSpeech.SetActive(false);
         }
     }
+
     private void PauseGame()
     {
         gamePaused = true;
         Time.timeScale = 0;
-        Debug.Log("Game paused.");
+        MuteSFX();
     }
 
     private void ResumeGame()
     {
         gamePaused = false;
-        Time.timeScale = 1; 
-        Debug.Log("Game resumed.");
+        Time.timeScale = 1;
+        RestoreSFX();
+    }
+
+    private void MuteSFX()
+    {
+        if (soundMixerManager != null)
+        {
+            soundMixerManager.SetSoundFXVolume(0.0001f);
+        }
+    }
+
+    private void RestoreSFX()
+    {
+        if (soundMixerManager != null)
+        {
+            soundMixerManager.SetSoundFXVolume(1f);
+        }
     }
 }

@@ -7,11 +7,14 @@ public class PigeonMovementWithPanel : MonoBehaviour
     public GameObject[] envelopePanels; 
     public GameObject[] arrows; 
     public GameObject[] objects; 
+
+    public SoundMixerManager soundMixerManager;
     private int currentPanelIndex = 0; 
     private bool gamePaused = true; 
     private bool envelopePickedUp = false; 
     private bool inSecondPanelArray = false; 
     private bool isTransitioning = false; 
+
 
     void Start()
     {
@@ -186,6 +189,8 @@ public class PigeonMovementWithPanel : MonoBehaviour
     {
         gamePaused = true;
         Time.timeScale = 0;
+        PauseSFX();
+        // SetSFXVolume(-80f); // Mute SFX
         Debug.Log("Game paused.");
     }
 
@@ -193,6 +198,25 @@ public class PigeonMovementWithPanel : MonoBehaviour
     {
         gamePaused = false;
         Time.timeScale = 1;
+        ResumeSFX();
+        // SetSFXVolume(0f);
         Debug.Log("Game resumed.");
     }
+
+     void PauseSFX()
+    {
+        if (soundMixerManager != null)
+        {
+            soundMixerManager.SetSoundFXVolume(0.0001f); // Effectively mute SFX
+        }
+    }
+
+     void ResumeSFX()
+    {
+        if (soundMixerManager != null)
+        {
+            soundMixerManager.SetSoundFXVolume(1f); // Restore SFX volume
+        }
+    }
+
 }
