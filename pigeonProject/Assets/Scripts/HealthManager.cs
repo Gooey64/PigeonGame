@@ -17,11 +17,12 @@ public class HealthManager : MonoBehaviour
 
     public static bool PlayerDied = false; 
 
-    private SpriteRenderer spriteRenderer;
+    private SpriteRenderer[] spriteRenderers;
 
     private void Start()
     {
-        spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+        spriteRenderers = GetComponentsInChildren<SpriteRenderer>();
+        Debug.Log(spriteRenderers.Length);
        
         if (PlayerPrefs.GetInt("LevelReplayed", 0) == 0)
         {
@@ -33,6 +34,7 @@ public class HealthManager : MonoBehaviour
 
     void Update()
     {
+        spriteRenderers = GetComponentsInChildren<SpriteRenderer>();
         if (healthAmount <= 0)
         {
             Debug.Log("Health depleted. Reloading level...");
@@ -59,9 +61,15 @@ public class HealthManager : MonoBehaviour
     private IEnumerator FlashRed()
     {
         Debug.Log("We are supposed to flash red now");
-        spriteRenderer.color = Color.red;
+        for (int i = 0; i < spriteRenderers.Length; i++)
+        {
+            spriteRenderers[i].color = Color.red;
+        }
         yield return new WaitForSeconds(0.2f);
-        spriteRenderer.color = Color.white;
+        for (int i = 0; i < spriteRenderers.Length; i++)
+        {
+            spriteRenderers[i].color = Color.white;
+        }
     }
 
     public void Heal(float healingAmount)
