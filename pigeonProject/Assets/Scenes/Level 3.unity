@@ -6743,6 +6743,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3521788817391792642, guid: 5fe61782ceecc4e958a9908a0d9817d0, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: b1c35c042e53846d4b5ff455df7ee0b6, type: 3}
     - target: {fileID: 6870102177084751741, guid: 5fe61782ceecc4e958a9908a0d9817d0, type: 3}
       propertyPath: m_RootOrder
       value: 11
