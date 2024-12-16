@@ -6555,7 +6555,7 @@ PrefabInstance:
       objectReference: {fileID: 2026049513}
     - target: {fileID: 4315065522020657704, guid: cdb3003cd9af241a08a28ea1fa32e8ed, type: 3}
       propertyPath: flyingUp
-      value: 25
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4315065522020657704, guid: cdb3003cd9af241a08a28ea1fa32e8ed, type: 3}
       propertyPath: windClip
@@ -6567,7 +6567,7 @@ PrefabInstance:
       objectReference: {fileID: 1369095798}
     - target: {fileID: 4315065522020657704, guid: cdb3003cd9af241a08a28ea1fa32e8ed, type: 3}
       propertyPath: baseSpeed
-      value: 20
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 4315065522020657704, guid: cdb3003cd9af241a08a28ea1fa32e8ed, type: 3}
       propertyPath: ChargeRate

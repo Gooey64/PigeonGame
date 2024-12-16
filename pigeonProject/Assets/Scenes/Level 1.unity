@@ -624,7 +624,7 @@ Animator:
   m_GameObject: {fileID: 160525465}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: bd97c854393b24a2390b4fe772814b19, type: 2}
+  m_Controller: {fileID: 9100000, guid: 080936ea04d9e4c99914ee1c1675873f, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -966,7 +966,7 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: f2188e238333a4cbdbe1867c85fa1557, type: 3}
     - target: {fileID: 3634315255005809405, guid: 6445c097557e342a9b354b177cad9e11, type: 3}
       propertyPath: m_SortingOrder
-      value: 20
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6383722056679480305, guid: 6445c097557e342a9b354b177cad9e11, type: 3}
       propertyPath: m_LocalScale.x
@@ -2019,7 +2019,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 621779263}
-  - component: {fileID: 621779264}
   - component: {fileID: 621779265}
   m_Layer: 0
   m_Name: PostOffice
@@ -2043,20 +2042,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &621779264
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 621779262}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 86daa7ff2a2674152aa772c99219e037, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bubbleSpeech: {fileID: 0}
-  soundMixerManager: {fileID: 0}
 --- !u!61 &621779265
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -12889,7 +12874,7 @@ PrefabInstance:
     - target: {fileID: 2586571967517681988, guid: 4150cf7ad8c7f4ec6a3b6035de9b4dfe, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: -926527948, guid: 1224f54abf0cf4a52b027b9ba53d65bd, type: 3}
+      objectReference: {fileID: -798831932, guid: 8f338c476b10e4fe79ae9b444e62b9f8, type: 3}
     - target: {fileID: 2699101485606141930, guid: 4150cf7ad8c7f4ec6a3b6035de9b4dfe, type: 3}
       propertyPath: m_RootOrder
       value: 21
