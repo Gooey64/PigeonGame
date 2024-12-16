@@ -3113,7 +3113,7 @@ GameObject:
   - component: {fileID: 628461824}
   - component: {fileID: 628461825}
   m_Layer: 0
-  m_Name: robot
+  m_Name: Fire
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3144,9 +3144,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 451469203757669592, guid: 522197186b0354a089ed133ec9eebb00, type: 2}
-  m_audioClip: {fileID: 8300000, guid: a554e05a135654a6c9408a299cb4174f, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 90d4c6b481f214cf0a8382de8992a906, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.1
+  m_Volume: 0.7
   m_Pitch: 1
   Loop: 1
   Mute: 0
