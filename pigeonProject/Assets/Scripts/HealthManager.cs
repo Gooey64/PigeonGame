@@ -17,8 +17,11 @@ public class HealthManager : MonoBehaviour
 
     public static bool PlayerDied = false; 
 
+    private SpriteRenderer spriteRenderer;
+
     private void Start()
     {
+        spriteRenderer = GetComponentInChildren<SpriteRenderer>();
        
         if (PlayerPrefs.GetInt("LevelReplayed", 0) == 0)
         {
@@ -50,6 +53,15 @@ public class HealthManager : MonoBehaviour
         healthAmount -= damage;
         healthAmount = Mathf.Clamp(healthAmount, 0, 100);
         UpdateHealthBar();
+        StartCoroutine(FlashRed());
+    }
+
+    private IEnumerator FlashRed()
+    {
+        Debug.Log("We are supposed to flash red now");
+        spriteRenderer.color = Color.red;
+        yield return new WaitForSeconds(0.2f);
+        spriteRenderer.color = Color.white;
     }
 
     public void Heal(float healingAmount)
