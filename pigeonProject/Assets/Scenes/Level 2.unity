@@ -1613,7 +1613,7 @@ MonoBehaviour:
   projectilePrefab: {fileID: 1878454002276626841, guid: 7a4ed51d8d81947f898057c2f149ee06, type: 3}
   firePoint: {fileID: 1882482838}
   fireRate: 1.5
-  projectileSpeed: 13.5
+  projectileSpeed: 13
 --- !u!95 &302862060
 Animator:
   serializedVersion: 5
@@ -11450,6 +11450,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Santa: {fileID: 0}
   damage: 10
+  speed: 5
+  target: {fileID: 0}
 --- !u!4 &1503929868
 Transform:
   m_ObjectHideFlags: 0
@@ -13120,7 +13122,7 @@ MonoBehaviour:
   projectilePrefab: {fileID: 1878454002276626841, guid: 7a4ed51d8d81947f898057c2f149ee06, type: 3}
   firePoint: {fileID: 1049382743}
   fireRate: 1.5
-  projectileSpeed: 13.5
+  projectileSpeed: 13
 --- !u!95 &1798446697
 Animator:
   serializedVersion: 5
