@@ -86,7 +86,7 @@ public class PackageHandler : MonoBehaviour
         SoundFXManager.instance.PlaySoundFXClip(winClip);
         this.OnPackageDelivery?.Invoke(obj);
         Debug.Log("package delivered!");
-
+        this.player.GetComponent<HealthManager>().levelFinished = true;
     }
 
     public void ShowLevelFishedPanel(GameObject _) {
