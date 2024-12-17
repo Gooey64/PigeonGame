@@ -101,8 +101,6 @@ public class LevelMenu : MonoBehaviour
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         Debug.Log($"Current Scene Index: {currentSceneIndex}");
 
-        if (ScoreManager.Instance.HasReachedTargetScore())
-        {
             if (currentSceneIndex + 1 < SceneManager.sceneCountInBuildSettings)
             {
                 int nextSceneIndex = currentSceneIndex + 1;
@@ -118,11 +116,7 @@ public class LevelMenu : MonoBehaviour
                 Debug.Log("No more levels to load!");
             }
         }
-        else
-        {
-            Debug.Log("Target score not reached. Cannot proceed to the next level.");
-        }
-    }
+
 
     public void UnlockNextLevel(int nextLevelIndex)
     {
