@@ -9151,7 +9151,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2885270708246352122, guid: be09b4eefac114acea5bc8e0f47db366, type: 3}
       propertyPath: remainingTime
-      value: 70
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 4188728517194442062, guid: be09b4eefac114acea5bc8e0f47db366, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
