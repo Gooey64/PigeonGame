@@ -37,7 +37,7 @@ public class EnvelopeDelivery : MonoBehaviour
         if (envelopeRb != null)
         {
             envelopeRb.bodyType = RigidbodyType2D.Dynamic;
-
+        }
         envelope.transform.position = groundPosition.position;
     }
 }
