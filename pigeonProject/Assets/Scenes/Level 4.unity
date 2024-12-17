@@ -1123,6 +1123,10 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7817598837330001696, guid: a178c98d184cba844890b00e1d97208a, type: 3}
+      propertyPath: m_SortingOrder
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8381,6 +8385,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2248965544873549451, guid: 2c84c57efff97e844a9cdbe5341159ac, type: 3}
+      propertyPath: m_Color.b
+      value: 0.029276304
+      objectReference: {fileID: 0}
+    - target: {fileID: 2248965544873549451, guid: 2c84c57efff97e844a9cdbe5341159ac, type: 3}
+      propertyPath: m_Color.g
+      value: 0.8980392
+      objectReference: {fileID: 0}
+    - target: {fileID: 2248965544873549451, guid: 2c84c57efff97e844a9cdbe5341159ac, type: 3}
+      propertyPath: m_Color.r
+      value: 0.003921571
+      objectReference: {fileID: 0}
     - target: {fileID: 3940753259000253466, guid: 2c84c57efff97e844a9cdbe5341159ac, type: 3}
       propertyPath: m_Name
       value: Drop Ride Base (2)
