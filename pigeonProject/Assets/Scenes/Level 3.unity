@@ -6849,7 +6849,7 @@ PrefabInstance:
     - target: {fileID: 3521788817391792642, guid: 5fe61782ceecc4e958a9908a0d9817d0, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: b1c35c042e53846d4b5ff455df7ee0b6, type: 3}
+      objectReference: {fileID: 21300000, guid: 8a3d1cf839e8f430fbabc718fa06d0fd, type: 3}
     - target: {fileID: 6870102177084751741, guid: 5fe61782ceecc4e958a9908a0d9817d0, type: 3}
       propertyPath: m_RootOrder
       value: 11
@@ -9740,7 +9740,7 @@ PrefabInstance:
     - target: {fileID: 6958980077721481426, guid: cdb3003cd9af241a08a28ea1fa32e8ed, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: fbd358f239b9743f59375581ab7ca508, type: 3}
+      objectReference: {fileID: 21300000, guid: 8a3d1cf839e8f430fbabc718fa06d0fd, type: 3}
     - target: {fileID: 7194996621223870834, guid: cdb3003cd9af241a08a28ea1fa32e8ed, type: 3}
       propertyPath: m_Name
       value: Pigeon

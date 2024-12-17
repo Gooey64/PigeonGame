@@ -8,6 +8,7 @@ public class FoodInteraction : MonoBehaviour
     private int currentPanelIndex = 0; // Tracks the current panel
     private bool isPlayerNearby = false; // Check if player is near the food
     private bool gamePaused = false; // Pause state for the game
+    private bool panelsSeen = false; // Tracks if the panels have already been seen
 
     private void Start()
     {
@@ -54,6 +55,7 @@ public class FoodInteraction : MonoBehaviour
             }
             else
             {
+                panelsSeen = true; // Mark panels as seen
                 ResumeGame(); // Resume the game when all panels are shown
             }
         }
@@ -67,7 +69,7 @@ public class FoodInteraction : MonoBehaviour
             return;
         }
 
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") && !panelsSeen) // Only show panels if not already seen
         {
             Debug.Log("Player entered trigger zone. Showing bubble speech panels.");
             isPlayerNearby = true;

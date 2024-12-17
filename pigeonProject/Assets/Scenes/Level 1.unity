@@ -9764,7 +9764,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1503798714
 RectTransform:
   m_ObjectHideFlags: 0
@@ -11510,23 +11510,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3659212480453916626, guid: cdb3003cd9af241a08a28ea1fa32e8ed, type: 3}
   m_PrefabInstance: {fileID: 1093383550271298428}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1824064223
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1824064217}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 423ac6499e3b74f0aa583429461dd7be, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  initialPanels: []
-  envelopePanels: []
-  arrows: []
-  objects: []
-  soundMixerManager: {fileID: 0}
 --- !u!212 &1824064228
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -11593,9 +11576,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   initialPanels:
   - {fileID: 1503798713}
-  envelopePanels: []
-  arrows: []
-  objects: []
   soundMixerManager: {fileID: 869091836}
 --- !u!4 &1830584431 stripped
 Transform:
@@ -14187,9 +14167,6 @@ PrefabInstance:
       insertIndex: 6
       addedObject: {fileID: 2122136579}
     m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 7194996621223870834, guid: cdb3003cd9af241a08a28ea1fa32e8ed, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1824064223}
     - targetCorrespondingSourceObject: {fileID: 7194996621223870834, guid: cdb3003cd9af241a08a28ea1fa32e8ed, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1824064228}
