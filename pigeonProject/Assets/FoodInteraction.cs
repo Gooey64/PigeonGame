@@ -2,17 +2,16 @@ using UnityEngine;
 
 public class FoodInteraction : MonoBehaviour
 {
-    public GameObject[] bubbleSpeechPanels; // Array of bubble speech panels
+    public GameObject[] bubbleSpeechPanels;
     public SoundMixerManager soundMixerManager;
 
-    private int currentPanelIndex = 0; // Tracks the current panel
-    private bool isPlayerNearby = false; // Check if player is near the food
-    private bool gamePaused = false; // Pause state for the game
-    private bool panelsSeen = false; // Tracks if the panels have already been seen
+    private int currentPanelIndex = 0;
+    private bool isPlayerNearby = false; 
+    private bool gamePaused = false; 
+    private bool panelsSeen = false;
 
     private void Start()
     {
-        // Ensure all panels are initially inactive
         foreach (var panel in bubbleSpeechPanels)
         {
             if (panel != null)
@@ -24,7 +23,6 @@ public class FoodInteraction : MonoBehaviour
 
     private void Update()
     {
-        // Check if the pigeon died or the player restarted
         if (HealthManager.PlayerDied || PauseMenu.IsRestartClicked())
         {
             Debug.Log("Pigeon died or level restarted. Hiding all panels.");
@@ -32,7 +30,6 @@ public class FoodInteraction : MonoBehaviour
             return;
         }
 
-        // Allow the player to progress through the panels by pressing the right arrow key
         if (isPlayerNearby && gamePaused && 
             (Input.GetButtonDown("Action") || 
              Input.GetKeyDown(KeyCode.RightArrow) || 
@@ -46,17 +43,17 @@ public class FoodInteraction : MonoBehaviour
     {
         if (currentPanelIndex < bubbleSpeechPanels.Length)
         {
-            bubbleSpeechPanels[currentPanelIndex].SetActive(false); // Hide the current panel
+            bubbleSpeechPanels[currentPanelIndex].SetActive(false); 
             currentPanelIndex++;
 
             if (currentPanelIndex < bubbleSpeechPanels.Length)
             {
-                bubbleSpeechPanels[currentPanelIndex].SetActive(true); // Show the next panel
+                bubbleSpeechPanels[currentPanelIndex].SetActive(true); 
             }
             else
             {
-                panelsSeen = true; // Mark panels as seen
-                ResumeGame(); // Resume the game when all panels are shown
+                panelsSeen = true; 
+                ResumeGame(); 
             }
         }
     }
@@ -69,18 +66,17 @@ public class FoodInteraction : MonoBehaviour
             return;
         }
 
-        if (other.CompareTag("Player") && !panelsSeen) // Only show panels if not already seen
+        if (other.CompareTag("Player") && !panelsSeen) 
         {
             Debug.Log("Player entered trigger zone. Showing bubble speech panels.");
             isPlayerNearby = true;
 
-            // Activate the first panel when the player is near
             if (bubbleSpeechPanels.Length > 0 && currentPanelIndex < bubbleSpeechPanels.Length)
             {
                 bubbleSpeechPanels[currentPanelIndex].SetActive(true);
             }
 
-            PauseGame(); // Pause the game
+            PauseGame(); 
         }
     }
 
@@ -91,9 +87,9 @@ public class FoodInteraction : MonoBehaviour
             Debug.Log("Player exited trigger zone. Hiding bubble speech panels.");
             isPlayerNearby = false;
 
-            // Hide all panels when the player leaves
+            
             HideAllPanels();
-            ResumeGame(); // Resume the game
+            ResumeGame(); 
         }
     }
 
@@ -107,7 +103,7 @@ public class FoodInteraction : MonoBehaviour
             }
         }
 
-        currentPanelIndex = 0; // Reset panel index
+        currentPanelIndex = 0; 
     }
 
     private void PauseGame()

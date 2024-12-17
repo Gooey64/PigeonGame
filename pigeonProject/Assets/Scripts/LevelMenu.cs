@@ -44,11 +44,11 @@ public class LevelMenu : MonoBehaviour
     {
         if (ScoreManager.Instance.HasReachedTargetScore())
         {
-            ShowWinPanel(); // Show the win panel
+            ShowWinPanel(); 
         }
         else
         {
-            HideWinPanel(); // Hide the win panel if conditions are not met
+            HideWinPanel(); 
         }
     }
 
@@ -56,26 +56,25 @@ public class LevelMenu : MonoBehaviour
     {
         if (winPanel != null)
         {
-            winPanel.SetActive(true); // Show the panel
+            winPanel.SetActive(true); 
         }
 
-        PauseGame(); // Pause the game to let the player view the message
+        PauseGame(); 
     }
 
     private void HideWinPanel()
     {
         if (winPanel != null)
         {
-            winPanel.SetActive(false); // Hide the panel
+            winPanel.SetActive(false); 
         }
     }
 
     private void Update()
     {
-        // Check if the right arrow is pressed and the win panel is active
         if (Input.GetKeyDown(KeyCode.RightArrow) && winPanel.activeSelf)
         {
-            ProceedToNextLevel(); // Proceed to the next level
+            ProceedToNextLevel(); 
         }
     }
 
@@ -88,7 +87,7 @@ public class LevelMenu : MonoBehaviour
             int nextSceneIndex = currentSceneIndex + 1;
             UnlockNextLevel(nextSceneIndex);
             ResumeGame();
-            SceneManager.LoadScene(nextSceneIndex); // Load the next level
+            SceneManager.LoadScene(nextSceneIndex);
         }
         else
         {

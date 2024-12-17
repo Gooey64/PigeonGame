@@ -5,23 +5,23 @@ using UnityEngine;
 
 public class PanelsController : MonoBehaviour
 {
-    public GameObject panels; // Assign your panels GameObject in the Inspector
+    public GameObject panels; 
     private bool gamePaused = true;
 
     void Start()
     {
         if (panels != null)
         {
-            panels.SetActive(true); // Ensure the panels are visible at the start
+            panels.SetActive(true); 
             Debug.Log("Panels are now visible at the start of the game.");
         }
 
-        PauseGame(); // Start the game in a paused state
+        PauseGame(); 
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.P)) // Example pause/unpause toggle key
+        if (Input.GetKeyDown(KeyCode.P)) 
         {
             if (gamePaused)
             {
@@ -41,7 +41,7 @@ public class PanelsController : MonoBehaviour
 
         if (panels != null)
         {
-            panels.SetActive(true); // Ensure panels remain visible during pause
+            panels.SetActive(true); 
         }
 
         Debug.Log("Game paused. Panels are visible.");
@@ -54,7 +54,7 @@ public class PanelsController : MonoBehaviour
 
         if (panels != null)
         {
-            panels.SetActive(false); // Hide panels when the game resumes
+            panels.SetActive(false); 
         }
 
         Debug.Log("Game resumed. Panels are hidden.");

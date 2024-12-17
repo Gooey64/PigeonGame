@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class DarkBackgroundManager : MonoBehaviour
 {
-    public GameObject darkBackground; // Dark background panel
-    public GameObject messagePanel; // Message panel with the image
+    public GameObject darkBackground; 
+    public GameObject messagePanel; 
 
     public void ShowMessage()
     {

@@ -37,12 +37,10 @@ public class DeliveryCollider : MonoBehaviour
 
     void IgnoreDelivery(GameObject package)
     {
-        // Logic for what happens when the delivery is ignored
-        // For example, you could disable the package or make it fall to the ground
         Rigidbody2D rb = package.GetComponent<Rigidbody2D>();
         if (rb != null)
         {
-            rb.bodyType = RigidbodyType2D.Dynamic; // Make it fall
+            rb.bodyType = RigidbodyType2D.Dynamic;
         }
     }
 }

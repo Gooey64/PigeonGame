@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class EnvelopeDelivery : MonoBehaviour
 {
-    public Rigidbody2D envelopeRigidbody; // Rigidbody of the envelope
-    public GameObject envelope; // The envelope GameObject
-    public Transform groundPosition; // The position where the envelope falls if delivery fails
+    public Rigidbody2D envelopeRigidbody; 
+    public GameObject envelope; 
+    public Transform groundPosition; 
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Envelope")) // Check if the envelope interacts with the mailbox
+        if (other.CompareTag("Envelope")) 
         {
             if (ScoreManager.Instance.HasReachedTargetScore())
             {
@@ -26,7 +26,7 @@ public class EnvelopeDelivery : MonoBehaviour
     private void DeliverEnvelope(GameObject envelope)
     {
         Debug.Log("Envelope successfully delivered!");
-        Destroy(envelope); // Destroy the envelope GameObject
+        Destroy(envelope); 
     }
 
     private void DropEnvelopeToGround(GameObject envelope)
@@ -36,10 +36,8 @@ public class EnvelopeDelivery : MonoBehaviour
         Rigidbody2D envelopeRb = envelope.GetComponent<Rigidbody2D>();
         if (envelopeRb != null)
         {
-            envelopeRb.bodyType = RigidbodyType2D.Dynamic; // Enable gravity to let it fall naturally
-        }
+            envelopeRb.bodyType = RigidbodyType2D.Dynamic;
 
-        // Position the envelope at the ground position
         envelope.transform.position = groundPosition.position;
     }
 }

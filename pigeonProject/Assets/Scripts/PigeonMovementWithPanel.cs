@@ -8,7 +8,7 @@ public class PigeonMovementWithPanel : MonoBehaviour
     public SoundMixerManager soundMixerManager;
     private int currentPanelIndex = 0;
     private bool gamePaused = true;
-    private static bool panelsShownOnce = false; // Tracks if panels have already been shown
+    private static bool panelsShownOnce = false; 
 
     void Start()
     {
@@ -19,7 +19,6 @@ public class PigeonMovementWithPanel : MonoBehaviour
             return;
         }
 
-        // Skip showing panels if they were already displayed
         if (panelsShownOnce)
         {
             Debug.Log("Panels have already been shown. Skipping initial panels.");
@@ -35,10 +34,10 @@ public class PigeonMovementWithPanel : MonoBehaviour
 
             for (int i = 0; i < initialPanels.Length; i++)
             {
-                initialPanels[i].SetActive(i == 0); // Activate only the first panel
+                initialPanels[i].SetActive(i == 0); 
             }
 
-            panelsShownOnce = true; // Mark panels as shown
+            panelsShownOnce = true; 
         }
         else
         {

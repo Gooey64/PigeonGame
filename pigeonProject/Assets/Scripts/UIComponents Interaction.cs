@@ -15,7 +15,6 @@ public class UIComponentsInteraction : MonoBehaviour
 
     private void Start()
     {
-        // Ensure all panels, images, and icons are initially inactive
         DeactivateAll(bubbleSpeechPanels);
         DeactivateAll(bubbleSpeechImages);
         DeactivateAll(bubbleSpeechIcons);
@@ -42,14 +41,12 @@ public class UIComponentsInteraction : MonoBehaviour
     {
         if (currentPanelIndex < bubbleSpeechPanels.Length)
         {
-            // Hide current panel, image, and icon
             SetActive(bubbleSpeechPanels, currentPanelIndex, false);
             SetActive(bubbleSpeechImages, currentPanelIndex, false);
             SetActive(bubbleSpeechIcons, currentPanelIndex, false);
 
             currentPanelIndex++;
 
-            // Show next panel, image, and icon
             if (currentPanelIndex < bubbleSpeechPanels.Length)
             {
                 SetActive(bubbleSpeechPanels, currentPanelIndex, true);
@@ -58,7 +55,7 @@ public class UIComponentsInteraction : MonoBehaviour
             }
             else
             {
-                ResumeGame(); // Resume the game when all UI sets are shown
+                ResumeGame(); 
             }
         }
     }
@@ -76,7 +73,6 @@ public class UIComponentsInteraction : MonoBehaviour
             Debug.Log("Player entered trigger zone: Showing bubble speech panels, images, and icons.");
             isPlayerNearby = true;
 
-            // Activate the first panel, image, and icon when the player is near
             SetActive(bubbleSpeechPanels, currentPanelIndex, true);
             SetActive(bubbleSpeechImages, currentPanelIndex, true);
             SetActive(bubbleSpeechIcons, currentPanelIndex, true);
@@ -104,7 +100,7 @@ public class UIComponentsInteraction : MonoBehaviour
         DeactivateAll(bubbleSpeechImages);
         DeactivateAll(bubbleSpeechIcons);
 
-        currentPanelIndex = 0; // Reset panel index
+        currentPanelIndex = 0; 
     }
 
     private void DeactivateAll(GameObject[] array)

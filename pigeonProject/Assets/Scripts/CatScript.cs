@@ -15,9 +15,8 @@ public class CatScript : MonoBehaviour
     Vector3 LeftFace = new Vector3(-2, 2, 2);
     bool catNoiseFlag = true;
     public float catNoiseInterval = 5f;
-    public float moveSpeed = 2f; // Adjust as needed
+    public float moveSpeed = 2f; 
 
-    // Start is called before the first frame update
     void Start()
     {
         min = transform.position.x - distance;
@@ -26,10 +25,8 @@ public class CatScript : MonoBehaviour
         sighted = false;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        // Stop movement if game is paused
         if (Time.timeScale == 0) return;
 
         if (!sighted)
@@ -45,7 +42,6 @@ public class CatScript : MonoBehaviour
                 transform.localScale = LeftFace;
             }
 
-            // Adjust movement with Time.deltaTime
             if (right)
             {
                 transform.position += Vector3.right * moveSpeed * Time.deltaTime;
@@ -57,7 +53,6 @@ public class CatScript : MonoBehaviour
         }
         else
         {
-            // Adjust faster movement with Time.deltaTime
             if (right)
             {
                 transform.position += Vector3.right * moveSpeed * 3f * Time.deltaTime;
