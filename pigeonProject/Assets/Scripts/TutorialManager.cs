@@ -15,7 +15,7 @@ public class TutorialManager : MonoBehaviour
 
     private void Start()
     {
-        if (SceneManager.GetActiveScene().name != "Level 1")
+        if (SceneManager.GetActiveScene().name != "Level 0")
         {
             tutorialCompleted = true; 
             return;
