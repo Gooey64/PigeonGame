@@ -152,7 +152,7 @@ PrefabInstance:
     - target: {fileID: 586542671757924351, guid: 7a4ed51d8d81947f898057c2f149ee06, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 4fadc557b363648d2b4715fe40d4557c, type: 3}
+      objectReference: {fileID: 1755660880, guid: f64831c7c79334bb78c82ee75ea4f6ce, type: 3}
     - target: {fileID: 586542671757924351, guid: 7a4ed51d8d81947f898057c2f149ee06, type: 3}
       propertyPath: m_SortingOrder
       value: 120
@@ -8422,6 +8422,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c53d1aa0ae4c4469bd22df380658882, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2059002786 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4739070874884594139, guid: 4bd1f5a37622147fb9276a050c892b4b, type: 3}
+  m_PrefabInstance: {fileID: 2059002784}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2059002787 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2381700777386584025, guid: 4bd1f5a37622147fb9276a050c892b4b, type: 3}
+  m_PrefabInstance: {fileID: 2059002784}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2059002788 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2247583403595631299, guid: 4bd1f5a37622147fb9276a050c892b4b, type: 3}
+  m_PrefabInstance: {fileID: 2059002784}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2115589461
 GameObject:
   m_ObjectHideFlags: 0
@@ -9423,6 +9456,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1683071961}
     m_Modifications:
+    - target: {fileID: 928253888628156580, guid: 8550b896481a747b9b75b78265af145e, type: 3}
+      propertyPath: musicVolumeSlider
+      value: 
+      objectReference: {fileID: 2059002786}
+    - target: {fileID: 928253888628156580, guid: 8550b896481a747b9b75b78265af145e, type: 3}
+      propertyPath: masterVolumeSlider
+      value: 
+      objectReference: {fileID: 2059002788}
+    - target: {fileID: 928253888628156580, guid: 8550b896481a747b9b75b78265af145e, type: 3}
+      propertyPath: soundFXVolumeSlider
+      value: 
+      objectReference: {fileID: 2059002787}
     - target: {fileID: 4131465162700795163, guid: 8550b896481a747b9b75b78265af145e, type: 3}
       propertyPath: m_RootOrder
       value: -1

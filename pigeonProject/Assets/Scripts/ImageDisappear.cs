@@ -2,18 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
 public class ImageDisappear : MonoBehaviour
 {
     public GameObject targetImage; 
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.RightArrow) || 
-            Input.GetButtonDown("Action") || 
-            Input.GetKeyDown(KeyCode.D))
+        if (HealthManager.PlayerDied || PauseMenu.IsRestartClicked())
         {
-            HideImage();
+            HideImage(); 
+        }
+        else if (Input.GetKeyDown(KeyCode.RightArrow) || 
+                 Input.GetButtonDown("Action") || 
+                 Input.GetKeyDown(KeyCode.D))
+        {
+            HideImage(); 
         }
     }
 

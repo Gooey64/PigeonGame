@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class LevelMenu : MonoBehaviour
 {
-    public Button[] buttons; // Match levels to buttons for manual selection
-    public GameObject winPanel; // Panel to display the win message
+    public Button[] buttons; 
+    public GameObject winPanel; 
     public Color unlockedColor = Color.white;
     public Color lockedColor = new Color(1f, 1f, 1f, 0.5f);
 
@@ -14,29 +14,27 @@ public class LevelMenu : MonoBehaviour
 
     private void Awake()
     {
-        UpdateLevelButtons(); // Update buttons to reflect unlocked levels
-        CheckAndShowWinPanel(); // Check if the win conditions are met
+        UpdateLevelButtons();
+        CheckAndShowWinPanel(); 
         Debug.Log($"Loaded Scene: {SceneManager.GetActiveScene().name}, Index: {SceneManager.GetActiveScene().buildIndex}");
     }
 
     private void UpdateLevelButtons()
     {
-        // Ensure buttons correspond to levels
         for (int i = 0; i < buttons.Length; i++)
         {
             if (i == 0 || PlayerPrefs.GetInt($"Level_{i}_Unlocked", 0) == 1)
             {
-                buttons[i].interactable = true; // Enable unlocked levels
+                buttons[i].interactable = true;
                 buttons[i].GetComponent<Image>().color = unlockedColor;
             }
             else
             {
-                buttons[i].interactable = false; // Disable locked levels
+                buttons[i].interactable = false; 
                 buttons[i].GetComponent<Image>().color = lockedColor;
             }
 
-            // Add a listener to load the corresponding level when the button is clicked
-            int levelIndex = i; // Capture loop variable
+            int levelIndex = i;
             buttons[i].onClick.RemoveAllListeners();
             buttons[i].onClick.AddListener(() => OpenLevel(levelIndex));
         }

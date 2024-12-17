@@ -8985,6 +8985,39 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4bd1f5a37622147fb9276a050c892b4b, type: 3}
+--- !u!114 &901407263 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4739070874884594139, guid: 4bd1f5a37622147fb9276a050c892b4b, type: 3}
+  m_PrefabInstance: {fileID: 901407262}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &901407264 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2381700777386584025, guid: 4bd1f5a37622147fb9276a050c892b4b, type: 3}
+  m_PrefabInstance: {fileID: 901407262}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &901407265 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2247583403595631299, guid: 4bd1f5a37622147fb9276a050c892b4b, type: 3}
+  m_PrefabInstance: {fileID: 901407262}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &919821013
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15749,6 +15782,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 928253888628156580, guid: 8550b896481a747b9b75b78265af145e, type: 3}
+      propertyPath: musicVolumeSlider
+      value: 
+      objectReference: {fileID: 901407263}
+    - target: {fileID: 928253888628156580, guid: 8550b896481a747b9b75b78265af145e, type: 3}
+      propertyPath: masterVolumeSlider
+      value: 
+      objectReference: {fileID: 901407265}
+    - target: {fileID: 928253888628156580, guid: 8550b896481a747b9b75b78265af145e, type: 3}
+      propertyPath: soundFXVolumeSlider
+      value: 
+      objectReference: {fileID: 901407264}
     - target: {fileID: 4131465162700795163, guid: 8550b896481a747b9b75b78265af145e, type: 3}
       propertyPath: m_RootOrder
       value: 10
