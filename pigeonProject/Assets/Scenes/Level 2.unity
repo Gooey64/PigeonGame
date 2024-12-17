@@ -10994,8 +10994,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1cc5efd22b92a49fa8636b77b2a84886, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buttons: []
-  winPanel: {fileID: 0}
+  buttons:
+  - {fileID: 1958932246}
+  winPanel: {fileID: 414685613}
   unlockedColor: {r: 1, g: 1, b: 1, a: 1}
   lockedColor: {r: 1, g: 1, b: 1, a: 0.5}
 --- !u!4 &1307396050
