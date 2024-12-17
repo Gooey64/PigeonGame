@@ -7,6 +7,7 @@ public class HealthManager : MonoBehaviour
 {
     [SerializeField] private AudioClip clip;
     [SerializeField] private AudioClip damageClip;
+    public bool levelFinished = false;
     public float healthAmount = 100f;
     public Image healthBar;
 
@@ -51,6 +52,9 @@ public class HealthManager : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
+        if (levelFinished) {
+            return;
+        }
         SoundFXManager.instance.PlaySoundFXClip(damageClip);
         healthAmount -= damage;
         healthAmount = Mathf.Clamp(healthAmount, 0, 100);
