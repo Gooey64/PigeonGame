@@ -17,7 +17,13 @@ public class PigeonMovementWithPanel : MonoBehaviour
 
     void Start()
     {
-        // Ensure panels appear only if there are contents in the arrays
+        if (HealthManager.PlayerDied || PauseMenu.IsRestartClicked())
+        {
+            Debug.Log("Player has died or level restarted. Disabling all panels and arrays.");
+            DisableAllPanelsAndArrays();
+            return;
+        }
+
         if (initialPanels.Length > 0)
         {
             Time.timeScale = 0;
@@ -53,6 +59,12 @@ public class PigeonMovementWithPanel : MonoBehaviour
 
     void Update()
     {
+        if (HealthManager.PlayerDied || PauseMenu.IsRestartClicked())
+        {
+            DisableAllPanelsAndArrays();
+            return;
+        }
+
         if (gamePaused && (Input.GetKeyDown(KeyCode.RightArrow) ||
                            Input.GetButtonDown("Action") ||
                            Input.GetKeyDown(KeyCode.D)))
@@ -253,7 +265,7 @@ public class PigeonMovementWithPanel : MonoBehaviour
     {
         if (soundMixerManager != null)
         {
-            soundMixerManager.SetSoundFXVolume(0.0001f); // Effectively mute SFX
+            soundMixerManager.SetSoundFXVolume(0.0001f);
         }
     }
 
@@ -261,7 +273,44 @@ public class PigeonMovementWithPanel : MonoBehaviour
     {
         if (soundMixerManager != null)
         {
-            soundMixerManager.SetSoundFXVolume(1f); // Restore SFX volume
+            soundMixerManager.SetSoundFXVolume(1f);
         }
+    }
+
+    void DisableAllPanelsAndArrays()
+    {
+        foreach (var panel in initialPanels)
+        {
+            if (panel != null)
+            {
+                panel.SetActive(false);
+            }
+        }
+
+        foreach (var panel in envelopePanels)
+        {
+            if (panel != null)
+            {
+                panel.SetActive(false);
+            }
+        }
+
+        foreach (var arrow in arrows)
+        {
+            if (arrow != null)
+            {
+                arrow.SetActive(false);
+            }
+        }
+
+        foreach (var obj in objects)
+        {
+            if (obj != null)
+            {
+                obj.SetActive(false);
+            }
+        }
+
+        Debug.Log("All panels and arrays have been disabled.");
     }
 }

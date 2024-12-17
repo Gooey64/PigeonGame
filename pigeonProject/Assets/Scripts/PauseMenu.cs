@@ -1,14 +1,15 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI; 
+using UnityEngine.UI;
 
 public class PauseMenu : MonoBehaviour
 {
-    [SerializeField] private GameObject pauseMenu;       
-    [SerializeField] private GameObject dimBackground;  
-    public Button restartButton; 
+    [SerializeField] private GameObject pauseMenu;
+    [SerializeField] private GameObject dimBackground;
+    public Button restartButton;
 
-    public static bool restartClicked = false; 
+    public static bool restartClicked = false;
+    private static bool isGameFrozen = false; 
 
     private void Start()
     {
@@ -21,9 +22,9 @@ public class PauseMenu : MonoBehaviour
     private void OnRestartButtonClicked()
     {
         Debug.Log("Restart button clicked.");
-        restartClicked = true; 
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex); 
-        Time.timeScale = 1; 
+        restartClicked = true;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        Time.timeScale = 1;
     }
 
     public void Pause()
@@ -33,13 +34,23 @@ public class PauseMenu : MonoBehaviour
         {
             dimBackground.SetActive(true);
         }
-        Time.timeScale = 0; 
+
+        if (Time.timeScale == 0)
+        {
+            isGameFrozen = true; 
+        }
+        else
+        {
+            Time.timeScale = 0;
+        }
+
+        Debug.Log("Game paused.");
     }
 
-    public void Home() 
+    public void Home()
     {
         SceneManager.LoadScene("Main Menu");
-        Time.timeScale = 1; 
+        Time.timeScale = 1;
     }
 
     public void Resume()
@@ -49,10 +60,20 @@ public class PauseMenu : MonoBehaviour
         {
             dimBackground.SetActive(false);
         }
-        Time.timeScale = 1; 
+
+        if (!isGameFrozen)
+        {
+            Time.timeScale = 1;
+        }
+        else
+        {
+            Debug.Log("Game remains frozen because it was already frozen.");
+        }
+
+        isGameFrozen = false; 
     }
 
-     public void Restart()
+    public void Restart()
     {
         if (pauseMenu != null)
         {
@@ -68,8 +89,8 @@ public class PauseMenu : MonoBehaviour
         {
             panelManager.OnGameRestart();
         }
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex); 
-        Time.timeScale = 1; 
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        Time.timeScale = 1;
     }
 
     public static bool IsRestartClicked()

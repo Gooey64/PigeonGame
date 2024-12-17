@@ -20,6 +20,7 @@ public class EnvelopeInteraction : MonoBehaviour
 
         if (isPlayerNearby && !isPickedUp && gamePaused && (Input.GetKeyDown(KeyCode.E) || 
                                                             Input.GetButtonDown("Action") || 
+                                                            Input.GetKeyDown(KeyCode.RightArrow) ||
                                                             Input.GetKeyDown(KeyCode.D)))
         {
             ResumeGame();
