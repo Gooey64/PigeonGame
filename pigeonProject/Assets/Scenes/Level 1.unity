@@ -2324,11 +2324,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 1392427228086463332, guid: be09b4eefac114acea5bc8e0f47db366, type: 3}
   m_PrefabInstance: {fileID: 709857181242247847}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &715849948 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6879732324177044164, guid: be09b4eefac114acea5bc8e0f47db366, type: 3}
-  m_PrefabInstance: {fileID: 709857181242247847}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &724972911
 GameObject:
   m_ObjectHideFlags: 0
@@ -13673,6 +13668,7 @@ PrefabInstance:
     - {fileID: 6883716082601638441, guid: be09b4eefac114acea5bc8e0f47db366, type: 3}
     - {fileID: 4785394402289364585, guid: be09b4eefac114acea5bc8e0f47db366, type: 3}
     - {fileID: 7479272333457909170, guid: be09b4eefac114acea5bc8e0f47db366, type: 3}
+    - {fileID: 6879732324177044164, guid: be09b4eefac114acea5bc8e0f47db366, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 1392427228086463332, guid: be09b4eefac114acea5bc8e0f47db366, type: 3}
       insertIndex: 0
@@ -13839,11 +13835,11 @@ PrefabInstance:
     - target: {fileID: 1726147154343922713, guid: cdb3003cd9af241a08a28ea1fa32e8ed, type: 3}
       propertyPath: instructionsPanel
       value: 
-      objectReference: {fileID: 715849948}
+      objectReference: {fileID: 0}
     - target: {fileID: 1726147154343922713, guid: cdb3003cd9af241a08a28ea1fa32e8ed, type: 3}
       propertyPath: instructionsPanel1
       value: 
-      objectReference: {fileID: 715849948}
+      objectReference: {fileID: 0}
     - target: {fileID: 1726147154343922713, guid: cdb3003cd9af241a08a28ea1fa32e8ed, type: 3}
       propertyPath: instructionsPanels.Array.size
       value: 2
@@ -13851,7 +13847,7 @@ PrefabInstance:
     - target: {fileID: 1726147154343922713, guid: cdb3003cd9af241a08a28ea1fa32e8ed, type: 3}
       propertyPath: instructionsPanels.Array.data[0]
       value: 
-      objectReference: {fileID: 715849948}
+      objectReference: {fileID: 0}
     - target: {fileID: 2929515951487129857, guid: cdb3003cd9af241a08a28ea1fa32e8ed, type: 3}
       propertyPath: m_FlipX
       value: 0
