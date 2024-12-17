@@ -223,11 +223,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5722636108074404471, guid: 7a4ed51d8d81947f898057c2f149ee06, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 4.4
+      value: 0.78
       objectReference: {fileID: 0}
     - target: {fileID: 5722636108074404471, guid: 7a4ed51d8d81947f898057c2f149ee06, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 5.68
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 5903780133983915100, guid: 7a4ed51d8d81947f898057c2f149ee06, type: 3}
       propertyPath: Santa
@@ -1153,6 +1153,7 @@ GameObject:
   - component: {fileID: 412898299}
   - component: {fileID: 412898298}
   - component: {fileID: 412898304}
+  - component: {fileID: 412898305}
   m_Layer: 0
   m_Name: Projectile-Mechanics
   m_TagString: Untagged
@@ -1246,8 +1247,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Santa: {fileID: 8300000, guid: 7a8ab3a5426994ccc9993f9adbc6a134, type: 3}
   damage: 10
-  speed: 5
-  target: {fileID: 0}
 --- !u!95 &412898301
 Animator:
   serializedVersion: 5
@@ -1350,6 +1349,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 1824064218}
   speed: 10
+--- !u!114 &412898305
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 412898297}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d74a2f02a7564188881b6c319578f36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Santa: {fileID: 0}
+  damage: 10
+  speed: 5
+  target: {fileID: 0}
 --- !u!1 &426469685
 GameObject:
   m_ObjectHideFlags: 0
@@ -2388,7 +2403,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 412898297}
   firePoint: {fileID: 1924336073}
-  fireRate: 0.5
+  fireRate: 1
   projectileSpeed: 5
   moveSpeed: 2
   moveRange: 25
@@ -3818,7 +3833,7 @@ MonoBehaviour:
   - {fileID: 1389772741}
   - {fileID: 1164672052}
   flipAtControlPoints: 0000000000000000010101010101010101010101010101010101010101010000000101
-  speed: 0.8
+  speed: 1
 --- !u!114 &869091836 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 928253888628156580, guid: 8550b896481a747b9b75b78265af145e, type: 3}
@@ -5905,8 +5920,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Santa: {fileID: 8300000, guid: 7a8ab3a5426994ccc9993f9adbc6a134, type: 3}
   damage: 10
-  speed: 5
-  target: {fileID: 0}
 --- !u!4 &1503929868
 Transform:
   m_ObjectHideFlags: 0
@@ -6316,10 +6329,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 589837450}
   firePoint: {fileID: 1359685159}
-  fireRate: 1
-  projectileSpeed: 15
+  fireRate: 3
+  projectileSpeed: 38
   target: {fileID: 1824064218}
-  moveSpeed: 17
+  moveSpeed: 15
   verticalOffset: 20
 --- !u!4 &1589266450
 Transform:

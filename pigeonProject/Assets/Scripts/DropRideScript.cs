@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class DropRideScript : MonoBehaviour
 {
-    public float distance;
-    float min;
-    float max;
-    bool up;
-    // Start is called before the first frame update
+    public float distance; 
+    public float speed = 0.03f; 
+    private float min;
+    private float max;
+    private bool up;
+
     void Start()
     {
         min = transform.position.y;
@@ -16,7 +17,6 @@ public class DropRideScript : MonoBehaviour
         up = true;
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (transform.position.y <= min)
@@ -30,11 +30,11 @@ public class DropRideScript : MonoBehaviour
 
         if (up)
         {
-            transform.position += Vector3.up * 0.03f;
+            transform.position += Vector3.up * speed;
         }
         else
         {
-            transform.position += Vector3.down * 0.03f;
+            transform.position += Vector3.down * speed;
         }
     }
 }
