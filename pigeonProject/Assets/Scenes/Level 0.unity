@@ -736,7 +736,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2564419581158513312, guid: 6445c097557e342a9b354b177cad9e11, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2045287577}
   m_SourcePrefab: {fileID: 100100000, guid: 6445c097557e342a9b354b177cad9e11, type: 3}
 --- !u!1001 &216987769
 PrefabInstance:
@@ -1329,6 +1332,8 @@ GameObject:
   m_Component:
   - component: {fileID: 370249893}
   - component: {fileID: 370249892}
+  - component: {fileID: 370249895}
+  - component: {fileID: 370249896}
   m_Layer: 0
   m_Name: Playground
   m_TagString: Untagged
@@ -1411,6 +1416,75 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 30
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &370249895
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 370249891}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 19.2, y: 10.8}
+    newSize: {x: 19.2, y: 10.8}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 19.2, y: 10.8}
+  m_EdgeRadius: 0
+--- !u!114 &370249896
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 370249891}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d11738c66f5b44293a094240a02a3645, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bubbleSpeechPanels:
+  - {fileID: 1708286313}
+  - {fileID: 1287961918}
+  - {fileID: 1379023479}
+  - {fileID: 1184021610}
+  bubbleSpeechImages:
+  - {fileID: 0}
+  - {fileID: 2135073755}
+  - {fileID: 0}
+  - {fileID: 1802171785}
+  bubbleSpeechIcons: []
+  soundMixerManager: {fileID: 869091836}
 --- !u!1 &378570522
 GameObject:
   m_ObjectHideFlags: 0
@@ -1596,7 +1670,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86daa7ff2a2674152aa772c99219e037, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bubbleSpeech: {fileID: 1531913657}
+  bubbleSpeechPanels: []
   soundMixerManager: {fileID: 869091836}
 --- !u!1 &520513876
 GameObject:
@@ -1608,6 +1682,8 @@ GameObject:
   m_Component:
   - component: {fileID: 520513878}
   - component: {fileID: 520513877}
+  - component: {fileID: 520513880}
+  - component: {fileID: 520513879}
   m_Layer: 0
   m_Name: PlayGroundsAccessories
   m_TagString: Untagged
@@ -1689,6 +1765,73 @@ Transform:
   m_Father: {fileID: 818646189}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &520513879
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 520513876}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d11738c66f5b44293a094240a02a3645, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bubbleSpeechPanels:
+  - {fileID: 1489828988}
+  - {fileID: 677671010}
+  bubbleSpeechImages:
+  - {fileID: 0}
+  - {fileID: 198061046}
+  bubbleSpeechIcons:
+  - {fileID: 0}
+  - {fileID: 2144321950}
+  soundMixerManager: {fileID: 869091836}
+--- !u!61 &520513880
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 520513876}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 19.2, y: 8.86}
+    newSize: {x: 19.2, y: 8.86}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 19.2, y: 8.86}
+  m_EdgeRadius: 0
 --- !u!4 &524248337 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2235553533341142212, guid: a178c98d184cba844890b00e1d97208a, type: 3}
@@ -1817,7 +1960,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86daa7ff2a2674152aa772c99219e037, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bubbleSpeech: {fileID: 1531913657}
+  bubbleSpeechPanels:
+  - {fileID: 1531913657}
+  - {fileID: 1747417208}
+  - {fileID: 1511398384}
   soundMixerManager: {fileID: 869091836}
 --- !u!61 &621779265
 BoxCollider2D:
@@ -10680,7 +10826,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 21442de0193d648d6904b8dadd95057f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8b2afa14a25ce4e3394498ac92d3579c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -11192,35 +11338,6 @@ MonoBehaviour:
   initialPanels:
   - {fileID: 265771133}
   - {fileID: 1343868455}
-  envelopePanels:
-  - {fileID: 1747417208}
-  - {fileID: 1511398384}
-  - {fileID: 1287961918}
-  - {fileID: 1379023479}
-  - {fileID: 1708286313}
-  - {fileID: 1489828988}
-  - {fileID: 677671010}
-  - {fileID: 1184021610}
-  arrows:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 2135073755}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 198061046}
-  - {fileID: 1802171785}
-  - {fileID: 0}
-  objects:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 2144321950}
-  - {fileID: 0}
-  - {fileID: 0}
   soundMixerManager: {fileID: 869091836}
 --- !u!1001 &1830765814
 PrefabInstance:
@@ -11253,6 +11370,10 @@ PrefabInstance:
     - target: {fileID: 3521788817391792642, guid: 5fe61782ceecc4e958a9908a0d9817d0, type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3521788817391792642, guid: 5fe61782ceecc4e958a9908a0d9817d0, type: 3}
+      propertyPath: m_SortingOrder
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 6013122552098296728, guid: 5fe61782ceecc4e958a9908a0d9817d0, type: 3}
       propertyPath: m_Size.x
@@ -12015,7 +12136,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8614febc8fbba46c984b6480d0de5107, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bubbleSpeech: {fileID: 924007280}
+  bubbleSpeechPanels:
+  - {fileID: 924007280}
+  - {fileID: 1468475498}
+  - {fileID: 1652712105}
   soundMixerManager: {fileID: 869091836}
 --- !u!1 &1939382718
 GameObject:
@@ -12203,6 +12327,28 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2045287573 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2564419581158513312, guid: 6445c097557e342a9b354b177cad9e11, type: 3}
+  m_PrefabInstance: {fileID: 216136003}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2045287577
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2045287573}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d11738c66f5b44293a094240a02a3645, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bubbleSpeechPanels:
+  - {fileID: 92724670}
+  bubbleSpeechImages: []
+  bubbleSpeechIcons: []
+  soundMixerManager: {fileID: 869091836}
 --- !u!1 &2075495185
 GameObject:
   m_ObjectHideFlags: 0

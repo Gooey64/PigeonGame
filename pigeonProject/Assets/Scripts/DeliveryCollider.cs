@@ -18,12 +18,31 @@ public class DeliveryCollider : MonoBehaviour
     {
         if (other.CompareTag("Package"))
         {
-            DeliverPackage();
+            if (ScoreManager.Instance.HasReachedTargetScore())
+            {
+                DeliverPackage();
+            }
+            else
+            {
+                Debug.Log("Target score not reached. Delivery ignored.");
+                IgnoreDelivery(other.gameObject);
+            }
         }
     }
 
     void DeliverPackage()
     {
         packageHandler.GetComponent<PackageHandler>().DeliverPackage(gameObject);
+    }
+
+    void IgnoreDelivery(GameObject package)
+    {
+        // Logic for what happens when the delivery is ignored
+        // For example, you could disable the package or make it fall to the ground
+        Rigidbody2D rb = package.GetComponent<Rigidbody2D>();
+        if (rb != null)
+        {
+            rb.bodyType = RigidbodyType2D.Dynamic; // Make it fall
+        }
     }
 }

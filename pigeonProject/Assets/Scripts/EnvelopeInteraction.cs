@@ -2,30 +2,58 @@ using UnityEngine;
 
 public class EnvelopeInteraction : MonoBehaviour
 {
-    public GameObject bubbleSpeech;
-    public SoundMixerManager soundMixerManager; 
+    public GameObject[] bubbleSpeechPanels; // Array of bubble speech panels
+    public SoundMixerManager soundMixerManager;
 
+    private int currentPanelIndex = 0; // Tracks the current panel
     private bool isPlayerNearby = false;
     private bool isPickedUp = false;
     private bool gamePaused = false;
     private bool hasPanelDisplayed = false;
 
+    private void Start()
+    {
+        // Ensure all panels are initially inactive
+        foreach (var panel in bubbleSpeechPanels)
+        {
+            if (panel != null)
+            {
+                panel.SetActive(false);
+            }
+        }
+    }
+
     private void Update()
     {
         if (HealthManager.PlayerDied || PauseMenu.IsRestartClicked())
         {
-            bubbleSpeech.SetActive(false);
+            HideAllPanels();
             return;
         }
 
-        if (isPlayerNearby && !isPickedUp && gamePaused && (Input.GetKeyDown(KeyCode.E) || 
-                                                            Input.GetButtonDown("Action") || 
-                                                            Input.GetKeyDown(KeyCode.RightArrow) ||
-                                                            Input.GetKeyDown(KeyCode.D)))
+        if (isPlayerNearby && gamePaused && (Input.GetButtonDown("Action") || 
+             Input.GetKeyDown(KeyCode.RightArrow) || 
+             Input.GetKeyDown(KeyCode.D)))
         {
-            ResumeGame();
-            TryPickUpEnvelope();
-            bubbleSpeech.SetActive(false);
+            ShowNextPanel();
+        }
+    }
+
+    private void ShowNextPanel()
+    {
+        if (currentPanelIndex < bubbleSpeechPanels.Length)
+        {
+            bubbleSpeechPanels[currentPanelIndex].SetActive(false); // Hide the current panel
+            currentPanelIndex++;
+
+            if (currentPanelIndex < bubbleSpeechPanels.Length)
+            {
+                bubbleSpeechPanels[currentPanelIndex].SetActive(true); // Show the next panel
+            }
+            else
+            {
+                ResumeGame(); // Resume the game when all panels are shown
+            }
         }
     }
 
@@ -33,15 +61,21 @@ public class EnvelopeInteraction : MonoBehaviour
     {
         if (HealthManager.PlayerDied || PauseMenu.IsRestartClicked())
         {
-            bubbleSpeech.SetActive(false);
+            HideAllPanels();
             return;
         }
 
         if (other.CompareTag("Player") && !isPickedUp && !hasPanelDisplayed)
         {
-            Debug.Log("Player entered trigger zone: Showing bubble speech and freezing game.");
+            Debug.Log("Player entered trigger zone: Showing bubble speech panels.");
             isPlayerNearby = true;
-            bubbleSpeech.SetActive(true);
+
+            // Activate the first panel when the player is near
+            if (bubbleSpeechPanels.Length > 0 && currentPanelIndex < bubbleSpeechPanels.Length)
+            {
+                bubbleSpeechPanels[currentPanelIndex].SetActive(true);
+            }
+
             PauseGame();
             hasPanelDisplayed = true;
         }
@@ -53,36 +87,30 @@ public class EnvelopeInteraction : MonoBehaviour
         {
             Debug.Log("Player exited trigger zone.");
             isPlayerNearby = false;
-            bubbleSpeech.SetActive(false);
-        }
-    }
 
-    private void TryPickUpEnvelope()
-    {
-        if (PlayerHasPickedUpEnvelope())
-        {
-            Debug.Log("Envelope successfully picked up!");
-            isPickedUp = true;
-            bubbleSpeech.SetActive(false);
+            HideAllPanels();
             ResumeGame();
-            Destroy(gameObject);
-        }
-        else
-        {
-            Debug.Log("Failed to pick up envelope.");
         }
     }
 
-    private bool PlayerHasPickedUpEnvelope()
+    private void HideAllPanels()
     {
-        return true;
+        foreach (var panel in bubbleSpeechPanels)
+        {
+            if (panel != null)
+            {
+                panel.SetActive(false);
+            }
+        }
+
+        currentPanelIndex = 0; // Reset panel index
     }
 
     private void PauseGame()
     {
         gamePaused = true;
         Time.timeScale = 0;
-        MuteSFX(); 
+        MuteSFX();
         Debug.Log("Game paused.");
     }
 
@@ -90,7 +118,7 @@ public class EnvelopeInteraction : MonoBehaviour
     {
         gamePaused = false;
         Time.timeScale = 1;
-        RestoreSFX(); 
+        RestoreSFX();
         Debug.Log("Game resumed.");
     }
 
@@ -98,7 +126,7 @@ public class EnvelopeInteraction : MonoBehaviour
     {
         if (soundMixerManager != null)
         {
-            soundMixerManager.SetSoundFXVolume(0.0001f); 
+            soundMixerManager.SetSoundFXVolume(0.0001f);
         }
     }
 
@@ -106,7 +134,7 @@ public class EnvelopeInteraction : MonoBehaviour
     {
         if (soundMixerManager != null)
         {
-            soundMixerManager.SetSoundFXVolume(1f); 
+            soundMixerManager.SetSoundFXVolume(1f);
         }
     }
 }
