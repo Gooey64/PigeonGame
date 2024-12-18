@@ -4640,7 +4640,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7814655655582324567, guid: 0652dea426bf046108aafe1c13fc8bce, type: 3}
       propertyPath: m_text
-      value: 'Score: 0 / 10'
+      value: 'Cookies: 0 / 1'
       objectReference: {fileID: 0}
     - target: {fileID: 7814655655582324567, guid: 0652dea426bf046108aafe1c13fc8bce, type: 3}
       propertyPath: m_fontColor.b
@@ -7089,7 +7089,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scorenoise: {fileID: 8300000, guid: b9287c54edcd94d78bebc4c96b7cad70, type: 3}
-  scoreValue: 10
+  scoreValue: 1
 --- !u!61 &1938122169
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7148,7 +7148,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   score: 0
-  targetScore: 10
+  targetScore: 1
   scoreText: {fileID: 353006312}
 --- !u!1 &1939382718
 GameObject:
@@ -9096,6 +9096,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 714047605}
     m_Modifications:
+    - target: {fileID: 1437822981710195374, guid: 4bd1f5a37622147fb9276a050c892b4b, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1437822981710195374, guid: 4bd1f5a37622147fb9276a050c892b4b, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1437822981710195374, guid: 4bd1f5a37622147fb9276a050c892b4b, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2247583403595631299, guid: 4bd1f5a37622147fb9276a050c892b4b, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -9104,6 +9116,18 @@ PrefabInstance:
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 869091836}
+    - target: {fileID: 3686911799841245007, guid: 4bd1f5a37622147fb9276a050c892b4b, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3686911799841245007, guid: 4bd1f5a37622147fb9276a050c892b4b, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3686911799841245007, guid: 4bd1f5a37622147fb9276a050c892b4b, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4314570903847337016, guid: 4bd1f5a37622147fb9276a050c892b4b, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -9195,6 +9219,18 @@ PrefabInstance:
     - target: {fileID: 6590331500873649195, guid: 4bd1f5a37622147fb9276a050c892b4b, type: 3}
       propertyPath: m_Name
       value: Pause Menu (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7352989729250169631, guid: 4bd1f5a37622147fb9276a050c892b4b, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7352989729250169631, guid: 4bd1f5a37622147fb9276a050c892b4b, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7352989729250169631, guid: 4bd1f5a37622147fb9276a050c892b4b, type: 3}
+      propertyPath: m_Color.r
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7679582068390941098, guid: 4bd1f5a37622147fb9276a050c892b4b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size

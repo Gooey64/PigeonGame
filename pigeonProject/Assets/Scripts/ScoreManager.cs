@@ -44,7 +44,7 @@ public class ScoreManager : MonoBehaviour
     {
         if (scoreText != null)
         {
-            scoreText.text = "Score: " + score.ToString() + " / " + targetScore.ToString();
+            scoreText.text = "Cookies: " + score.ToString() + " / " + targetScore.ToString();
         }
     }
 }
