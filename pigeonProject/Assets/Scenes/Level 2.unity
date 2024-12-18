@@ -1612,8 +1612,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 1878454002276626841, guid: 7a4ed51d8d81947f898057c2f149ee06, type: 3}
   firePoint: {fileID: 1882482838}
-  fireRate: 1.5
-  projectileSpeed: 25
+  fireRate: 1.7
+  projectileSpeed: 20
 --- !u!95 &302862060
 Animator:
   serializedVersion: 5
@@ -3455,7 +3455,6 @@ GameObject:
   - component: {fileID: 763265304}
   - component: {fileID: 763265303}
   - component: {fileID: 763265302}
-  - component: {fileID: 763265301}
   m_Layer: 0
   m_Name: cookieglow3 (1)
   m_TagString: Food
@@ -3463,33 +3462,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!50 &763265301
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 763265300}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!61 &763265302
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9192,6 +9164,56 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fc81e1e9729944af694c6afc088a1a8a, type: 3}
+--- !u!1 &972789269 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4198480692249713831, guid: cdb3003cd9af241a08a28ea1fa32e8ed, type: 3}
+  m_PrefabInstance: {fileID: 1093383550271298428}
+  m_PrefabAsset: {fileID: 0}
+--- !u!61 &972789271
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 972789269}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!1001 &985389111
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12535,7 +12557,6 @@ GameObject:
   - component: {fileID: 1739537046}
   - component: {fileID: 1739537045}
   - component: {fileID: 1739537044}
-  - component: {fileID: 1739537043}
   - component: {fileID: 1739537042}
   m_Layer: 0
   m_Name: cookieglow3
@@ -12559,33 +12580,6 @@ MonoBehaviour:
   score: 0
   targetScore: 30
   scoreText: {fileID: 1285660056}
---- !u!50 &1739537043
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1739537041}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!61 &1739537044
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -13120,8 +13114,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 1878454002276626841, guid: 7a4ed51d8d81947f898057c2f149ee06, type: 3}
   firePoint: {fileID: 1049382743}
-  fireRate: 1.5
-  projectileSpeed: 25
+  fireRate: 1.7
+  projectileSpeed: 20
 --- !u!95 &1798446697
 Animator:
   serializedVersion: 5
@@ -15445,7 +15439,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2885270708246352122, guid: be09b4eefac114acea5bc8e0f47db366, type: 3}
       propertyPath: remainingTime
-      value: 300
+      value: 106
       objectReference: {fileID: 0}
     - target: {fileID: 4188728517194442062, guid: be09b4eefac114acea5bc8e0f47db366, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -15964,6 +15958,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4198480692249713831, guid: cdb3003cd9af241a08a28ea1fa32e8ed, type: 3}
+      propertyPath: m_TagString
+      value: Package
+      objectReference: {fileID: 0}
     - target: {fileID: 4315065522020657704, guid: cdb3003cd9af241a08a28ea1fa32e8ed, type: 3}
       propertyPath: car
       value: 
@@ -16087,7 +16085,10 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3659212480453916626, guid: cdb3003cd9af241a08a28ea1fa32e8ed, type: 3}
       insertIndex: 6
       addedObject: {fileID: 228768302}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4198480692249713831, guid: cdb3003cd9af241a08a28ea1fa32e8ed, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 972789271}
   m_SourcePrefab: {fileID: 100100000, guid: cdb3003cd9af241a08a28ea1fa32e8ed, type: 3}
 --- !u!1001 &2123194875189502820
 PrefabInstance:

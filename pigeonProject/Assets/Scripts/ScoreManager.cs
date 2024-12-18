@@ -35,6 +35,11 @@ public class ScoreManager : MonoBehaviour
         return score >= targetScore;
     }
 
+    public int GetScore() // Added getter for score
+    {
+        return score;
+    }
+
     private void UpdateScoreText()
     {
         if (scoreText != null)

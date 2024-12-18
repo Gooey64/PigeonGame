@@ -1783,7 +1783,6 @@ GameObject:
   - component: {fileID: 503585446}
   - component: {fileID: 503585445}
   - component: {fileID: 503585444}
-  - component: {fileID: 503585443}
   - component: {fileID: 503585448}
   m_Layer: 0
   m_Name: cookieglow3
@@ -1792,33 +1791,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!50 &503585443
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 503585442}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!61 &503585444
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4382,6 +4354,56 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2235553533341142212, guid: a178c98d184cba844890b00e1d97208a, type: 3}
   m_PrefabInstance: {fileID: 1049688072}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1114547403 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4198480692249713831, guid: cdb3003cd9af241a08a28ea1fa32e8ed, type: 3}
+  m_PrefabInstance: {fileID: 1093383550271298428}
+  m_PrefabAsset: {fileID: 0}
+--- !u!61 &1114547405
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1114547403}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!4 &1125303713 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3290063319471085981, guid: b3d31376401323c4697ff65c5e654619, type: 3}
@@ -4647,7 +4669,6 @@ GameObject:
   - component: {fileID: 1173346866}
   - component: {fileID: 1173346865}
   - component: {fileID: 1173346864}
-  - component: {fileID: 1173346863}
   m_Layer: 0
   m_Name: cookieglow3 (1)
   m_TagString: Food
@@ -4670,33 +4691,6 @@ Transform:
   m_Father: {fileID: 864988104}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!50 &1173346863
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1173346861}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!61 &1173346864
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4898,7 +4892,6 @@ GameObject:
   - component: {fileID: 1239481988}
   - component: {fileID: 1239481987}
   - component: {fileID: 1239481986}
-  - component: {fileID: 1239481985}
   m_Layer: 0
   m_Name: cookieglow3 (1)
   m_TagString: Food
@@ -4906,33 +4899,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!50 &1239481985
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1239481984}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!61 &1239481986
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8484,7 +8450,6 @@ GameObject:
   - component: {fileID: 2115589465}
   - component: {fileID: 2115589464}
   - component: {fileID: 2115589463}
-  - component: {fileID: 2115589462}
   m_Layer: 0
   m_Name: cookieglow3 (2)
   m_TagString: Food
@@ -8492,33 +8457,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!50 &2115589462
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2115589461}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!61 &2115589463
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9151,7 +9089,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2885270708246352122, guid: be09b4eefac114acea5bc8e0f47db366, type: 3}
       propertyPath: remainingTime
-      value: 300
+      value: 106
       objectReference: {fileID: 0}
     - target: {fileID: 4188728517194442062, guid: be09b4eefac114acea5bc8e0f47db366, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -9654,6 +9592,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4198480692249713831, guid: cdb3003cd9af241a08a28ea1fa32e8ed, type: 3}
+      propertyPath: m_TagString
+      value: Package
+      objectReference: {fileID: 0}
     - target: {fileID: 4315065522020657704, guid: cdb3003cd9af241a08a28ea1fa32e8ed, type: 3}
       propertyPath: car
       value: 
@@ -9780,7 +9722,10 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3659212480453916626, guid: cdb3003cd9af241a08a28ea1fa32e8ed, type: 3}
       insertIndex: 7
       addedObject: {fileID: 60796301}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4198480692249713831, guid: cdb3003cd9af241a08a28ea1fa32e8ed, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1114547405}
   m_SourcePrefab: {fileID: 100100000, guid: cdb3003cd9af241a08a28ea1fa32e8ed, type: 3}
 --- !u!1001 &1228053571902375364
 PrefabInstance:
