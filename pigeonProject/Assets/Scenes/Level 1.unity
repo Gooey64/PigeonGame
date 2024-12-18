@@ -8958,7 +8958,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1307396049
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8971,8 +8971,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1cc5efd22b92a49fa8636b77b2a84886, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buttons: []
-  winPanel: {fileID: 0}
+  buttons:
+  - {fileID: 641099429}
+  winPanel: {fileID: 1009496786}
   unlockedColor: {r: 1, g: 1, b: 1, a: 1}
   lockedColor: {r: 1, g: 1, b: 1, a: 0.5}
 --- !u!4 &1307396050
@@ -11583,7 +11584,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1824064217}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 423ac6499e3b74f0aa583429461dd7be, type: 3}
   m_Name: 
@@ -12050,7 +12051,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1902482357
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12065,7 +12066,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buttons:
   - {fileID: 641099429}
-  winPanel: {fileID: 0}
+  winPanel: {fileID: 1009496786}
   unlockedColor: {r: 1, g: 1, b: 1, a: 1}
   lockedColor: {r: 1, g: 1, b: 1, a: 0.5}
 --- !u!4 &1902482358
