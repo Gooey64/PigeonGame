@@ -42,6 +42,8 @@ public class LevelMenu : MonoBehaviour
 
     private void CheckAndShowWinPanel()
     {
+        Debug.Log("HERE:");
+        Debug.Log(ScoreManager.Instance.HasReachedTargetScore());
         if (ScoreManager.Instance.HasReachedTargetScore())
         {
             ShowWinPanel(); 
@@ -87,7 +89,9 @@ public class LevelMenu : MonoBehaviour
             int nextSceneIndex = currentSceneIndex + 1;
             UnlockNextLevel(nextSceneIndex);
             ResumeGame();
+            Debug.Log("I AM HEREEEEEE");
             SceneManager.LoadScene(nextSceneIndex);
+            ScoreManager.Instance.score = 0;
         }
         else
         {
