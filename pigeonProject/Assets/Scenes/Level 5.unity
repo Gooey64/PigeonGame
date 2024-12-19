@@ -787,7 +787,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2885270708246352122, guid: be09b4eefac114acea5bc8e0f47db366, type: 3}
       propertyPath: remainingTime
-      value: 300
+      value: 121
       objectReference: {fileID: 0}
     - target: {fileID: 4188728517194442062, guid: be09b4eefac114acea5bc8e0f47db366, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -1469,7 +1469,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scorenoise: {fileID: 8300000, guid: b9287c54edcd94d78bebc4c96b7cad70, type: 3}
-  scoreValue: 10
+  scoreValue: 1
 --- !u!212 &224429095
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3155,6 +3155,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4198480692249713831, guid: cdb3003cd9af241a08a28ea1fa32e8ed, type: 3}
+      propertyPath: m_TagString
+      value: Package
+      objectReference: {fileID: 0}
     - target: {fileID: 4315065522020657704, guid: cdb3003cd9af241a08a28ea1fa32e8ed, type: 3}
       propertyPath: RunCost
       value: 35
@@ -3262,6 +3266,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7194996621223870834, guid: cdb3003cd9af241a08a28ea1fa32e8ed, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1429987546}
+    - targetCorrespondingSourceObject: {fileID: 4198480692249713831, guid: cdb3003cd9af241a08a28ea1fa32e8ed, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1165939538}
   m_SourcePrefab: {fileID: 100100000, guid: cdb3003cd9af241a08a28ea1fa32e8ed, type: 3}
 --- !u!1 &585105301
 GameObject:
@@ -4907,7 +4914,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scorenoise: {fileID: 8300000, guid: b9287c54edcd94d78bebc4c96b7cad70, type: 3}
-  scoreValue: 10
+  scoreValue: 1
 --- !u!212 &1016639883
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5578,6 +5585,56 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1860608897581687902, guid: c61a2832e487844d8aac8b41cc2f0534, type: 3}
   m_PrefabInstance: {fileID: 385702562}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1165939536 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4198480692249713831, guid: cdb3003cd9af241a08a28ea1fa32e8ed, type: 3}
+  m_PrefabInstance: {fileID: 584621314}
+  m_PrefabAsset: {fileID: 0}
+--- !u!61 &1165939538
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1165939536}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!1001 &1180997996
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6110,7 +6167,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7814655655582324567, guid: 0652dea426bf046108aafe1c13fc8bce, type: 3}
       propertyPath: m_text
-      value: 'Score: 0 / 50'
+      value: 'Cookies: 0 / 5'
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7837,7 +7894,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scorenoise: {fileID: 8300000, guid: b9287c54edcd94d78bebc4c96b7cad70, type: 3}
-  scoreValue: 10
+  scoreValue: 1
 --- !u!212 &1527580995
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -8643,6 +8700,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2034438982}
     m_Modifications:
+    - target: {fileID: 1437822981710195374, guid: 4bd1f5a37622147fb9276a050c892b4b, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1437822981710195374, guid: 4bd1f5a37622147fb9276a050c892b4b, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1437822981710195374, guid: 4bd1f5a37622147fb9276a050c892b4b, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2247583403595631299, guid: 4bd1f5a37622147fb9276a050c892b4b, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -8658,6 +8727,18 @@ PrefabInstance:
     - target: {fileID: 2381700777386584025, guid: 4bd1f5a37622147fb9276a050c892b4b, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: SetSoundFXVolume
+      objectReference: {fileID: 0}
+    - target: {fileID: 3686911799841245007, guid: 4bd1f5a37622147fb9276a050c892b4b, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3686911799841245007, guid: 4bd1f5a37622147fb9276a050c892b4b, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3686911799841245007, guid: 4bd1f5a37622147fb9276a050c892b4b, type: 3}
+      propertyPath: m_Color.r
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4314570903847337016, guid: 4bd1f5a37622147fb9276a050c892b4b, type: 3}
       propertyPath: m_Pivot.x
@@ -8754,6 +8835,18 @@ PrefabInstance:
     - target: {fileID: 6590331500873649195, guid: 4bd1f5a37622147fb9276a050c892b4b, type: 3}
       propertyPath: m_Name
       value: Pause Menu (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7352989729250169631, guid: 4bd1f5a37622147fb9276a050c892b4b, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7352989729250169631, guid: 4bd1f5a37622147fb9276a050c892b4b, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7352989729250169631, guid: 4bd1f5a37622147fb9276a050c892b4b, type: 3}
+      propertyPath: m_Color.r
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7679582068390941098, guid: 4bd1f5a37622147fb9276a050c892b4b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
@@ -9927,7 +10020,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scorenoise: {fileID: 8300000, guid: b9287c54edcd94d78bebc4c96b7cad70, type: 3}
-  scoreValue: 10
+  scoreValue: 1
 --- !u!212 &1832563749
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -11662,7 +11755,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scorenoise: {fileID: 8300000, guid: b9287c54edcd94d78bebc4c96b7cad70, type: 3}
-  scoreValue: 10
+  scoreValue: 1
 --- !u!212 &2137211844
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -11728,5 +11821,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   score: 0
-  targetScore: 50
+  targetScore: 5
   scoreText: {fileID: 489410134}

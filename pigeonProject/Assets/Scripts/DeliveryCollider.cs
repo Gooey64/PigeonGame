@@ -20,7 +20,8 @@ public class DeliveryCollider : MonoBehaviour
         {
             if (ScoreManager.Instance.HasReachedTargetScore())
             {
-                DeliverPackage();
+                Debug.Log("Target score reached. Delivering package...");
+                DeliverPackage(other.gameObject);
             }
             else
             {
@@ -30,17 +31,26 @@ public class DeliveryCollider : MonoBehaviour
         }
     }
 
-    void DeliverPackage()
+    void DeliverPackage(GameObject package)
     {
-        packageHandler.GetComponent<PackageHandler>().DeliverPackage(gameObject);
+        if (packageHandler != null)
+        {
+            packageHandler.GetComponent<PackageHandler>().DeliverPackage(package);
+            Debug.Log("Package delivered successfully.");
+        }
+        else
+        {
+            Debug.LogError("PackageHandler not found. Cannot deliver package.");
+        }
     }
 
     void IgnoreDelivery(GameObject package)
     {
+        Debug.Log("Package delivery ignored. Returning package to dynamic state.");
         Rigidbody2D rb = package.GetComponent<Rigidbody2D>();
         if (rb != null)
         {
-            rb.bodyType = RigidbodyType2D.Dynamic;
+            rb.bodyType = RigidbodyType2D.Dynamic; 
         }
     }
 }

@@ -707,7 +707,6 @@ GameObject:
   - component: {fileID: 157487491}
   - component: {fileID: 157487490}
   - component: {fileID: 157487489}
-  - component: {fileID: 157487488}
   - component: {fileID: 157487487}
   m_Layer: 0
   m_Name: cookies (2)
@@ -761,33 +760,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.92, y: 1.02}
   m_EdgeRadius: 0
---- !u!50 &157487488
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 157487486}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!114 &157487489
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -801,7 +773,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scorenoise: {fileID: 8300000, guid: b9287c54edcd94d78bebc4c96b7cad70, type: 3}
-  scoreValue: 10
+  scoreValue: 1
 --- !u!212 &157487490
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1687,6 +1659,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2121950152}
     m_Modifications:
+    - target: {fileID: 1437822981710195374, guid: 4bd1f5a37622147fb9276a050c892b4b, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1437822981710195374, guid: 4bd1f5a37622147fb9276a050c892b4b, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1437822981710195374, guid: 4bd1f5a37622147fb9276a050c892b4b, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2247583403595631299, guid: 4bd1f5a37622147fb9276a050c892b4b, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -1702,6 +1686,18 @@ PrefabInstance:
     - target: {fileID: 2381700777386584025, guid: 4bd1f5a37622147fb9276a050c892b4b, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: SetSoundFXVolume
+      objectReference: {fileID: 0}
+    - target: {fileID: 3686911799841245007, guid: 4bd1f5a37622147fb9276a050c892b4b, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3686911799841245007, guid: 4bd1f5a37622147fb9276a050c892b4b, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3686911799841245007, guid: 4bd1f5a37622147fb9276a050c892b4b, type: 3}
+      propertyPath: m_Color.r
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4314570903847337016, guid: 4bd1f5a37622147fb9276a050c892b4b, type: 3}
       propertyPath: m_Pivot.x
@@ -1798,6 +1794,18 @@ PrefabInstance:
     - target: {fileID: 6590331500873649195, guid: 4bd1f5a37622147fb9276a050c892b4b, type: 3}
       propertyPath: m_Name
       value: Pause Menu (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7352989729250169631, guid: 4bd1f5a37622147fb9276a050c892b4b, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7352989729250169631, guid: 4bd1f5a37622147fb9276a050c892b4b, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7352989729250169631, guid: 4bd1f5a37622147fb9276a050c892b4b, type: 3}
+      propertyPath: m_Color.r
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7679582068390941098, guid: 4bd1f5a37622147fb9276a050c892b4b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -2569,7 +2577,6 @@ GameObject:
   - component: {fileID: 502256478}
   - component: {fileID: 502256477}
   - component: {fileID: 502256476}
-  - component: {fileID: 502256480}
   - component: {fileID: 502256479}
   m_Layer: 0
   m_Name: cookies
@@ -2591,7 +2598,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scorenoise: {fileID: 8300000, guid: b9287c54edcd94d78bebc4c96b7cad70, type: 3}
-  scoreValue: 10
+  scoreValue: 1
 --- !u!212 &502256477
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2704,33 +2711,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.92, y: 1.02}
   m_EdgeRadius: 0
---- !u!50 &502256480
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 502256475}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!1001 &507556531
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3474,6 +3454,56 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b3d31376401323c4697ff65c5e654619, type: 3}
+--- !u!1 &574643323 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4198480692249713831, guid: cdb3003cd9af241a08a28ea1fa32e8ed, type: 3}
+  m_PrefabInstance: {fileID: 1013728129}
+  m_PrefabAsset: {fileID: 0}
+--- !u!61 &574643325
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 574643323}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!1001 &591599201
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3761,7 +3791,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7814655655582324567, guid: 0652dea426bf046108aafe1c13fc8bce, type: 3}
       propertyPath: m_text
-      value: 'Score: 0 / 50'
+      value: 'Cookies: 0 / 5'
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3945,7 +3975,6 @@ GameObject:
   - component: {fileID: 732961768}
   - component: {fileID: 732961772}
   - component: {fileID: 732961771}
-  - component: {fileID: 732961770}
   - component: {fileID: 732961769}
   m_Layer: 0
   m_Name: cookies (3)
@@ -4014,33 +4043,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.92, y: 1.02}
   m_EdgeRadius: 0
---- !u!50 &732961770
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 732961767}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!114 &732961771
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4054,7 +4056,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scorenoise: {fileID: 8300000, guid: b9287c54edcd94d78bebc4c96b7cad70, type: 3}
-  scoreValue: 10
+  scoreValue: 1
 --- !u!212 &732961772
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4199,7 +4201,6 @@ GameObject:
   - component: {fileID: 743281362}
   - component: {fileID: 743281361}
   - component: {fileID: 743281360}
-  - component: {fileID: 743281359}
   - component: {fileID: 743281358}
   - component: {fileID: 743281363}
   m_Layer: 0
@@ -4254,33 +4255,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.92, y: 1.02}
   m_EdgeRadius: 0
---- !u!50 &743281359
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 743281356}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!114 &743281360
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4294,7 +4268,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scorenoise: {fileID: 8300000, guid: b9287c54edcd94d78bebc4c96b7cad70, type: 3}
-  scoreValue: 10
+  scoreValue: 1
 --- !u!212 &743281361
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4375,7 +4349,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   score: 0
-  targetScore: 50
+  targetScore: 5
   scoreText: {fileID: 1652279728}
 --- !u!1001 &746737173
 PrefabInstance:
@@ -4899,7 +4873,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2885270708246352122, guid: be09b4eefac114acea5bc8e0f47db366, type: 3}
       propertyPath: remainingTime
-      value: 300
+      value: 106
       objectReference: {fileID: 0}
     - target: {fileID: 2970782367382245070, guid: be09b4eefac114acea5bc8e0f47db366, type: 3}
       propertyPath: m_text
@@ -6625,6 +6599,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4198480692249713831, guid: cdb3003cd9af241a08a28ea1fa32e8ed, type: 3}
+      propertyPath: m_TagString
+      value: Package
+      objectReference: {fileID: 0}
     - target: {fileID: 4315065522020657704, guid: cdb3003cd9af241a08a28ea1fa32e8ed, type: 3}
       propertyPath: RunCost
       value: 35
@@ -6748,7 +6726,10 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3659212480453916626, guid: cdb3003cd9af241a08a28ea1fa32e8ed, type: 3}
       insertIndex: 6
       addedObject: {fileID: 1849764049}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4198480692249713831, guid: cdb3003cd9af241a08a28ea1fa32e8ed, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 574643325}
   m_SourcePrefab: {fileID: 100100000, guid: cdb3003cd9af241a08a28ea1fa32e8ed, type: 3}
 --- !u!1001 &1019868498
 PrefabInstance:
@@ -9673,7 +9654,6 @@ GameObject:
   - component: {fileID: 1787221527}
   - component: {fileID: 1787221526}
   - component: {fileID: 1787221525}
-  - component: {fileID: 1787221524}
   - component: {fileID: 1787221523}
   m_Layer: 0
   m_Name: cookies (3)
@@ -9727,33 +9707,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.92, y: 1.02}
   m_EdgeRadius: 0
---- !u!50 &1787221524
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1787221522}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!114 &1787221525
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9767,7 +9720,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scorenoise: {fileID: 8300000, guid: b9287c54edcd94d78bebc4c96b7cad70, type: 3}
-  scoreValue: 10
+  scoreValue: 1
 --- !u!212 &1787221526
 SpriteRenderer:
   m_ObjectHideFlags: 0
