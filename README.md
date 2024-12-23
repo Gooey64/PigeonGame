@@ -1,4 +1,4 @@
-# U.P.S. United Pigeon Services (WIP)
+# U.P.S. United Pigeon Services
 
 https://pigeongame2024.itch.io/ups
 
